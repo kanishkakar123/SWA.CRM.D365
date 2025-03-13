@@ -6,7 +6,7 @@ namespace SWA.CRM.D365.Workflows
 {
     public class GetWorkflowInitiatingUser : WorkFlowActivityBase
     {
-        [Output("CurrentUser")]
+        [Output("User")]
         [ReferenceTarget("systemuser")]
         public OutArgument<EntityReference> CurrentUser { get; set; }
 

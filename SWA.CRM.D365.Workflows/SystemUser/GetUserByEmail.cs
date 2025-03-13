@@ -11,7 +11,7 @@ namespace SWA.CRM.D365.Workflows
         [RequiredArgument]
         public InArgument<string> Email { get; set; }
 
-        [Output("AssignToUser")]
+        [Output("User")]
         [ReferenceTarget("systemuser")]
         public OutArgument<EntityReference> User { get; set; }
 
