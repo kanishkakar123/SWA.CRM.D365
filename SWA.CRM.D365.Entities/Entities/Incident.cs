@@ -132,166 +132,6 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_createdbyipaddress")]
-		public string Adx_CreatedByIPAddress
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("adx_createdbyipaddress");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Adx_CreatedByIPAddress");
-				this.SetAttributeValue("adx_createdbyipaddress", value);
-				this.OnPropertyChanged("Adx_CreatedByIPAddress");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_createdbyusername")]
-		public string Adx_CreatedByUsername
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("adx_createdbyusername");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Adx_CreatedByUsername");
-				this.SetAttributeValue("adx_createdbyusername", value);
-				this.OnPropertyChanged("Adx_CreatedByUsername");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_modifiedbyipaddress")]
-		public string Adx_ModifiedByIPAddress
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("adx_modifiedbyipaddress");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Adx_ModifiedByIPAddress");
-				this.SetAttributeValue("adx_modifiedbyipaddress", value);
-				this.OnPropertyChanged("Adx_ModifiedByIPAddress");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_modifiedbyusername")]
-		public string Adx_ModifiedByUsername
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("adx_modifiedbyusername");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Adx_ModifiedByUsername");
-				this.SetAttributeValue("adx_modifiedbyusername", value);
-				this.OnPropertyChanged("Adx_ModifiedByUsername");
-			}
-		}
-		
-		/// <summary>
-		/// If set to Yes, the case will be visible and searchable on portals connected to this organization.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_publishtoweb")]
-		public System.Nullable<bool> adx_publishtoweb
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<bool>>("adx_publishtoweb");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("adx_publishtoweb");
-				this.SetAttributeValue("adx_publishtoweb", value);
-				this.OnPropertyChanged("adx_publishtoweb");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_resolution")]
-		public string adx_resolution
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("adx_resolution");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("adx_resolution");
-				this.SetAttributeValue("adx_resolution", value);
-				this.OnPropertyChanged("adx_resolution");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_resolutiondate")]
-		public System.Nullable<System.DateTime> adx_resolutiondate
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("adx_resolutiondate");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("adx_resolutiondate");
-				this.SetAttributeValue("adx_resolutiondate", value);
-				this.OnPropertyChanged("adx_resolutiondate");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_stepstoreproduce")]
-		public string adx_stepstoreproduce
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("adx_stepstoreproduce");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("adx_stepstoreproduce");
-				this.SetAttributeValue("adx_stepstoreproduce", value);
-				this.OnPropertyChanged("adx_stepstoreproduce");
-			}
-		}
-		
-		/// <summary>
 		/// Type the number of service units that were billed to the customer for the case.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("billedserviceunits")]
@@ -802,286 +642,6 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fa_expectedloadrequirements")]
-		public virtual Incident_fa_ExpectedLoadRequirements? fa_ExpectedLoadRequirements
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_fa_ExpectedLoadRequirements?)(EntityOptionSetEnum.GetEnum(this, "fa_expectedloadrequirements")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fa_ExpectedLoadRequirements");
-				this.SetAttributeValue("fa_expectedloadrequirements", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("fa_ExpectedLoadRequirements");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fa_fieldcrews")]
-		public Microsoft.Xrm.Sdk.EntityReference fa_FieldCrews
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("fa_fieldcrews");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fa_FieldCrews");
-				this.SetAttributeValue("fa_fieldcrews", value);
-				this.OnPropertyChanged("fa_FieldCrews");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fa_fortisproject")]
-		public Microsoft.Xrm.Sdk.EntityReference fa_FortisProject
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("fa_fortisproject");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fa_FortisProject");
-				this.SetAttributeValue("fa_fortisproject", value);
-				this.OnPropertyChanged("fa_FortisProject");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fa_identifycause")]
-		public string fa_IdentifyCause
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("fa_identifycause");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fa_IdentifyCause");
-				this.SetAttributeValue("fa_identifycause", value);
-				this.OnPropertyChanged("fa_IdentifyCause");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fa_iscontactinitiated")]
-		public System.Nullable<bool> fa_IsContactInitiated
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<bool>>("fa_iscontactinitiated");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fa_IsContactInitiated");
-				this.SetAttributeValue("fa_iscontactinitiated", value);
-				this.OnPropertyChanged("fa_IsContactInitiated");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fa_locationaddress")]
-		public string fa_LocationAddress
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("fa_locationaddress");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fa_LocationAddress");
-				this.SetAttributeValue("fa_locationaddress", value);
-				this.OnPropertyChanged("fa_LocationAddress");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fa_outagecategory")]
-		public virtual Incident_fa_OutageCategory? fa_OutageCategory
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_fa_OutageCategory?)(EntityOptionSetEnum.GetEnum(this, "fa_outagecategory")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fa_OutageCategory");
-				this.SetAttributeValue("fa_outagecategory", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("fa_OutageCategory");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fa_phonecallcompleted")]
-		public System.Nullable<bool> fa_PhoneCallCompleted
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<bool>>("fa_phonecallcompleted");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fa_PhoneCallCompleted");
-				this.SetAttributeValue("fa_phonecallcompleted", value);
-				this.OnPropertyChanged("fa_PhoneCallCompleted");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fa_poweroutages")]
-		public virtual Incident_fa_PowerOutages? fa_PowerOutages
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_fa_PowerOutages?)(EntityOptionSetEnum.GetEnum(this, "fa_poweroutages")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fa_PowerOutages");
-				this.SetAttributeValue("fa_poweroutages", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("fa_PowerOutages");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fa_preferredconnectiontimeline")]
-		public string fa_PreferredConnectionTimeline
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("fa_preferredconnectiontimeline");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fa_PreferredConnectionTimeline");
-				this.SetAttributeValue("fa_preferredconnectiontimeline", value);
-				this.OnPropertyChanged("fa_PreferredConnectionTimeline");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fa_projecttype")]
-		public virtual Incident_fa_projecttype? fa_projecttype
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_fa_projecttype?)(EntityOptionSetEnum.GetEnum(this, "fa_projecttype")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fa_projecttype");
-				this.SetAttributeValue("fa_projecttype", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("fa_projecttype");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fa_repairplan")]
-		public string fa_RepairPlan
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("fa_repairplan");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fa_RepairPlan");
-				this.SetAttributeValue("fa_repairplan", value);
-				this.OnPropertyChanged("fa_RepairPlan");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fa_requesttype")]
-		public virtual Incident_fa_RequestType? fa_RequestType
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_fa_RequestType?)(EntityOptionSetEnum.GetEnum(this, "fa_requesttype")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fa_RequestType");
-				this.SetAttributeValue("fa_requesttype", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("fa_RequestType");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fa_typicalrangekw")]
-		public virtual Incident_fa_TypicalRangekW? fa_TypicalRangekW
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_fa_TypicalRangekW?)(EntityOptionSetEnum.GetEnum(this, "fa_typicalrangekw")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fa_TypicalRangekW");
-				this.SetAttributeValue("fa_typicalrangekw", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("fa_TypicalRangekW");
-			}
-		}
-		
-		/// <summary>
 		/// For internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("firstresponsebykpiid")]
@@ -1490,42 +1050,22 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Allows a partner contact to be assigned to a specific case.
+		/// 
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msa_partnercontactid")]
-		public Microsoft.Xrm.Sdk.EntityReference msa_partnercontactid
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_casesentiment")]
+		public virtual Incident_msdyn_casesentiment? msdyn_casesentiment
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msa_partnercontactid");
+				return ((Incident_msdyn_casesentiment?)(EntityOptionSetEnum.GetEnum(this, "msdyn_casesentiment")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("msa_partnercontactid");
-				this.SetAttributeValue("msa_partnercontactid", value);
-				this.OnPropertyChanged("msa_partnercontactid");
-			}
-		}
-		
-		/// <summary>
-		/// Creates a Relationship between a Partner (account) and a case for indirect service arrangements.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msa_partnerid")]
-		public Microsoft.Xrm.Sdk.EntityReference msa_partnerid
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msa_partnerid");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("msa_partnerid");
-				this.SetAttributeValue("msa_partnerid", value);
-				this.OnPropertyChanged("msa_partnerid");
+				this.OnPropertyChanging("msdyn_casesentiment");
+				this.SetAttributeValue("msdyn_casesentiment", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("msdyn_casesentiment");
 			}
 		}
 		
@@ -1566,46 +1106,6 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("msdyn_copilotengaged");
 				this.SetAttributeValue("msdyn_copilotengaged", value);
 				this.OnPropertyChanged("msdyn_copilotengaged");
-			}
-		}
-		
-		/// <summary>
-		/// Case's functional location
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_functionallocation")]
-		public Microsoft.Xrm.Sdk.EntityReference msdyn_FunctionalLocation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_functionallocation");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("msdyn_FunctionalLocation");
-				this.SetAttributeValue("msdyn_functionallocation", value);
-				this.OnPropertyChanged("msdyn_FunctionalLocation");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier for Incident Type associated with Case.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_incidenttype")]
-		public Microsoft.Xrm.Sdk.EntityReference msdyn_IncidentType
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_incidenttype");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("msdyn_IncidentType");
-				this.SetAttributeValue("msdyn_incidenttype", value);
-				this.OnPropertyChanged("msdyn_IncidentType");
 			}
 		}
 		
@@ -2244,6 +1744,226 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_casecategoryid")]
+		public Microsoft.Xrm.Sdk.EntityReference swa_casecategoryid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("swa_casecategoryid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_casecategoryid");
+				this.SetAttributeValue("swa_casecategoryid", value);
+				this.OnPropertyChanged("swa_casecategoryid");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_casesubcategoryid")]
+		public Microsoft.Xrm.Sdk.EntityReference swa_casesubcategoryid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("swa_casesubcategoryid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_casesubcategoryid");
+				this.SetAttributeValue("swa_casesubcategoryid", value);
+				this.OnPropertyChanged("swa_casesubcategoryid");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_casetypeid")]
+		public Microsoft.Xrm.Sdk.EntityReference swa_casetypeid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("swa_casetypeid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_casetypeid");
+				this.SetAttributeValue("swa_casetypeid", value);
+				this.OnPropertyChanged("swa_casetypeid");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_cityid")]
+		public Microsoft.Xrm.Sdk.EntityReference swa_cityid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("swa_cityid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_cityid");
+				this.SetAttributeValue("swa_cityid", value);
+				this.OnPropertyChanged("swa_cityid");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_complaintnumber")]
+		public string swa_complaintnumber
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("swa_complaintnumber");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_complaintnumber");
+				this.SetAttributeValue("swa_complaintnumber", value);
+				this.OnPropertyChanged("swa_complaintnumber");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_regionid")]
+		public Microsoft.Xrm.Sdk.EntityReference swa_regionid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("swa_regionid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_regionid");
+				this.SetAttributeValue("swa_regionid", value);
+				this.OnPropertyChanged("swa_regionid");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_requestbeneficiary")]
+		public System.Nullable<bool> swa_requestbeneficiary
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("swa_requestbeneficiary");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_requestbeneficiary");
+				this.SetAttributeValue("swa_requestbeneficiary", value);
+				this.OnPropertyChanged("swa_requestbeneficiary");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_requestedinformationbeneficiary")]
+		public string swa_requestedinformationbeneficiary
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("swa_requestedinformationbeneficiary");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_requestedinformationbeneficiary");
+				this.SetAttributeValue("swa_requestedinformationbeneficiary", value);
+				this.OnPropertyChanged("swa_requestedinformationbeneficiary");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_requestedinformationserviceprovider")]
+		public string swa_requestedinformationserviceprovider
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("swa_requestedinformationserviceprovider");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_requestedinformationserviceprovider");
+				this.SetAttributeValue("swa_requestedinformationserviceprovider", value);
+				this.OnPropertyChanged("swa_requestedinformationserviceprovider");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_requestserviceprovider")]
+		public System.Nullable<bool> swa_requestserviceprovider
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("swa_requestserviceprovider");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_requestserviceprovider");
+				this.SetAttributeValue("swa_requestserviceprovider", value);
+				this.OnPropertyChanged("swa_requestserviceprovider");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_teamid")]
+		public Microsoft.Xrm.Sdk.EntityReference swa_teamid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("swa_teamid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_teamid");
+				this.SetAttributeValue("swa_teamid", value);
+				this.OnPropertyChanged("swa_teamid");
+			}
+		}
+		
+		/// <summary>
 		/// Shows the case number for customer reference and searching capabilities. This cannot be modified.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ticketnumber")]
@@ -2377,6 +2097,26 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// 1:N bpf_incident_swa_caseprocessflow
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("bpf_incident_swa_caseprocessflow")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.swa_caseprocessflow> bpf_incident_swa_caseprocessflow
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_caseprocessflow>("bpf_incident_swa_caseprocessflow", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("bpf_incident_swa_caseprocessflow");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_caseprocessflow>("bpf_incident_swa_caseprocessflow", null, value);
+				this.OnPropertyChanged("bpf_incident_swa_caseprocessflow");
+			}
+		}
+		
+		/// <summary>
 		/// 1:N incident_activity_parties
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_activity_parties")]
@@ -2413,6 +2153,46 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("Incident_ActivityPointers");
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityPointer>("Incident_ActivityPointers", null, value);
 				this.OnPropertyChanged("Incident_ActivityPointers");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N Incident_Annotation
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_Annotation")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Annotation> Incident_Annotation
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("Incident_Annotation", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Incident_Annotation");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("Incident_Annotation", null, value);
+				this.OnPropertyChanged("Incident_Annotation");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N Incident_Appointments
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_Appointments")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Appointment> Incident_Appointments
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Appointment>("Incident_Appointments", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Incident_Appointments");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Appointment>("Incident_Appointments", null, value);
+				this.OnPropertyChanged("Incident_Appointments");
 			}
 		}
 		
@@ -2497,26 +2277,6 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 1:N incident_OrderCloses
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_OrderCloses")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.OrderClose> incident_OrderCloses
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.OrderClose>("incident_OrderCloses", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("incident_OrderCloses");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.OrderClose>("incident_OrderCloses", null, value);
-				this.OnPropertyChanged("incident_OrderCloses");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N incident_parent_incident
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_parent_incident", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
@@ -2537,42 +2297,156 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 1:N incident_QuoteCloses
+		/// 1:N Incident_Phonecalls
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_QuoteCloses")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.QuoteClose> incident_QuoteCloses
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_Phonecalls")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.PhoneCall> Incident_Phonecalls
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.QuoteClose>("incident_QuoteCloses", null);
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.PhoneCall>("Incident_Phonecalls", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("incident_QuoteCloses");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.QuoteClose>("incident_QuoteCloses", null, value);
-				this.OnPropertyChanged("incident_QuoteCloses");
+				this.OnPropertyChanging("Incident_Phonecalls");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.PhoneCall>("Incident_Phonecalls", null, value);
+				this.OnPropertyChanged("Incident_Phonecalls");
 			}
 		}
 		
 		/// <summary>
-		/// 1:N OriginatingCase_Lead
+		/// 1:N Incident_QueueItem
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("OriginatingCase_Lead")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Lead> OriginatingCase_Lead
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_QueueItem")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.QueueItem> Incident_QueueItem
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Lead>("OriginatingCase_Lead", null);
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.QueueItem>("Incident_QueueItem", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("OriginatingCase_Lead");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Lead>("OriginatingCase_Lead", null, value);
-				this.OnPropertyChanged("OriginatingCase_Lead");
+				this.OnPropertyChanging("Incident_QueueItem");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.QueueItem>("Incident_QueueItem", null, value);
+				this.OnPropertyChanged("Incident_QueueItem");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N incident_swa_smses
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_swa_smses")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.swa_sms> incident_swa_smses
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_sms>("incident_swa_smses", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("incident_swa_smses");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_sms>("incident_swa_smses", null, value);
+				this.OnPropertyChanged("incident_swa_smses");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N Incident_Tasks
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_Tasks")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Task> Incident_Tasks
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Task>("Incident_Tasks", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Incident_Tasks");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Task>("Incident_Tasks", null, value);
+				this.OnPropertyChanged("Incident_Tasks");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N knowledgearticle_incidents
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("knowledgearticle_incidents")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.KnowledgeArticleIncident> knowledgearticle_incidents
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.KnowledgeArticleIncident>("knowledgearticle_incidents", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("knowledgearticle_incidents");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.KnowledgeArticleIncident>("knowledgearticle_incidents", null, value);
+				this.OnPropertyChanged("knowledgearticle_incidents");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N slakpiinstance_incident
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("slakpiinstance_incident")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.SLAKPIInstance> slakpiinstance_incident
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.SLAKPIInstance>("slakpiinstance_incident", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("slakpiinstance_incident");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.SLAKPIInstance>("slakpiinstance_incident", null, value);
+				this.OnPropertyChanged("slakpiinstance_incident");
+			}
+		}
+		
+		/// <summary>
+		/// N:N KnowledgeBaseRecord_Incident
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_Incident")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord> KnowledgeBaseRecord_Incident
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("KnowledgeBaseRecord_Incident", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("KnowledgeBaseRecord_Incident");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("KnowledgeBaseRecord_Incident", null, value);
+				this.OnPropertyChanged("KnowledgeBaseRecord_Incident");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 business_unit_incidents
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_incidents")]
+		public SWA.CRM.D365.Entities.Base.BusinessUnit business_unit_incidents
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.BusinessUnit>("business_unit_incidents", null);
 			}
 		}
 		
@@ -2724,44 +2598,135 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// N:1 msa_account_incident
+		/// N:1 kbarticle_incidents
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msa_partnerid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msa_account_incident")]
-		public SWA.CRM.D365.Entities.Base.Account msa_account_incident
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kbarticleid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("kbarticle_incidents")]
+		public SWA.CRM.D365.Entities.Base.KbArticle kbarticle_incidents
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("msa_account_incident", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KbArticle>("kbarticle_incidents", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("msa_account_incident");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("msa_account_incident", null, value);
-				this.OnPropertyChanged("msa_account_incident");
+				this.OnPropertyChanging("kbarticle_incidents");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KbArticle>("kbarticle_incidents", null, value);
+				this.OnPropertyChanged("kbarticle_incidents");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 msa_contact_incident
+		/// N:1 lk_incidentbase_createdby
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msa_partnercontactid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msa_contact_incident")]
-		public SWA.CRM.D365.Entities.Base.Contact msa_contact_incident
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_incidentbase_createdby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_incidentbase_createdby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Contact>("msa_contact_incident", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentbase_createdby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_incidentbase_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_incidentbase_createdonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_incidentbase_createdonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentbase_createdonbehalfby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("msa_contact_incident");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Contact>("msa_contact_incident", null, value);
-				this.OnPropertyChanged("msa_contact_incident");
+				this.OnPropertyChanging("lk_incidentbase_createdonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentbase_createdonbehalfby", null, value);
+				this.OnPropertyChanged("lk_incidentbase_createdonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_incidentbase_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_incidentbase_modifiedby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_incidentbase_modifiedby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentbase_modifiedby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_incidentbase_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_incidentbase_modifiedonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_incidentbase_modifiedonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentbase_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_incidentbase_modifiedonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentbase_modifiedonbehalfby", null, value);
+				this.OnPropertyChanged("lk_incidentbase_modifiedonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 manualsla_cases
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("manualsla_cases")]
+		public SWA.CRM.D365.Entities.Base.SLA manualsla_cases
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("manualsla_cases", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("manualsla_cases");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("manualsla_cases", null, value);
+				this.OnPropertyChanged("manualsla_cases");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 owner_incidents
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("owner_incidents")]
+		public SWA.CRM.D365.Entities.Base.Owner owner_incidents
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("owner_incidents", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("owner_incidents");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("owner_incidents", null, value);
+				this.OnPropertyChanged("owner_incidents");
 			}
 		}
 		
@@ -2783,6 +2748,237 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("product_incidents");
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Product>("product_incidents", null, value);
 				this.OnPropertyChanged("product_incidents");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 sla_cases
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sla_cases")]
+		public SWA.CRM.D365.Entities.Base.SLA sla_cases
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("sla_cases", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 slakpiinstance_incident_firstresponsebykpi
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("firstresponsebykpiid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("slakpiinstance_incident_firstresponsebykpi")]
+		public SWA.CRM.D365.Entities.Base.SLAKPIInstance slakpiinstance_incident_firstresponsebykpi
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLAKPIInstance>("slakpiinstance_incident_firstresponsebykpi", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("slakpiinstance_incident_firstresponsebykpi");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SLAKPIInstance>("slakpiinstance_incident_firstresponsebykpi", null, value);
+				this.OnPropertyChanged("slakpiinstance_incident_firstresponsebykpi");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 slakpiinstance_incident_resolvebykpi
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resolvebykpiid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("slakpiinstance_incident_resolvebykpi")]
+		public SWA.CRM.D365.Entities.Base.SLAKPIInstance slakpiinstance_incident_resolvebykpi
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLAKPIInstance>("slakpiinstance_incident_resolvebykpi", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("slakpiinstance_incident_resolvebykpi");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SLAKPIInstance>("slakpiinstance_incident_resolvebykpi", null, value);
+				this.OnPropertyChanged("slakpiinstance_incident_resolvebykpi");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_swa_casecategory_incident_casecategoryid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_casecategoryid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_swa_casecategory_incident_casecategoryid")]
+		public SWA.CRM.D365.Entities.Base.swa_casecategory swa_swa_casecategory_incident_casecategoryid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.swa_casecategory>("swa_swa_casecategory_incident_casecategoryid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_swa_casecategory_incident_casecategoryid");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.swa_casecategory>("swa_swa_casecategory_incident_casecategoryid", null, value);
+				this.OnPropertyChanged("swa_swa_casecategory_incident_casecategoryid");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_swa_casesubcategory_incident_casesubcategoryid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_casesubcategoryid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_swa_casesubcategory_incident_casesubcategoryid")]
+		public SWA.CRM.D365.Entities.Base.swa_casesubcategory swa_swa_casesubcategory_incident_casesubcategoryid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.swa_casesubcategory>("swa_swa_casesubcategory_incident_casesubcategoryid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_swa_casesubcategory_incident_casesubcategoryid");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.swa_casesubcategory>("swa_swa_casesubcategory_incident_casesubcategoryid", null, value);
+				this.OnPropertyChanged("swa_swa_casesubcategory_incident_casesubcategoryid");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_swa_casetype_incident_casetypeid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_casetypeid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_swa_casetype_incident_casetypeid")]
+		public SWA.CRM.D365.Entities.Base.swa_casetype swa_swa_casetype_incident_casetypeid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.swa_casetype>("swa_swa_casetype_incident_casetypeid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_swa_casetype_incident_casetypeid");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.swa_casetype>("swa_swa_casetype_incident_casetypeid", null, value);
+				this.OnPropertyChanged("swa_swa_casetype_incident_casetypeid");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_swa_city_incident_cityid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_cityid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_swa_city_incident_cityid")]
+		public SWA.CRM.D365.Entities.Base.swa_city swa_swa_city_incident_cityid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.swa_city>("swa_swa_city_incident_cityid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_swa_city_incident_cityid");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.swa_city>("swa_swa_city_incident_cityid", null, value);
+				this.OnPropertyChanged("swa_swa_city_incident_cityid");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_swa_region_incident_regionid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_regionid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_swa_region_incident_regionid")]
+		public SWA.CRM.D365.Entities.Base.swa_region swa_swa_region_incident_regionid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.swa_region>("swa_swa_region_incident_regionid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_swa_region_incident_regionid");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.swa_region>("swa_swa_region_incident_regionid", null, value);
+				this.OnPropertyChanged("swa_swa_region_incident_regionid");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_team_incident_teamid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_teamid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_team_incident_teamid")]
+		public SWA.CRM.D365.Entities.Base.Team swa_team_incident_teamid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Team>("swa_team_incident_teamid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_team_incident_teamid");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Team>("swa_team_incident_teamid", null, value);
+				this.OnPropertyChanged("swa_team_incident_teamid");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 system_user_incidents
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("system_user_incidents")]
+		public SWA.CRM.D365.Entities.Base.SystemUser system_user_incidents
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("system_user_incidents", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 team_incidents
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_incidents")]
+		public SWA.CRM.D365.Entities.Base.Team team_incidents
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Team>("team_incidents", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 TransactionCurrency_Incident
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("TransactionCurrency_Incident")]
+		public SWA.CRM.D365.Entities.Base.TransactionCurrency TransactionCurrency_Incident
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_Incident", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("TransactionCurrency_Incident");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_Incident", null, value);
+				this.OnPropertyChanged("TransactionCurrency_Incident");
 			}
 		}
 		

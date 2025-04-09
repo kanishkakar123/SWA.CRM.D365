@@ -965,6 +965,46 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// Indicates whether Power Automate Automation Center preview features will be available for all users in this organization.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("areautomationcenterpreviewfeaturesenabled")]
+		public System.Nullable<bool> AreAutomationCenterPreviewFeaturesEnabled
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("areautomationcenterpreviewfeaturesenabled");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("AreAutomationCenterPreviewFeaturesEnabled");
+				this.SetAttributeValue("areautomationcenterpreviewfeaturesenabled", value);
+				this.OnPropertyChanged("AreAutomationCenterPreviewFeaturesEnabled");
+			}
+		}
+		
+		/// <summary>
+		/// Indicates whether Process Insights Preview features are enabled in this organization.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("areprocessinsightspreviewfeaturesenabled")]
+		public System.Nullable<bool> AreProcessInsightsPreviewFeaturesEnabled
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("areprocessinsightspreviewfeaturesenabled");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("AreProcessInsightsPreviewFeaturesEnabled");
+				this.SetAttributeValue("areprocessinsightspreviewfeaturesenabled", value);
+				this.OnPropertyChanged("AreProcessInsightsPreviewFeaturesEnabled");
+			}
+		}
+		
+		/// <summary>
 		/// Indicates whether Address Suggestions has been enabled for the organization
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aresalesaddresssuggestionsenabled")]
@@ -2386,6 +2426,26 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// What verbosity level the Power Automate Desktop Flow Run Action Logs allow.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("desktopflowrunactionlogverbosity")]
+		public virtual Organization_DesktopFlowRunActionLogVerbosity? DesktopFlowRunActionLogVerbosity
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((Organization_DesktopFlowRunActionLogVerbosity?)(EntityOptionSetEnum.GetEnum(this, "desktopflowrunactionlogverbosity")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("DesktopFlowRunActionLogVerbosity");
+				this.SetAttributeValue("desktopflowrunactionlogverbosity", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("DesktopFlowRunActionLogVerbosity");
+			}
+		}
+		
+		/// <summary>
 		/// Where the Power Automate Desktop Flow Run Action logs are stored.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("desktopflowrunactionlogversion")]
@@ -2655,6 +2715,66 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("EnableCanvasAppsInSolutionsByDefault");
 				this.SetAttributeValue("enablecanvasappsinsolutionsbydefault", value);
 				this.OnPropertyChanged("EnableCanvasAppsInSolutionsByDefault");
+			}
+		}
+		
+		/// <summary>
+		/// Enable this feature to allow cross-geo boundary sharing of aggregated analytics data if your preferred data location for Viva Insights is different than the location of your environment
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enablecopilotstudiocrossgeosharedatawithvivainsights")]
+		public System.Nullable<bool> EnableCopilotStudioCrossGeoShareDataWithVivaInsights
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("enablecopilotstudiocrossgeosharedatawithvivainsights");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("EnableCopilotStudioCrossGeoShareDataWithVivaInsights");
+				this.SetAttributeValue("enablecopilotstudiocrossgeosharedatawithvivainsights", value);
+				this.OnPropertyChanged("EnableCopilotStudioCrossGeoShareDataWithVivaInsights");
+			}
+		}
+		
+		/// <summary>
+		/// (Deprecated) Enable this feature to allow Copilot Studio to share aggregated analytics data for custom agents with Viva Insights for an individual environment
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enablecopilotstudiosharedatawithvi")]
+		public System.Nullable<bool> EnableCopilotStudioShareDataWithVI
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("enablecopilotstudiosharedatawithvi");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("EnableCopilotStudioShareDataWithVI");
+				this.SetAttributeValue("enablecopilotstudiosharedatawithvi", value);
+				this.OnPropertyChanged("EnableCopilotStudioShareDataWithVI");
+			}
+		}
+		
+		/// <summary>
+		/// Enable this feature to allow Copilot Studio to share aggregated analytics data for custom agents with Viva Insights for an individual environment
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("enablecopilotstudiosharedatawithvivainsights")]
+		public System.Nullable<bool> EnableCopilotStudioShareDataWithVivaInsights
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("enablecopilotstudiosharedatawithvivainsights");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("EnableCopilotStudioShareDataWithVivaInsights");
+				this.SetAttributeValue("enablecopilotstudiosharedatawithvivainsights", value);
+				this.OnPropertyChanged("EnableCopilotStudioShareDataWithVivaInsights");
 			}
 		}
 		
@@ -4665,7 +4785,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Indicates whether Windows Vanilla Image will be readly available for Desktop Flow users in this organization.
+		/// Indicates whether Windows Vanilla Image will be available for Desktop Flow users in this organization.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdesktopflowvanillaimagesharingenabled")]
 		public System.Nullable<bool> IsDesktopFlowVanillaImageSharingEnabled
@@ -9605,6 +9725,86 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// 1:N organization_business_units
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_business_units")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.BusinessUnit> organization_business_units
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.BusinessUnit>("organization_business_units", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_business_units");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.BusinessUnit>("organization_business_units", null, value);
+				this.OnPropertyChanged("organization_business_units");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_kb_article_templates
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_kb_article_templates")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.KbArticleTemplate> organization_kb_article_templates
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.KbArticleTemplate>("organization_kb_article_templates", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_kb_article_templates");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.KbArticleTemplate>("organization_kb_article_templates", null, value);
+				this.OnPropertyChanged("organization_kb_article_templates");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_kb_articles
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_kb_articles")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.KbArticle> organization_kb_articles
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.KbArticle>("organization_kb_articles", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_kb_articles");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.KbArticle>("organization_kb_articles", null, value);
+				this.OnPropertyChanged("organization_kb_articles");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_KnowledgeBaseRecord
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_KnowledgeBaseRecord")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord> organization_KnowledgeBaseRecord
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("organization_KnowledgeBaseRecord", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_KnowledgeBaseRecord");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("organization_KnowledgeBaseRecord", null, value);
+				this.OnPropertyChanged("organization_KnowledgeBaseRecord");
+			}
+		}
+		
+		/// <summary>
 		/// 1:N organization_price_levels
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_price_levels")]
@@ -9661,6 +9861,458 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("organization_products");
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Product>("organization_products", null, value);
 				this.OnPropertyChanged("organization_products");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_queueitems
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_queueitems")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.QueueItem> organization_queueitems
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.QueueItem>("organization_queueitems", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_queueitems");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.QueueItem>("organization_queueitems", null, value);
+				this.OnPropertyChanged("organization_queueitems");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_queues
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_queues")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Queue> organization_queues
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Queue>("organization_queues", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_queues");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Queue>("organization_queues", null, value);
+				this.OnPropertyChanged("organization_queues");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_roles
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_roles")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Role> organization_roles
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Role>("organization_roles", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_roles");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Role>("organization_roles", null, value);
+				this.OnPropertyChanged("organization_roles");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_saved_queries
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_saved_queries")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.SavedQuery> organization_saved_queries
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.SavedQuery>("organization_saved_queries", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_saved_queries");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.SavedQuery>("organization_saved_queries", null, value);
+				this.OnPropertyChanged("organization_saved_queries");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_status_maps
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_status_maps")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.StatusMap> organization_status_maps
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.StatusMap>("organization_status_maps", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_status_maps");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.StatusMap>("organization_status_maps", null, value);
+				this.OnPropertyChanged("organization_status_maps");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_string_maps
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_string_maps")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.StringMap> organization_string_maps
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.StringMap>("organization_string_maps", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_string_maps");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.StringMap>("organization_string_maps", null, value);
+				this.OnPropertyChanged("organization_string_maps");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_swa_casecategory
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_swa_casecategory")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.swa_casecategory> organization_swa_casecategory
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_casecategory>("organization_swa_casecategory", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_swa_casecategory");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_casecategory>("organization_swa_casecategory", null, value);
+				this.OnPropertyChanged("organization_swa_casecategory");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_swa_caseprocessflow
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_swa_caseprocessflow")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.swa_caseprocessflow> organization_swa_caseprocessflow
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_caseprocessflow>("organization_swa_caseprocessflow", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_swa_caseprocessflow");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_caseprocessflow>("organization_swa_caseprocessflow", null, value);
+				this.OnPropertyChanged("organization_swa_caseprocessflow");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_swa_casesubcategory
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_swa_casesubcategory")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.swa_casesubcategory> organization_swa_casesubcategory
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_casesubcategory>("organization_swa_casesubcategory", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_swa_casesubcategory");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_casesubcategory>("organization_swa_casesubcategory", null, value);
+				this.OnPropertyChanged("organization_swa_casesubcategory");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_swa_casetype
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_swa_casetype")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.swa_casetype> organization_swa_casetype
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_casetype>("organization_swa_casetype", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_swa_casetype");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_casetype>("organization_swa_casetype", null, value);
+				this.OnPropertyChanged("organization_swa_casetype");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_swa_city
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_swa_city")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.swa_city> organization_swa_city
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_city>("organization_swa_city", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_swa_city");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_city>("organization_swa_city", null, value);
+				this.OnPropertyChanged("organization_swa_city");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_swa_configuration
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_swa_configuration")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.swa_configuration> organization_swa_configuration
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_configuration>("organization_swa_configuration", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_swa_configuration");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_configuration>("organization_swa_configuration", null, value);
+				this.OnPropertyChanged("organization_swa_configuration");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_swa_region
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_swa_region")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.swa_region> organization_swa_region
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_region>("organization_swa_region", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_swa_region");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_region>("organization_swa_region", null, value);
+				this.OnPropertyChanged("organization_swa_region");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_system_users
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_system_users")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.SystemUser> organization_system_users
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.SystemUser>("organization_system_users", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_system_users");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.SystemUser>("organization_system_users", null, value);
+				this.OnPropertyChanged("organization_system_users");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_teams
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_teams")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Team> organization_teams
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Team>("organization_teams", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_teams");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Team>("organization_teams", null, value);
+				this.OnPropertyChanged("organization_teams");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_transactioncurrencies
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_transactioncurrencies")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.TransactionCurrency> organization_transactioncurrencies
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.TransactionCurrency>("organization_transactioncurrencies", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_transactioncurrencies");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.TransactionCurrency>("organization_transactioncurrencies", null, value);
+				this.OnPropertyChanged("organization_transactioncurrencies");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N organization_uof_schedules
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_uof_schedules")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.UoMSchedule> organization_uof_schedules
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.UoMSchedule>("organization_uof_schedules", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("organization_uof_schedules");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.UoMSchedule>("organization_uof_schedules", null, value);
+				this.OnPropertyChanged("organization_uof_schedules");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 basecurrency_organization
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("basecurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("basecurrency_organization")]
+		public SWA.CRM.D365.Entities.Base.TransactionCurrency basecurrency_organization
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("basecurrency_organization", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("basecurrency_organization");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("basecurrency_organization", null, value);
+				this.OnPropertyChanged("basecurrency_organization");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_organization_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_organization_createdonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_organization_createdonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_organization_createdonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_organization_createdonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_organization_createdonbehalfby", null, value);
+				this.OnPropertyChanged("lk_organization_createdonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_organization_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_organization_modifiedonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_organization_modifiedonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_organization_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_organization_modifiedonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_organization_modifiedonbehalfby", null, value);
+				this.OnPropertyChanged("lk_organization_modifiedonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_organizationbase_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_organizationbase_createdby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_organizationbase_createdby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_organizationbase_createdby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_organizationbase_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_organizationbase_modifiedby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_organizationbase_modifiedby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_organizationbase_modifiedby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 Template_Organization
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("acknowledgementtemplateid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Template_Organization")]
+		public SWA.CRM.D365.Entities.Base.Template Template_Organization
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Template>("Template_Organization", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Template_Organization");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Template>("Template_Organization", null, value);
+				this.OnPropertyChanged("Template_Organization");
 			}
 		}
 		

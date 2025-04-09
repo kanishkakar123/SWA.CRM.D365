@@ -920,6 +920,97 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// N:1 lk_customeraddress_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_customeraddress_createdonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_customeraddress_createdonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_customeraddress_createdonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_customeraddress_createdonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_customeraddress_createdonbehalfby", null, value);
+				this.OnPropertyChanged("lk_customeraddress_createdonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_customeraddress_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_customeraddress_modifiedonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_customeraddress_modifiedonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_customeraddress_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_customeraddress_modifiedonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_customeraddress_modifiedonbehalfby", null, value);
+				this.OnPropertyChanged("lk_customeraddress_modifiedonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_customeraddressbase_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_customeraddressbase_createdby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_customeraddressbase_createdby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_customeraddressbase_createdby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_customeraddressbase_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_customeraddressbase_modifiedby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_customeraddressbase_modifiedby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_customeraddressbase_modifiedby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 TransactionCurrency_CustomerAddress
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("TransactionCurrency_CustomerAddress")]
+		public SWA.CRM.D365.Entities.Base.TransactionCurrency TransactionCurrency_CustomerAddress
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_CustomerAddress", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("TransactionCurrency_CustomerAddress");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_CustomerAddress", null, value);
+				this.OnPropertyChanged("TransactionCurrency_CustomerAddress");
+			}
+		}
+		
+		/// <summary>
 		/// Constructor for populating via LINQ queries given a LINQ anonymous type
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>

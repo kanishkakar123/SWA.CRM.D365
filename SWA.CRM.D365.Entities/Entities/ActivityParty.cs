@@ -493,6 +493,27 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// N:1 appointment_activity_parties
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("appointment_activity_parties")]
+		public SWA.CRM.D365.Entities.Base.Appointment appointment_activity_parties
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Appointment>("appointment_activity_parties", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("appointment_activity_parties");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Appointment>("appointment_activity_parties", null, value);
+				this.OnPropertyChanged("appointment_activity_parties");
+			}
+		}
+		
+		/// <summary>
 		/// N:1 contact_activity_parties
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
@@ -577,23 +598,23 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// N:1 lead_activity_parties
+		/// N:1 knowledgearticle_activity_parties
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_activity_parties")]
-		public SWA.CRM.D365.Entities.Base.Lead lead_activity_parties
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("knowledgearticle_activity_parties")]
+		public SWA.CRM.D365.Entities.Base.KnowledgeArticle knowledgearticle_activity_parties
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Lead>("lead_activity_parties", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("knowledgearticle_activity_parties", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("lead_activity_parties");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Lead>("lead_activity_parties", null, value);
-				this.OnPropertyChanged("lead_activity_parties");
+				this.OnPropertyChanging("knowledgearticle_activity_parties");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("knowledgearticle_activity_parties", null, value);
+				this.OnPropertyChanged("knowledgearticle_activity_parties");
 			}
 		}
 		
@@ -619,86 +640,107 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// N:1 orderclose_activity_parties
+		/// N:1 phonecall_activity_parties
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("orderclose_activity_parties")]
-		public SWA.CRM.D365.Entities.Base.OrderClose orderclose_activity_parties
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("phonecall_activity_parties")]
+		public SWA.CRM.D365.Entities.Base.PhoneCall phonecall_activity_parties
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.OrderClose>("orderclose_activity_parties", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.PhoneCall>("phonecall_activity_parties", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("orderclose_activity_parties");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.OrderClose>("orderclose_activity_parties", null, value);
-				this.OnPropertyChanged("orderclose_activity_parties");
+				this.OnPropertyChanging("phonecall_activity_parties");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.PhoneCall>("phonecall_activity_parties", null, value);
+				this.OnPropertyChanged("phonecall_activity_parties");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 quote_activity_parties
+		/// N:1 queue_activity_parties
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("quote_activity_parties")]
-		public SWA.CRM.D365.Entities.Base.Quote quote_activity_parties
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("queue_activity_parties")]
+		public SWA.CRM.D365.Entities.Base.Queue queue_activity_parties
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Quote>("quote_activity_parties", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Queue>("queue_activity_parties", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("quote_activity_parties");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Quote>("quote_activity_parties", null, value);
-				this.OnPropertyChanged("quote_activity_parties");
+				this.OnPropertyChanging("queue_activity_parties");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Queue>("queue_activity_parties", null, value);
+				this.OnPropertyChanged("queue_activity_parties");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 quoteclose_activity_parties
+		/// N:1 swa_sms_activity_parties
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("quoteclose_activity_parties")]
-		public SWA.CRM.D365.Entities.Base.QuoteClose quoteclose_activity_parties
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_activity_parties")]
+		public SWA.CRM.D365.Entities.Base.swa_sms swa_sms_activity_parties
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.QuoteClose>("quoteclose_activity_parties", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.swa_sms>("swa_sms_activity_parties", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("quoteclose_activity_parties");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.QuoteClose>("quoteclose_activity_parties", null, value);
-				this.OnPropertyChanged("quoteclose_activity_parties");
+				this.OnPropertyChanging("swa_sms_activity_parties");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.swa_sms>("swa_sms_activity_parties", null, value);
+				this.OnPropertyChanged("swa_sms_activity_parties");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 salesorder_activity_parties
+		/// N:1 system_user_activity_parties
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("salesorder_activity_parties")]
-		public SWA.CRM.D365.Entities.Base.SalesOrder salesorder_activity_parties
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("system_user_activity_parties")]
+		public SWA.CRM.D365.Entities.Base.SystemUser system_user_activity_parties
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SalesOrder>("salesorder_activity_parties", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("system_user_activity_parties", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("salesorder_activity_parties");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SalesOrder>("salesorder_activity_parties", null, value);
-				this.OnPropertyChanged("salesorder_activity_parties");
+				this.OnPropertyChanging("system_user_activity_parties");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("system_user_activity_parties", null, value);
+				this.OnPropertyChanged("system_user_activity_parties");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 task_activity_parties
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("task_activity_parties")]
+		public SWA.CRM.D365.Entities.Base.Task task_activity_parties
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Task>("task_activity_parties", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("task_activity_parties");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Task>("task_activity_parties", null, value);
+				this.OnPropertyChanged("task_activity_parties");
 			}
 		}
 		

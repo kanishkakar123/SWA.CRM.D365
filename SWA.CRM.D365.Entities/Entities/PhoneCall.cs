@@ -12,7 +12,7 @@ namespace SWA.CRM.D365.Entities.Base
 {
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum OrderCloseState
+	public enum PhoneCallState
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -26,35 +26,35 @@ namespace SWA.CRM.D365.Entities.Base
 	}
 	
 	/// <summary>
-	/// Activity generated automatically when an order is closed.
+	/// Activity to track a telephone call.
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("orderclose")]
-	public partial class OrderClose : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("phonecall")]
+	public partial class PhoneCall : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
 		/// <summary>
 		/// Default Constructor.
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public OrderClose() : 
+		public PhoneCall() : 
 				base(EntityLogicalName)
 		{
 		}
 		
-		public const string EntityLogicalName = "orderclose";
+		public const string EntityLogicalName = "phonecall";
 		
-		public const string EntitySchemaName = "OrderClose";
+		public const string EntitySchemaName = "PhoneCall";
 		
 		public const string PrimaryIdAttribute = "activityid";
 		
 		public const string PrimaryNameAttribute = "subject";
 		
-		public const string EntityLogicalCollectionName = "ordercloses";
+		public const string EntityLogicalCollectionName = "phonecalls";
 		
-		public const string EntitySetName = "ordercloses";
+		public const string EntitySetName = "phonecalls";
 		
-		public const int EntityTypeCode = 4209;
+		public const int EntityTypeCode = 4210;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -79,7 +79,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Additional information provided by the external application as JSON. For internal use only.
+		/// For internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityadditionalparams")]
 		public string ActivityAdditionalParams
@@ -99,7 +99,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the order close activity.
+		/// Unique identifier of the phone call activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
 		public System.Nullable<System.Guid> ActivityId
@@ -142,7 +142,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Type of activity.
+		/// Shows the type of activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activitytypecode")]
 		public string ActivityTypeCode
@@ -155,7 +155,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Actual duration of the order close activity in minutes.
+		/// Type the number of minutes spent on the phone call. The duration is used in reporting.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("actualdurationminutes")]
 		public System.Nullable<int> ActualDurationMinutes
@@ -175,7 +175,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Actual end time of the order close activity.
+		/// Enter the actual end date and time of the phone call. By default, it displays the date and time when the activity was completed or canceled, but can be edited to capture the actual duration of the phone call.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("actualend")]
 		public System.Nullable<System.DateTime> ActualEnd
@@ -195,7 +195,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Actual start time of the order close activity.
+		/// Enter the actual start date and time for the phone call. By default, it displays the date and time when the activity was created, but can be edited to capture the actual duration of the phone call.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("actualstart")]
 		public System.Nullable<System.DateTime> ActualStart
@@ -215,43 +215,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Blind Carbon-copy (bcc) recipients of the activity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("bcc")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> Bcc
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("bcc");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Bcc");
-				if ((value == null))
-				{
-					this.SetAttributeValue("bcc", value);
-				}
-				else
-				{
-					this.SetAttributeValue("bcc", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
-				this.OnPropertyChanged("Bcc");
-			}
-		}
-		
-		/// <summary>
-		/// Category of the order close activity.
+		/// Type a category to identify the phone call type, such as lead gathering or customer follow-up, to tie the phone call to a business group or function.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("category")]
 		public string Category
@@ -271,63 +235,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Carbon-copy (cc) recipients of the activity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("cc")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> Cc
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("cc");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Cc");
-				if ((value == null))
-				{
-					this.SetAttributeValue("cc", value);
-				}
-				else
-				{
-					this.SetAttributeValue("cc", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
-				this.OnPropertyChanged("Cc");
-			}
-		}
-		
-		/// <summary>
-		/// Shows how contact about the social activity originated, such as from Twitter or Facebook. This field is read-only.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("community")]
-		public virtual SocialProfile_Community? Community
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((SocialProfile_Community?)(EntityOptionSetEnum.GetEnum(this, "community")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Community");
-				this.SetAttributeValue("community", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("Community");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier of the user who created the order close activity.
+		/// Shows who created the record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -340,20 +248,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Shows the external party who created the record.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyexternalparty")]
-		public Microsoft.Xrm.Sdk.EntityReference CreatedByExternalParty
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdbyexternalparty");
-			}
-		}
-		
-		/// <summary>
-		/// Date and time when the order close activity was created.
+		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
@@ -366,7 +261,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the orderclose.
+		/// Shows who created the record on behalf of another user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -386,76 +281,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Customer with which the activity is associated.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customers")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> Customers
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("customers");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Customers");
-				if ((value == null))
-				{
-					this.SetAttributeValue("customers", value);
-				}
-				else
-				{
-					this.SetAttributeValue("customers", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
-				this.OnPropertyChanged("Customers");
-			}
-		}
-		
-		/// <summary>
-		/// Date and time when the delivery of the activity was last attempted.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("deliverylastattemptedon")]
-		public System.Nullable<System.DateTime> DeliveryLastAttemptedOn
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("deliverylastattemptedon");
-			}
-		}
-		
-		/// <summary>
-		/// Priority of delivery of the activity to the email server.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("deliveryprioritycode")]
-		public virtual activitypointer_DeliveryPriorityCode? DeliveryPriorityCode
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((activitypointer_DeliveryPriorityCode?)(EntityOptionSetEnum.GetEnum(this, "deliveryprioritycode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("DeliveryPriorityCode");
-				this.SetAttributeValue("deliveryprioritycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("DeliveryPriorityCode");
-			}
-		}
-		
-		/// <summary>
-		/// Activity generated automatically when an order is closed.
+		/// Type additional information to describe the phone call, such as the primary message or the products and services discussed.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("description")]
 		public string Description
@@ -475,27 +301,27 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// The message id of activity which is returned from Exchange Server.
+		/// Select the direction of the phone call as incoming or outbound.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangeitemid")]
-		public string ExchangeItemId
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("directioncode")]
+		public System.Nullable<bool> DirectionCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<string>("exchangeitemid");
+				return this.GetAttributeValue<System.Nullable<bool>>("directioncode");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("ExchangeItemId");
-				this.SetAttributeValue("exchangeitemid", value);
-				this.OnPropertyChanged("ExchangeItemId");
+				this.OnPropertyChanging("DirectionCode");
+				this.SetAttributeValue("directioncode", value);
+				this.OnPropertyChanged("DirectionCode");
 			}
 		}
 		
 		/// <summary>
-		/// Exchange rate for the currency associated with the activitypointer with respect to the base currency.
+		/// Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
 		public System.Nullable<decimal> ExchangeRate
@@ -508,27 +334,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Shows the web link of Activity of type email.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangeweblink")]
-		public string ExchangeWebLink
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("exchangeweblink");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ExchangeWebLink");
-				this.SetAttributeValue("exchangeweblink", value);
-				this.OnPropertyChanged("ExchangeWebLink");
-			}
-		}
-		
-		/// <summary>
-		/// Person who the activity is from.
+		/// Enter the account, contact, lead, or user who made the phone call.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("from")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> From
@@ -564,7 +370,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Sequence number of the import that created this record.
+		/// Unique identifier of the data import or data migration that created this record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
 		public System.Nullable<int> ImportSequenceNumber
@@ -584,20 +390,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Type of instance of a recurring series.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("instancetypecode")]
-		public virtual OrderClose_InstanceTypeCode? InstanceTypeCode
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((OrderClose_InstanceTypeCode?)(EntityOptionSetEnum.GetEnum(this, "instancetypecode")));
-			}
-		}
-		
-		/// <summary>
-		/// Information about whether the order close activity was billed as part of resolving a case.
+		/// Information which specifies whether the phone call activity was billed as part of resolving a case.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isbilled")]
 		public System.Nullable<bool> IsBilled
@@ -617,26 +410,6 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismapiprivate")]
-		public System.Nullable<bool> IsMapiPrivate
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<bool>>("ismapiprivate");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("IsMapiPrivate");
-				this.SetAttributeValue("ismapiprivate", value);
-				this.OnPropertyChanged("IsMapiPrivate");
-			}
-		}
-		
-		/// <summary>
 		/// Information regarding whether the activity is a regular activity type or event type.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isregularactivity")]
@@ -650,7 +423,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Information that specifies if the order close activity was created from a workflow rule.
+		/// Indication which specifies if the phone call activity was created by a workflow rule.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isworkflowcreated")]
 		public System.Nullable<bool> IsWorkflowCreated
@@ -690,7 +463,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Left the voice mail
+		/// Select whether a voice mail was left for the person.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("leftvoicemail")]
 		public System.Nullable<bool> LeftVoiceMail
@@ -710,7 +483,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who last modified the order close activity.
+		/// Shows who last updated the record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -723,20 +496,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Shows the external party who modified the record.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyexternalparty")]
-		public Microsoft.Xrm.Sdk.EntityReference ModifiedByExternalParty
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedbyexternalparty");
-			}
-		}
-		
-		/// <summary>
-		/// Date and time when the order close activity was last modified.
+		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
@@ -749,7 +509,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who last modified the orderclose.
+		/// Shows who last updated the record on behalf of another user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -782,98 +542,6 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// List of optional attendees for the activity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("optionalattendees")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> OptionalAttendees
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("optionalattendees");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OptionalAttendees");
-				if ((value == null))
-				{
-					this.SetAttributeValue("optionalattendees", value);
-				}
-				else
-				{
-					this.SetAttributeValue("optionalattendees", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
-				this.OnPropertyChanged("OptionalAttendees");
-			}
-		}
-		
-		/// <summary>
-		/// Order number.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ordernumber")]
-		public string OrderNumber
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("ordernumber");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OrderNumber");
-				this.SetAttributeValue("ordernumber", value);
-				this.OnPropertyChanged("OrderNumber");
-			}
-		}
-		
-		/// <summary>
-		/// Person who organized the activity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizer")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> Organizer
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("organizer");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Organizer");
-				if ((value == null))
-				{
-					this.SetAttributeValue("organizer", value);
-				}
-				else
-				{
-					this.SetAttributeValue("organizer", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
-				this.OnPropertyChanged("Organizer");
-			}
-		}
-		
-		/// <summary>
 		/// Date and time that the record was migrated.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overriddencreatedon")]
@@ -894,7 +562,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user or team who owns the activity.
+		/// Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
 		public Microsoft.Xrm.Sdk.EntityReference OwnerId
@@ -914,7 +582,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the business unit that owns the activity.
+		/// Unique identifier of the business unit that owns the phone call activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningBusinessUnit
@@ -927,7 +595,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the team that owns the activity.
+		/// Unique identifier of the team that owns the phone call activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningTeam
@@ -940,7 +608,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user that owns the activity.
+		/// Unique identifier of the user that owns the phone call activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningUser
@@ -953,64 +621,35 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Outsource vendor with which activity is associated.
+		/// Type the phone number.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partners")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> Partners
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("phonenumber")]
+		public string PhoneNumber
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("partners");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
+				return this.GetAttributeValue<string>("phonenumber");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("Partners");
-				if ((value == null))
-				{
-					this.SetAttributeValue("partners", value);
-				}
-				else
-				{
-					this.SetAttributeValue("partners", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
-				this.OnPropertyChanged("Partners");
+				this.OnPropertyChanging("PhoneNumber");
+				this.SetAttributeValue("phonenumber", value);
+				this.OnPropertyChanged("PhoneNumber");
 			}
 		}
 		
 		/// <summary>
-		/// For internal use only.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("postponeactivityprocessinguntil")]
-		public System.Nullable<System.DateTime> PostponeActivityProcessingUntil
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("postponeactivityprocessinguntil");
-			}
-		}
-		
-		/// <summary>
-		/// Priority of the activity.
+		/// Select the priority so that preferred customers or critical issues are handled quickly.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prioritycode")]
-		public virtual OrderClose_PriorityCode? PriorityCode
+		public virtual PhoneCall_PriorityCode? PriorityCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((OrderClose_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
+				return ((PhoneCall_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1022,7 +661,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the Process.
+		/// Shows the ID of the process.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("processid")]
 		public System.Nullable<System.Guid> ProcessId
@@ -1042,7 +681,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the object with which the activity is associated.
+		/// Choose the record that the phone call relates to.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
 		public Microsoft.Xrm.Sdk.EntityReference RegardingObjectId
@@ -1062,119 +701,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// List of required attendees for the activity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("requiredattendees")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> RequiredAttendees
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("requiredattendees");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("RequiredAttendees");
-				if ((value == null))
-				{
-					this.SetAttributeValue("requiredattendees", value);
-				}
-				else
-				{
-					this.SetAttributeValue("requiredattendees", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
-				this.OnPropertyChanged("RequiredAttendees");
-			}
-		}
-		
-		/// <summary>
-		/// Users or facility/equipment that are required for the activity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resources")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> Resources
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("resources");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Resources");
-				if ((value == null))
-				{
-					this.SetAttributeValue("resources", value);
-				}
-				else
-				{
-					this.SetAttributeValue("resources", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
-				this.OnPropertyChanged("Resources");
-			}
-		}
-		
-		/// <summary>
-		/// Order revision number.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("revision")]
-		public System.Nullable<int> Revision
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<int>>("revision");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Revision");
-				this.SetAttributeValue("revision", value);
-				this.OnPropertyChanged("Revision");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier of the order with which the order close activity is associated.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("salesorderid")]
-		public Microsoft.Xrm.Sdk.EntityReference SalesOrderId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("salesorderid");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("SalesOrderId");
-				this.SetAttributeValue("salesorderid", value);
-				this.OnPropertyChanged("SalesOrderId");
-			}
-		}
-		
-		/// <summary>
-		/// Scheduled duration of the order close activity, specified in minutes.
+		/// Scheduled duration of the phone call activity, specified in minutes.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scheduleddurationminutes")]
 		public System.Nullable<int> ScheduledDurationMinutes
@@ -1187,7 +714,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Scheduled end time of the order close activity.
+		/// Enter the expected due date and time.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scheduledend")]
 		public System.Nullable<System.DateTime> ScheduledEnd
@@ -1207,7 +734,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Scheduled start time of the order close activity.
+		/// Enter the expected due date and time.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scheduledstart")]
 		public System.Nullable<System.DateTime> ScheduledStart
@@ -1227,46 +754,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the mailbox associated with the sender of the email message.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sendermailboxid")]
-		public Microsoft.Xrm.Sdk.EntityReference SenderMailboxId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("sendermailboxid");
-			}
-		}
-		
-		/// <summary>
-		/// Date and time when the activity was sent.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("senton")]
-		public System.Nullable<System.DateTime> SentOn
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("senton");
-			}
-		}
-		
-		/// <summary>
-		/// Uniqueidentifier specifying the id of recurring series of an instance.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("seriesid")]
-		public System.Nullable<System.Guid> SeriesId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("seriesid");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier of the service with which the order close activity is associated.
+		/// Unique identifier for an associated service.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("serviceid")]
 		public Microsoft.Xrm.Sdk.EntityReference ServiceId
@@ -1286,7 +774,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Choose the service level agreement (SLA) that you want to apply to the case record.
+		/// Choose the service level agreement (SLA) that you want to apply to the Phone Call record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
 		public Microsoft.Xrm.Sdk.EntityReference SLAId
@@ -1306,7 +794,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Last SLA that was applied to this case. This field is for internal use only.
+		/// Last SLA that was applied to this Phone Call. This field is for internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
 		public Microsoft.Xrm.Sdk.EntityReference SLAInvokedId
@@ -1339,7 +827,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the Stage.
+		/// Shows the ID of the stage.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stageid")]
 		public System.Nullable<System.Guid> StageId
@@ -1359,10 +847,10 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Shows whether the order close activity is open, completed, or canceled.  By default, order close activities are completed.
+		/// Shows whether the phone call is open, completed, or canceled. Completed and canceled phone calls are read-only and can't be edited.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
-		public System.Nullable<SWA.CRM.D365.Entities.Base.OrderCloseState> StateCode
+		public System.Nullable<SWA.CRM.D365.Entities.Base.PhoneCallState> StateCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1370,7 +858,7 @@ namespace SWA.CRM.D365.Entities.Base
 				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("statecode");
 				if ((optionSet != null))
 				{
-					return ((SWA.CRM.D365.Entities.Base.OrderCloseState)(System.Enum.ToObject(typeof(SWA.CRM.D365.Entities.Base.OrderCloseState), optionSet.Value)));
+					return ((SWA.CRM.D365.Entities.Base.PhoneCallState)(System.Enum.ToObject(typeof(SWA.CRM.D365.Entities.Base.PhoneCallState), optionSet.Value)));
 				}
 				else
 				{
@@ -1394,15 +882,15 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Reason for the status of the order close activity.
+		/// Select the phone call's status.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual OrderClose_StatusCode? StatusCode
+		public virtual PhoneCall_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((OrderClose_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
+				return ((PhoneCall_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1414,7 +902,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Subcategory of the order close activity.
+		/// Type a subcategory to identify the phone call type and relate the activity to a specific product, sales region, business group, or other function.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subcategory")]
 		public string Subcategory
@@ -1434,7 +922,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Subject associated with the order close activity.
+		/// Type a short description about the objective or primary topic of the phone call.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subject")]
 		public string Subject
@@ -1450,6 +938,26 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("Subject");
 				this.SetAttributeValue("subject", value);
 				this.OnPropertyChanged("Subject");
+			}
+		}
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subscriptionid")]
+		public System.Nullable<System.Guid> SubscriptionId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("subscriptionid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SubscriptionId");
+				this.SetAttributeValue("subscriptionid", value);
+				this.OnPropertyChanged("SubscriptionId");
 			}
 		}
 		
@@ -1474,7 +982,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Person who is the receiver of the activity.
+		/// Enter the account, contact, lead, or user recipients of the phone call.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("to")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> To
@@ -1510,7 +1018,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the currency associated with the activitypointer.
+		/// Choose the local currency for the record to make sure budgets are reported in the correct currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
@@ -1570,7 +1078,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Version number of the activity.
+		/// Version number of the phone call activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
@@ -1583,148 +1091,418 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 1:N orderclose_activity_parties
+		/// 1:N phonecall_activity_parties
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("orderclose_activity_parties")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> orderclose_activity_parties
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("phonecall_activity_parties")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> phonecall_activity_parties
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityParty>("orderclose_activity_parties", null);
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityParty>("phonecall_activity_parties", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("orderclose_activity_parties");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityParty>("orderclose_activity_parties", null, value);
-				this.OnPropertyChanged("orderclose_activity_parties");
+				this.OnPropertyChanging("phonecall_activity_parties");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityParty>("phonecall_activity_parties", null, value);
+				this.OnPropertyChanged("phonecall_activity_parties");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 account_OrderCloses
+		/// 1:N PhoneCall_Annotation
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("PhoneCall_Annotation")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Annotation> PhoneCall_Annotation
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("PhoneCall_Annotation", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("PhoneCall_Annotation");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("PhoneCall_Annotation", null, value);
+				this.OnPropertyChanged("PhoneCall_Annotation");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N PhoneCall_QueueItem
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("PhoneCall_QueueItem")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.QueueItem> PhoneCall_QueueItem
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.QueueItem>("PhoneCall_QueueItem", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("PhoneCall_QueueItem");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.QueueItem>("PhoneCall_QueueItem", null, value);
+				this.OnPropertyChanged("PhoneCall_QueueItem");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N slakpiinstance_phonecall
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("slakpiinstance_phonecall")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.SLAKPIInstance> slakpiinstance_phonecall
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.SLAKPIInstance>("slakpiinstance_phonecall", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("slakpiinstance_phonecall");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.SLAKPIInstance>("slakpiinstance_phonecall", null, value);
+				this.OnPropertyChanged("slakpiinstance_phonecall");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 Account_Phonecalls
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_OrderCloses")]
-		public SWA.CRM.D365.Entities.Base.Account account_OrderCloses
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Account_Phonecalls")]
+		public SWA.CRM.D365.Entities.Base.Account Account_Phonecalls
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("account_OrderCloses", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("Account_Phonecalls", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("account_OrderCloses");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("account_OrderCloses", null, value);
-				this.OnPropertyChanged("account_OrderCloses");
+				this.OnPropertyChanging("Account_Phonecalls");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("Account_Phonecalls", null, value);
+				this.OnPropertyChanged("Account_Phonecalls");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 activity_pointer_order_close
+		/// N:1 activity_pointer_phonecall
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("activity_pointer_order_close")]
-		public SWA.CRM.D365.Entities.Base.ActivityPointer activity_pointer_order_close
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("activity_pointer_phonecall")]
+		public SWA.CRM.D365.Entities.Base.ActivityPointer activity_pointer_phonecall
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.ActivityPointer>("activity_pointer_order_close", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.ActivityPointer>("activity_pointer_phonecall", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("activity_pointer_order_close");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.ActivityPointer>("activity_pointer_order_close", null, value);
-				this.OnPropertyChanged("activity_pointer_order_close");
+				this.OnPropertyChanging("activity_pointer_phonecall");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.ActivityPointer>("activity_pointer_phonecall", null, value);
+				this.OnPropertyChanged("activity_pointer_phonecall");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 incident_OrderCloses
+		/// N:1 business_unit_phone_call_activities
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_phone_call_activities")]
+		public SWA.CRM.D365.Entities.Base.BusinessUnit business_unit_phone_call_activities
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.BusinessUnit>("business_unit_phone_call_activities", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 Contact_Phonecalls
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_OrderCloses")]
-		public SWA.CRM.D365.Entities.Base.Incident incident_OrderCloses
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Contact_Phonecalls")]
+		public SWA.CRM.D365.Entities.Base.Contact Contact_Phonecalls
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Incident>("incident_OrderCloses", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Contact>("Contact_Phonecalls", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("incident_OrderCloses");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Incident>("incident_OrderCloses", null, value);
-				this.OnPropertyChanged("incident_OrderCloses");
+				this.OnPropertyChanging("Contact_Phonecalls");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Contact>("Contact_Phonecalls", null, value);
+				this.OnPropertyChanged("Contact_Phonecalls");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lead_OrderCloses
+		/// N:1 Incident_Phonecalls
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_OrderCloses")]
-		public SWA.CRM.D365.Entities.Base.Lead lead_OrderCloses
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_Phonecalls")]
+		public SWA.CRM.D365.Entities.Base.Incident Incident_Phonecalls
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Lead>("lead_OrderCloses", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Incident>("Incident_Phonecalls", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("lead_OrderCloses");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Lead>("lead_OrderCloses", null, value);
-				this.OnPropertyChanged("lead_OrderCloses");
+				this.OnPropertyChanging("Incident_Phonecalls");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Incident>("Incident_Phonecalls", null, value);
+				this.OnPropertyChanged("Incident_Phonecalls");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 opportunity_OrderCloses
+		/// N:1 KnowledgeArticle_Phonecalls
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("opportunity_OrderCloses")]
-		public SWA.CRM.D365.Entities.Base.Opportunity opportunity_OrderCloses
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeArticle_Phonecalls")]
+		public SWA.CRM.D365.Entities.Base.KnowledgeArticle KnowledgeArticle_Phonecalls
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Opportunity>("opportunity_OrderCloses", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("KnowledgeArticle_Phonecalls", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("opportunity_OrderCloses");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Opportunity>("opportunity_OrderCloses", null, value);
-				this.OnPropertyChanged("opportunity_OrderCloses");
+				this.OnPropertyChanging("KnowledgeArticle_Phonecalls");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("KnowledgeArticle_Phonecalls", null, value);
+				this.OnPropertyChanged("KnowledgeArticle_Phonecalls");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 SalesOrder_OrderClose
+		/// N:1 KnowledgeBaseRecord_PhoneCalls
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("salesorderid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SalesOrder_OrderClose")]
-		public SWA.CRM.D365.Entities.Base.SalesOrder SalesOrder_OrderClose
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_PhoneCalls")]
+		public SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord KnowledgeBaseRecord_PhoneCalls
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SalesOrder>("SalesOrder_OrderClose", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("KnowledgeBaseRecord_PhoneCalls", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("SalesOrder_OrderClose");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SalesOrder>("SalesOrder_OrderClose", null, value);
-				this.OnPropertyChanged("SalesOrder_OrderClose");
+				this.OnPropertyChanging("KnowledgeBaseRecord_PhoneCalls");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("KnowledgeBaseRecord_PhoneCalls", null, value);
+				this.OnPropertyChanged("KnowledgeBaseRecord_PhoneCalls");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_phonecall_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_phonecall_createdby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_phonecall_createdby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_phonecall_createdby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_phonecall_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_phonecall_createdonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_phonecall_createdonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_phonecall_createdonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_phonecall_createdonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_phonecall_createdonbehalfby", null, value);
+				this.OnPropertyChanged("lk_phonecall_createdonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_phonecall_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_phonecall_modifiedby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_phonecall_modifiedby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_phonecall_modifiedby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_phonecall_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_phonecall_modifiedonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_phonecall_modifiedonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_phonecall_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_phonecall_modifiedonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_phonecall_modifiedonbehalfby", null, value);
+				this.OnPropertyChanged("lk_phonecall_modifiedonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 manualsla_phonecall
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("manualsla_phonecall")]
+		public SWA.CRM.D365.Entities.Base.SLA manualsla_phonecall
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("manualsla_phonecall", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("manualsla_phonecall");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("manualsla_phonecall", null, value);
+				this.OnPropertyChanged("manualsla_phonecall");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 Opportunity_Phonecalls
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Opportunity_Phonecalls")]
+		public SWA.CRM.D365.Entities.Base.Opportunity Opportunity_Phonecalls
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Opportunity>("Opportunity_Phonecalls", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Opportunity_Phonecalls");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Opportunity>("Opportunity_Phonecalls", null, value);
+				this.OnPropertyChanged("Opportunity_Phonecalls");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 owner_phonecalls
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("owner_phonecalls")]
+		public SWA.CRM.D365.Entities.Base.Owner owner_phonecalls
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("owner_phonecalls", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("owner_phonecalls");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("owner_phonecalls", null, value);
+				this.OnPropertyChanged("owner_phonecalls");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 sla_phonecall
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sla_phonecall")]
+		public SWA.CRM.D365.Entities.Base.SLA sla_phonecall
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("sla_phonecall", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 team_phonecall
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_phonecall")]
+		public SWA.CRM.D365.Entities.Base.Team team_phonecall
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Team>("team_phonecall", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 TransactionCurrency_PhoneCall
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("TransactionCurrency_PhoneCall")]
+		public SWA.CRM.D365.Entities.Base.TransactionCurrency TransactionCurrency_PhoneCall
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_PhoneCall", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("TransactionCurrency_PhoneCall");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_PhoneCall", null, value);
+				this.OnPropertyChanged("TransactionCurrency_PhoneCall");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 user_phonecall
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_phonecall")]
+		public SWA.CRM.D365.Entities.Base.SystemUser user_phonecall
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("user_phonecall", null);
 			}
 		}
 		
@@ -1733,7 +1511,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public OrderClose(object anonymousType) : 
+		public PhoneCall(object anonymousType) : 
 				this()
 		{
             foreach (var p in anonymousType.GetType().GetProperties())

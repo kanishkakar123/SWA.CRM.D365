@@ -1141,6 +1141,26 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// 1:N activity_pointer_appointment
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("activity_pointer_appointment")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Appointment> activity_pointer_appointment
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Appointment>("activity_pointer_appointment", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("activity_pointer_appointment");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Appointment>("activity_pointer_appointment", null, value);
+				this.OnPropertyChanged("activity_pointer_appointment");
+			}
+		}
+		
+		/// <summary>
 		/// 1:N activity_pointer_email
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("activity_pointer_email")]
@@ -1181,42 +1201,62 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 1:N activity_pointer_order_close
+		/// 1:N activity_pointer_phonecall
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("activity_pointer_order_close")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.OrderClose> activity_pointer_order_close
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("activity_pointer_phonecall")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.PhoneCall> activity_pointer_phonecall
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.OrderClose>("activity_pointer_order_close", null);
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.PhoneCall>("activity_pointer_phonecall", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("activity_pointer_order_close");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.OrderClose>("activity_pointer_order_close", null, value);
-				this.OnPropertyChanged("activity_pointer_order_close");
+				this.OnPropertyChanging("activity_pointer_phonecall");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.PhoneCall>("activity_pointer_phonecall", null, value);
+				this.OnPropertyChanged("activity_pointer_phonecall");
 			}
 		}
 		
 		/// <summary>
-		/// 1:N activity_pointer_quote_close
+		/// 1:N activity_pointer_swa_sms
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("activity_pointer_quote_close")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.QuoteClose> activity_pointer_quote_close
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("activity_pointer_swa_sms")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.swa_sms> activity_pointer_swa_sms
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.QuoteClose>("activity_pointer_quote_close", null);
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_sms>("activity_pointer_swa_sms", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("activity_pointer_quote_close");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.QuoteClose>("activity_pointer_quote_close", null, value);
-				this.OnPropertyChanged("activity_pointer_quote_close");
+				this.OnPropertyChanging("activity_pointer_swa_sms");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_sms>("activity_pointer_swa_sms", null, value);
+				this.OnPropertyChanged("activity_pointer_swa_sms");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N activity_pointer_task
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("activity_pointer_task")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Task> activity_pointer_task
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Task>("activity_pointer_task", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("activity_pointer_task");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Task>("activity_pointer_task", null, value);
+				this.OnPropertyChanged("activity_pointer_task");
 			}
 		}
 		
@@ -1241,6 +1281,46 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// 1:N ActivityPointer_QueueItem
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ActivityPointer_QueueItem")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.QueueItem> ActivityPointer_QueueItem
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.QueueItem>("ActivityPointer_QueueItem", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ActivityPointer_QueueItem");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.QueueItem>("ActivityPointer_QueueItem", null, value);
+				this.OnPropertyChanged("ActivityPointer_QueueItem");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N slakpiinstance_activitypointer
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("slakpiinstance_activitypointer")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.SLAKPIInstance> slakpiinstance_activitypointer
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.SLAKPIInstance>("slakpiinstance_activitypointer", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("slakpiinstance_activitypointer");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.SLAKPIInstance>("slakpiinstance_activitypointer", null, value);
+				this.OnPropertyChanged("slakpiinstance_activitypointer");
+			}
+		}
+		
+		/// <summary>
 		/// N:1 Account_ActivityPointers
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
@@ -1258,6 +1338,20 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("Account_ActivityPointers");
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("Account_ActivityPointers", null, value);
 				this.OnPropertyChanged("Account_ActivityPointers");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 business_unit_activitypointer
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_activitypointer")]
+		public SWA.CRM.D365.Entities.Base.BusinessUnit business_unit_activitypointer
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.BusinessUnit>("business_unit_activitypointer", null);
 			}
 		}
 		
@@ -1304,23 +1398,135 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// N:1 Lead_ActivityPointers
+		/// N:1 KnowledgeArticle_ActivityPointers
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Lead_ActivityPointers")]
-		public SWA.CRM.D365.Entities.Base.Lead Lead_ActivityPointers
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeArticle_ActivityPointers")]
+		public SWA.CRM.D365.Entities.Base.KnowledgeArticle KnowledgeArticle_ActivityPointers
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Lead>("Lead_ActivityPointers", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("KnowledgeArticle_ActivityPointers", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("Lead_ActivityPointers");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Lead>("Lead_ActivityPointers", null, value);
-				this.OnPropertyChanged("Lead_ActivityPointers");
+				this.OnPropertyChanging("KnowledgeArticle_ActivityPointers");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("KnowledgeArticle_ActivityPointers", null, value);
+				this.OnPropertyChanged("KnowledgeArticle_ActivityPointers");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 KnowledgeBaseRecord_ActivityPointers
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_ActivityPointers")]
+		public SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord KnowledgeBaseRecord_ActivityPointers
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("KnowledgeBaseRecord_ActivityPointers", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("KnowledgeBaseRecord_ActivityPointers");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("KnowledgeBaseRecord_ActivityPointers", null, value);
+				this.OnPropertyChanged("KnowledgeBaseRecord_ActivityPointers");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_activitypointer_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_activitypointer_createdby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_activitypointer_createdby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_activitypointer_createdby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_activitypointer_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_activitypointer_createdonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_activitypointer_createdonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_activitypointer_createdonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_activitypointer_createdonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_activitypointer_createdonbehalfby", null, value);
+				this.OnPropertyChanged("lk_activitypointer_createdonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_activitypointer_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_activitypointer_modifiedby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_activitypointer_modifiedby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_activitypointer_modifiedby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_activitypointer_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_activitypointer_modifiedonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_activitypointer_modifiedonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_activitypointer_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_activitypointer_modifiedonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_activitypointer_modifiedonbehalfby", null, value);
+				this.OnPropertyChanged("lk_activitypointer_modifiedonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 manualsla_activitypointer
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("manualsla_activitypointer")]
+		public SWA.CRM.D365.Entities.Base.SLA manualsla_activitypointer
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("manualsla_activitypointer", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("manualsla_activitypointer");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("manualsla_activitypointer", null, value);
+				this.OnPropertyChanged("manualsla_activitypointer");
 			}
 		}
 		
@@ -1346,44 +1552,86 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// N:1 Quote_ActivityPointers
+		/// N:1 owner_activitypointers
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Quote_ActivityPointers")]
-		public SWA.CRM.D365.Entities.Base.Quote Quote_ActivityPointers
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("owner_activitypointers")]
+		public SWA.CRM.D365.Entities.Base.Owner owner_activitypointers
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Quote>("Quote_ActivityPointers", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("owner_activitypointers", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("Quote_ActivityPointers");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Quote>("Quote_ActivityPointers", null, value);
-				this.OnPropertyChanged("Quote_ActivityPointers");
+				this.OnPropertyChanging("owner_activitypointers");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("owner_activitypointers", null, value);
+				this.OnPropertyChanged("owner_activitypointers");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 SalesOrder_ActivityPointers
+		/// N:1 sla_activitypointer
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SalesOrder_ActivityPointers")]
-		public SWA.CRM.D365.Entities.Base.SalesOrder SalesOrder_ActivityPointers
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sla_activitypointer")]
+		public SWA.CRM.D365.Entities.Base.SLA sla_activitypointer
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SalesOrder>("SalesOrder_ActivityPointers", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("sla_activitypointer", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 team_activity
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_activity")]
+		public SWA.CRM.D365.Entities.Base.Team team_activity
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Team>("team_activity", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 TransactionCurrency_ActivityPointer
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("TransactionCurrency_ActivityPointer")]
+		public SWA.CRM.D365.Entities.Base.TransactionCurrency TransactionCurrency_ActivityPointer
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_ActivityPointer", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("SalesOrder_ActivityPointers");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SalesOrder>("SalesOrder_ActivityPointers", null, value);
-				this.OnPropertyChanged("SalesOrder_ActivityPointers");
+				this.OnPropertyChanging("TransactionCurrency_ActivityPointer");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_ActivityPointer", null, value);
+				this.OnPropertyChanged("TransactionCurrency_ActivityPointer");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 user_activity
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_activity")]
+		public SWA.CRM.D365.Entities.Base.SystemUser user_activity
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("user_activity", null);
 			}
 		}
 		

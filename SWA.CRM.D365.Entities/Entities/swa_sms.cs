@@ -12,7 +12,7 @@ namespace SWA.CRM.D365.Entities.Base
 {
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum QuoteCloseState
+	public enum swa_smsState
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -23,38 +23,41 @@ namespace SWA.CRM.D365.Entities.Base
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Canceled = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Scheduled = 3,
 	}
 	
 	/// <summary>
-	/// Activity generated when a quote is closed.
+	/// 
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("quoteclose")]
-	public partial class QuoteClose : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("swa_sms")]
+	public partial class swa_sms : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
 		/// <summary>
 		/// Default Constructor.
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public QuoteClose() : 
+		public swa_sms() : 
 				base(EntityLogicalName)
 		{
 		}
 		
-		public const string EntityLogicalName = "quoteclose";
+		public const string EntityLogicalName = "swa_sms";
 		
-		public const string EntitySchemaName = "QuoteClose";
+		public const string EntitySchemaName = "swa_sms";
 		
 		public const string PrimaryIdAttribute = "activityid";
 		
 		public const string PrimaryNameAttribute = "subject";
 		
-		public const string EntityLogicalCollectionName = "quotecloses";
+		public const string EntityLogicalCollectionName = "swa_smses";
 		
-		public const string EntitySetName = "quotecloses";
+		public const string EntitySetName = "swa_smses";
 		
-		public const int EntityTypeCode = 4211;
+		public const int EntityTypeCode = 11221;
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -99,7 +102,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the quote close activity.
+		/// Unique identifier of the activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
 		public System.Nullable<System.Guid> ActivityId
@@ -155,7 +158,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Actual duration of the quote close activity in minutes.
+		/// Actual duration of the activity in minutes.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("actualdurationminutes")]
 		public System.Nullable<int> ActualDurationMinutes
@@ -175,7 +178,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Actual end time of the quote close activity.
+		/// Actual end time of the activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("actualend")]
 		public System.Nullable<System.DateTime> ActualEnd
@@ -195,7 +198,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Actual start time of the quote close activity.
+		/// Actual start time of the activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("actualstart")]
 		public System.Nullable<System.DateTime> ActualStart
@@ -247,26 +250,6 @@ namespace SWA.CRM.D365.Entities.Base
 					this.SetAttributeValue("bcc", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
 				}
 				this.OnPropertyChanged("Bcc");
-			}
-		}
-		
-		/// <summary>
-		/// Category of the quote close activity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("category")]
-		public string Category
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("category");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Category");
-				this.SetAttributeValue("category", value);
-				this.OnPropertyChanged("Category");
 			}
 		}
 		
@@ -327,7 +310,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who created the quote close activity.
+		/// Unique identifier of the user who created the activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -340,20 +323,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Shows the external party who created the record.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyexternalparty")]
-		public Microsoft.Xrm.Sdk.EntityReference CreatedByExternalParty
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdbyexternalparty");
-			}
-		}
-		
-		/// <summary>
-		/// Date and time when the quote close activity was created.
+		/// Date and time when the activity was created.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
@@ -366,7 +336,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the quoteclose.
+		/// Unique identifier of the delegate user who created the activitypointer.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -455,7 +425,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Activity generated when a quote is closed.
+		/// Description of the activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("description")]
 		public string Description
@@ -587,17 +557,17 @@ namespace SWA.CRM.D365.Entities.Base
 		/// Type of instance of a recurring series.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("instancetypecode")]
-		public virtual QuoteClose_InstanceTypeCode? InstanceTypeCode
+		public virtual swa_sms_InstanceTypeCode? InstanceTypeCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((QuoteClose_InstanceTypeCode?)(EntityOptionSetEnum.GetEnum(this, "instancetypecode")));
+				return ((swa_sms_InstanceTypeCode?)(EntityOptionSetEnum.GetEnum(this, "instancetypecode")));
 			}
 		}
 		
 		/// <summary>
-		/// Information about whether the quote close activity was billed as part of resolving a case.
+		/// Information regarding whether the activity was billed as part of resolving a case.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isbilled")]
 		public System.Nullable<bool> IsBilled
@@ -650,7 +620,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Information that specifies if the quote close activity was created from a workflow rule.
+		/// Information regarding whether the activity was created from a workflow rule.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isworkflowcreated")]
 		public System.Nullable<bool> IsWorkflowCreated
@@ -710,7 +680,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who last modified the quote close activity.
+		/// Unique identifier of user who last modified the activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -723,20 +693,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Shows the external party who modified the record.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyexternalparty")]
-		public Microsoft.Xrm.Sdk.EntityReference ModifiedByExternalParty
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedbyexternalparty");
-			}
-		}
-		
-		/// <summary>
-		/// Date and time when the quote close activity was last modified.
+		/// Date and time when activity was last modified.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
@@ -749,7 +706,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who last modified the quoteclose.
+		/// Unique identifier of the delegate user who last modified the activitypointer.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -985,12 +942,12 @@ namespace SWA.CRM.D365.Entities.Base
 		/// Priority of the activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prioritycode")]
-		public virtual QuoteClose_PriorityCode? PriorityCode
+		public virtual swa_sms_PriorityCode? PriorityCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((QuoteClose_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
+				return ((swa_sms_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1018,46 +975,6 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("ProcessId");
 				this.SetAttributeValue("processid", value);
 				this.OnPropertyChanged("ProcessId");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier of the quote with which the quote close activity is associated.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("quoteid")]
-		public Microsoft.Xrm.Sdk.EntityReference QuoteId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("quoteid");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("QuoteId");
-				this.SetAttributeValue("quoteid", value);
-				this.OnPropertyChanged("QuoteId");
-			}
-		}
-		
-		/// <summary>
-		/// Quote number.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("quotenumber")]
-		public string QuoteNumber
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("quotenumber");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("QuoteNumber");
-				this.SetAttributeValue("quotenumber", value);
-				this.OnPropertyChanged("QuoteNumber");
 			}
 		}
 		
@@ -1154,27 +1071,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Quote revision number.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("revision")]
-		public System.Nullable<int> Revision
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<int>>("revision");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Revision");
-				this.SetAttributeValue("revision", value);
-				this.OnPropertyChanged("Revision");
-			}
-		}
-		
-		/// <summary>
-		/// Scheduled duration of the quote close activity, specified in minutes.
+		/// Scheduled duration of the activity, specified in minutes.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scheduleddurationminutes")]
 		public System.Nullable<int> ScheduledDurationMinutes
@@ -1184,10 +1081,17 @@ namespace SWA.CRM.D365.Entities.Base
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("scheduleddurationminutes");
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ScheduledDurationMinutes");
+				this.SetAttributeValue("scheduleddurationminutes", value);
+				this.OnPropertyChanged("ScheduledDurationMinutes");
+			}
 		}
 		
 		/// <summary>
-		/// Scheduled end time of the quote close activity.
+		/// Scheduled end time of the activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scheduledend")]
 		public System.Nullable<System.DateTime> ScheduledEnd
@@ -1207,7 +1111,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Scheduled start time of the quote close activity.
+		/// Scheduled start time of the activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scheduledstart")]
 		public System.Nullable<System.DateTime> ScheduledStart
@@ -1266,7 +1170,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the service with which the quote close activity is associated.
+		/// Unique identifier of an associated service.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("serviceid")]
 		public Microsoft.Xrm.Sdk.EntityReference ServiceId
@@ -1359,10 +1263,10 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Shows whether the quote close activity is open, completed, or canceled.  By default, quote close activities are completed.
+		/// Status of the activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
-		public System.Nullable<SWA.CRM.D365.Entities.Base.QuoteCloseState> StateCode
+		public System.Nullable<SWA.CRM.D365.Entities.Base.swa_smsState> StateCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1370,7 +1274,7 @@ namespace SWA.CRM.D365.Entities.Base
 				Microsoft.Xrm.Sdk.OptionSetValue optionSet = this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("statecode");
 				if ((optionSet != null))
 				{
-					return ((SWA.CRM.D365.Entities.Base.QuoteCloseState)(System.Enum.ToObject(typeof(SWA.CRM.D365.Entities.Base.QuoteCloseState), optionSet.Value)));
+					return ((SWA.CRM.D365.Entities.Base.swa_smsState)(System.Enum.ToObject(typeof(SWA.CRM.D365.Entities.Base.swa_smsState), optionSet.Value)));
 				}
 				else
 				{
@@ -1394,15 +1298,15 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Reason for the status of the quote close activity.
+		/// Reason for the status of the activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual QuoteClose_StatusCode? StatusCode
+		public virtual swa_sms_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((QuoteClose_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
+				return ((swa_sms_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1414,27 +1318,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Subcategory of the quote close activity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subcategory")]
-		public string Subcategory
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("subcategory");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Subcategory");
-				this.SetAttributeValue("subcategory", value);
-				this.OnPropertyChanged("Subcategory");
-			}
-		}
-		
-		/// <summary>
-		/// Subject associated with the quote close activity.
+		/// Subject associated with the activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subject")]
 		public string Subject
@@ -1450,6 +1334,46 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("Subject");
 				this.SetAttributeValue("subject", value);
 				this.OnPropertyChanged("Subject");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_responsecode")]
+		public string swa_responsecode
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("swa_responsecode");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_responsecode");
+				this.SetAttributeValue("swa_responsecode", value);
+				this.OnPropertyChanged("swa_responsecode");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_responsemessage")]
+		public string swa_responsemessage
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("swa_responsemessage");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_responsemessage");
+				this.SetAttributeValue("swa_responsemessage", value);
+				this.OnPropertyChanged("swa_responsemessage");
 			}
 		}
 		
@@ -1583,169 +1507,398 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 1:N quoteclose_activity_parties
+		/// 1:N swa_sms_activity_parties
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("quoteclose_activity_parties")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> quoteclose_activity_parties
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_activity_parties")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> swa_sms_activity_parties
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityParty>("quoteclose_activity_parties", null);
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityParty>("swa_sms_activity_parties", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("quoteclose_activity_parties");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityParty>("quoteclose_activity_parties", null, value);
-				this.OnPropertyChanged("quoteclose_activity_parties");
+				this.OnPropertyChanging("swa_sms_activity_parties");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityParty>("swa_sms_activity_parties", null, value);
+				this.OnPropertyChanged("swa_sms_activity_parties");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 account_QuoteCloses
+		/// 1:N swa_sms_Annotations
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_Annotations")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Annotation> swa_sms_Annotations
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("swa_sms_Annotations", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_sms_Annotations");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("swa_sms_Annotations", null, value);
+				this.OnPropertyChanged("swa_sms_Annotations");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N swa_sms_QueueItems
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_QueueItems")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.QueueItem> swa_sms_QueueItems
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.QueueItem>("swa_sms_QueueItems", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_sms_QueueItems");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.QueueItem>("swa_sms_QueueItems", null, value);
+				this.OnPropertyChanged("swa_sms_QueueItems");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 account_swa_smses
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_QuoteCloses")]
-		public SWA.CRM.D365.Entities.Base.Account account_QuoteCloses
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_swa_smses")]
+		public SWA.CRM.D365.Entities.Base.Account account_swa_smses
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("account_QuoteCloses", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("account_swa_smses", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("account_QuoteCloses");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("account_QuoteCloses", null, value);
-				this.OnPropertyChanged("account_QuoteCloses");
+				this.OnPropertyChanging("account_swa_smses");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("account_swa_smses", null, value);
+				this.OnPropertyChanged("account_swa_smses");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 activity_pointer_quote_close
+		/// N:1 activity_pointer_swa_sms
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("activity_pointer_quote_close")]
-		public SWA.CRM.D365.Entities.Base.ActivityPointer activity_pointer_quote_close
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("activity_pointer_swa_sms")]
+		public SWA.CRM.D365.Entities.Base.ActivityPointer activity_pointer_swa_sms
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.ActivityPointer>("activity_pointer_quote_close", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.ActivityPointer>("activity_pointer_swa_sms", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("activity_pointer_quote_close");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.ActivityPointer>("activity_pointer_quote_close", null, value);
-				this.OnPropertyChanged("activity_pointer_quote_close");
+				this.OnPropertyChanging("activity_pointer_swa_sms");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.ActivityPointer>("activity_pointer_swa_sms", null, value);
+				this.OnPropertyChanged("activity_pointer_swa_sms");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 incident_QuoteCloses
+		/// N:1 contact_swa_smses
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_QuoteCloses")]
-		public SWA.CRM.D365.Entities.Base.Incident incident_QuoteCloses
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_swa_smses")]
+		public SWA.CRM.D365.Entities.Base.Contact contact_swa_smses
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Incident>("incident_QuoteCloses", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Contact>("contact_swa_smses", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("incident_QuoteCloses");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Incident>("incident_QuoteCloses", null, value);
-				this.OnPropertyChanged("incident_QuoteCloses");
+				this.OnPropertyChanging("contact_swa_smses");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Contact>("contact_swa_smses", null, value);
+				this.OnPropertyChanged("contact_swa_smses");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lead_QuoteCloses
+		/// N:1 incident_swa_smses
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_QuoteCloses")]
-		public SWA.CRM.D365.Entities.Base.Lead lead_QuoteCloses
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_swa_smses")]
+		public SWA.CRM.D365.Entities.Base.Incident incident_swa_smses
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Lead>("lead_QuoteCloses", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Incident>("incident_swa_smses", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("lead_QuoteCloses");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Lead>("lead_QuoteCloses", null, value);
-				this.OnPropertyChanged("lead_QuoteCloses");
+				this.OnPropertyChanging("incident_swa_smses");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Incident>("incident_swa_smses", null, value);
+				this.OnPropertyChanged("incident_swa_smses");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 opportunity_QuoteCloses
+		/// N:1 knowledgearticle_swa_smses
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("opportunity_QuoteCloses")]
-		public SWA.CRM.D365.Entities.Base.Opportunity opportunity_QuoteCloses
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("knowledgearticle_swa_smses")]
+		public SWA.CRM.D365.Entities.Base.KnowledgeArticle knowledgearticle_swa_smses
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Opportunity>("opportunity_QuoteCloses", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("knowledgearticle_swa_smses", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("opportunity_QuoteCloses");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Opportunity>("opportunity_QuoteCloses", null, value);
-				this.OnPropertyChanged("opportunity_QuoteCloses");
+				this.OnPropertyChanging("knowledgearticle_swa_smses");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("knowledgearticle_swa_smses", null, value);
+				this.OnPropertyChanged("knowledgearticle_swa_smses");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 Quote_QuoteClose
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("quoteid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Quote_QuoteClose")]
-		public SWA.CRM.D365.Entities.Base.Quote Quote_QuoteClose
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Quote>("Quote_QuoteClose", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Quote_QuoteClose");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Quote>("Quote_QuoteClose", null, value);
-				this.OnPropertyChanged("Quote_QuoteClose");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 quote_QuoteCloses
+		/// N:1 knowledgebaserecord_swa_smses
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("quote_QuoteCloses")]
-		public SWA.CRM.D365.Entities.Base.Quote quote_QuoteCloses
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("knowledgebaserecord_swa_smses")]
+		public SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord knowledgebaserecord_swa_smses
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Quote>("quote_QuoteCloses", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("knowledgebaserecord_swa_smses", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("quote_QuoteCloses");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Quote>("quote_QuoteCloses", null, value);
-				this.OnPropertyChanged("quote_QuoteCloses");
+				this.OnPropertyChanging("knowledgebaserecord_swa_smses");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("knowledgebaserecord_swa_smses", null, value);
+				this.OnPropertyChanged("knowledgebaserecord_swa_smses");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 opportunity_swa_smses
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("opportunity_swa_smses")]
+		public SWA.CRM.D365.Entities.Base.Opportunity opportunity_swa_smses
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Opportunity>("opportunity_swa_smses", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("opportunity_swa_smses");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Opportunity>("opportunity_swa_smses", null, value);
+				this.OnPropertyChanged("opportunity_swa_smses");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_sms_businessunit_owningbusinessunit
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_businessunit_owningbusinessunit")]
+		public SWA.CRM.D365.Entities.Base.BusinessUnit swa_sms_businessunit_owningbusinessunit
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.BusinessUnit>("swa_sms_businessunit_owningbusinessunit", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_sms_owner_ownerid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_owner_ownerid")]
+		public SWA.CRM.D365.Entities.Base.Owner swa_sms_owner_ownerid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("swa_sms_owner_ownerid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_sms_owner_ownerid");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("swa_sms_owner_ownerid", null, value);
+				this.OnPropertyChanged("swa_sms_owner_ownerid");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_sms_sla_slaid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_sla_slaid")]
+		public SWA.CRM.D365.Entities.Base.SLA swa_sms_sla_slaid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("swa_sms_sla_slaid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_sms_sla_slaid");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("swa_sms_sla_slaid", null, value);
+				this.OnPropertyChanged("swa_sms_sla_slaid");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_sms_sla_slainvokedid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_sla_slainvokedid")]
+		public SWA.CRM.D365.Entities.Base.SLA swa_sms_sla_slainvokedid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("swa_sms_sla_slainvokedid", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_sms_systemuser_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_systemuser_createdby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser swa_sms_systemuser_createdby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("swa_sms_systemuser_createdby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_sms_systemuser_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_systemuser_createdonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser swa_sms_systemuser_createdonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("swa_sms_systemuser_createdonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_sms_systemuser_createdonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("swa_sms_systemuser_createdonbehalfby", null, value);
+				this.OnPropertyChanged("swa_sms_systemuser_createdonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_sms_systemuser_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_systemuser_modifiedby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser swa_sms_systemuser_modifiedby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("swa_sms_systemuser_modifiedby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_sms_systemuser_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_systemuser_modifiedonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser swa_sms_systemuser_modifiedonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("swa_sms_systemuser_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_sms_systemuser_modifiedonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("swa_sms_systemuser_modifiedonbehalfby", null, value);
+				this.OnPropertyChanged("swa_sms_systemuser_modifiedonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_sms_systemuser_owninguser
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_systemuser_owninguser")]
+		public SWA.CRM.D365.Entities.Base.SystemUser swa_sms_systemuser_owninguser
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("swa_sms_systemuser_owninguser", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_sms_team_owningteam
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_team_owningteam")]
+		public SWA.CRM.D365.Entities.Base.Team swa_sms_team_owningteam
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Team>("swa_sms_team_owningteam", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 swa_sms_transactioncurrency_transactioncurrencyid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_sms_transactioncurrency_transactioncurrencyid")]
+		public SWA.CRM.D365.Entities.Base.TransactionCurrency swa_sms_transactioncurrency_transactioncurrencyid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("swa_sms_transactioncurrency_transactioncurrencyid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("swa_sms_transactioncurrency_transactioncurrencyid");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("swa_sms_transactioncurrency_transactioncurrencyid", null, value);
+				this.OnPropertyChanged("swa_sms_transactioncurrency_transactioncurrencyid");
 			}
 		}
 		
@@ -1754,7 +1907,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public QuoteClose(object anonymousType) : 
+		public swa_sms(object anonymousType) : 
 				this()
 		{
             foreach (var p in anonymousType.GetType().GetProperties())

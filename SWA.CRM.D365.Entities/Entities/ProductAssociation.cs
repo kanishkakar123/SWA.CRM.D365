@@ -571,42 +571,72 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 1:N productAssociation_quote_details
+		/// N:1 lk_ProductAssociate_createdby
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("productAssociation_quote_details")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.QuoteDetail> productAssociation_quote_details
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ProductAssociate_createdby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_ProductAssociate_createdby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.QuoteDetail>("productAssociation_quote_details", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("productAssociation_quote_details");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.QuoteDetail>("productAssociation_quote_details", null, value);
-				this.OnPropertyChanged("productAssociation_quote_details");
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_ProductAssociate_createdby", null);
 			}
 		}
 		
 		/// <summary>
-		/// 1:N productAssociation_salesorder_details
+		/// N:1 lk_ProductAssociation_createdonbehalfby
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("productAssociation_salesorder_details")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.SalesOrderDetail> productAssociation_salesorder_details
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ProductAssociation_createdonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_ProductAssociation_createdonbehalfby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.SalesOrderDetail>("productAssociation_salesorder_details", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_ProductAssociation_createdonbehalfby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("productAssociation_salesorder_details");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.SalesOrderDetail>("productAssociation_salesorder_details", null, value);
-				this.OnPropertyChanged("productAssociation_salesorder_details");
+				this.OnPropertyChanging("lk_ProductAssociation_createdonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_ProductAssociation_createdonbehalfby", null, value);
+				this.OnPropertyChanged("lk_ProductAssociation_createdonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_ProductAssociation_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ProductAssociation_modifiedby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_ProductAssociation_modifiedby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_ProductAssociation_modifiedby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_ProductAssociation_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_ProductAssociation_modifiedonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_ProductAssociation_modifiedonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_ProductAssociation_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_ProductAssociation_modifiedonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_ProductAssociation_modifiedonbehalfby", null, value);
+				this.OnPropertyChanged("lk_ProductAssociation_modifiedonbehalfby");
 			}
 		}
 		
@@ -663,6 +693,48 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("Product_ProductAssociation_Prod");
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Product>("Product_ProductAssociation_Prod", null, value);
 				this.OnPropertyChanged("Product_ProductAssociation_Prod");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 transactioncurrency_ProductAssociation
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("transactioncurrency_ProductAssociation")]
+		public SWA.CRM.D365.Entities.Base.TransactionCurrency transactioncurrency_ProductAssociation
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("transactioncurrency_ProductAssociation", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("transactioncurrency_ProductAssociation");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("transactioncurrency_ProductAssociation", null, value);
+				this.OnPropertyChanged("transactioncurrency_ProductAssociation");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 unit_of_measurement_productassociation
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("uomid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("unit_of_measurement_productassociation")]
+		public SWA.CRM.D365.Entities.Base.UoM unit_of_measurement_productassociation
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.UoM>("unit_of_measurement_productassociation", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("unit_of_measurement_productassociation");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.UoM>("unit_of_measurement_productassociation", null, value);
+				this.OnPropertyChanged("unit_of_measurement_productassociation");
 			}
 		}
 		

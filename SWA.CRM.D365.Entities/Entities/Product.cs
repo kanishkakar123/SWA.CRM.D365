@@ -478,62 +478,22 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Specify whether a product is to be converted to a customer asset. When a product is used on a work order, the system will automatically convert it into a customer asset when the work order is closed.
+		/// Alternate name/description for product
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_converttocustomerasset")]
-		public System.Nullable<bool> msdyn_ConvertToCustomerAsset
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_alsoknownas")]
+		public string msdyn_AlsoKnownAs
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<bool>>("msdyn_converttocustomerasset");
+				return this.GetAttributeValue<string>("msdyn_alsoknownas");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("msdyn_ConvertToCustomerAsset");
-				this.SetAttributeValue("msdyn_converttocustomerasset", value);
-				this.OnPropertyChanged("msdyn_ConvertToCustomerAsset");
-			}
-		}
-		
-		/// <summary>
-		/// Default vendor that supplies this product
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_defaultvendor")]
-		public Microsoft.Xrm.Sdk.EntityReference msdyn_DefaultVendor
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_defaultvendor");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("msdyn_DefaultVendor");
-				this.SetAttributeValue("msdyn_defaultvendor", value);
-				this.OnPropertyChanged("msdyn_DefaultVendor");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_fieldserviceproducttype")]
-		public virtual msdyn_FieldServiceProductType? msdyn_FieldServiceProductType
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((msdyn_FieldServiceProductType?)(EntityOptionSetEnum.GetEnum(this, "msdyn_fieldserviceproducttype")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("msdyn_FieldServiceProductType");
-				this.SetAttributeValue("msdyn_fieldserviceproducttype", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-				this.OnPropertyChanged("msdyn_FieldServiceProductType");
+				this.OnPropertyChanging("msdyn_AlsoKnownAs");
+				this.SetAttributeValue("msdyn_alsoknownas", value);
+				this.OnPropertyChanged("msdyn_AlsoKnownAs");
 			}
 		}
 		
@@ -554,66 +514,6 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("msdyn_gdproptout");
 				this.SetAttributeValue("msdyn_gdproptout", value);
 				this.OnPropertyChanged("msdyn_gdproptout");
-			}
-		}
-		
-		/// <summary>
-		/// Type the name for the product when used on a purchase order.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_purchasename")]
-		public string msdyn_PurchaseName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("msdyn_purchasename");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("msdyn_PurchaseName");
-				this.SetAttributeValue("msdyn_purchasename", value);
-				this.OnPropertyChanged("msdyn_PurchaseName");
-			}
-		}
-		
-		/// <summary>
-		/// Select whether the item is taxable. If an item is set as not taxable, it won't be taxable even on a taxable work order.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_taxable")]
-		public System.Nullable<bool> msdyn_Taxable
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<bool>>("msdyn_taxable");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("msdyn_Taxable");
-				this.SetAttributeValue("msdyn_taxable", value);
-				this.OnPropertyChanged("msdyn_Taxable");
-			}
-		}
-		
-		/// <summary>
-		/// Shows the UPC Code for product. Used for bar code scanning.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_upccode")]
-		public string msdyn_UPCCode
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("msdyn_upccode");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("msdyn_UPCCode");
-				this.SetAttributeValue("msdyn_upccode", value);
-				this.OnPropertyChanged("msdyn_UPCCode");
 			}
 		}
 		
@@ -1348,6 +1248,26 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// 1:N Product_Annotation
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Product_Annotation")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Annotation> Product_Annotation
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("Product_Annotation", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Product_Annotation");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("Product_Annotation", null, value);
+				this.OnPropertyChanged("Product_Annotation");
+			}
+		}
+		
+		/// <summary>
 		/// 1:N product_incidents
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_incidents")]
@@ -1364,26 +1284,6 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("product_incidents");
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Incident>("product_incidents", null, value);
 				this.OnPropertyChanged("product_incidents");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N product_order_details
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_order_details")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.SalesOrderDetail> product_order_details
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.SalesOrderDetail>("product_order_details", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("product_order_details");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.SalesOrderDetail>("product_order_details", null, value);
-				this.OnPropertyChanged("product_order_details");
 			}
 		}
 		
@@ -1468,103 +1368,112 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 1:N product_quote_details
+		/// N:N msdyn_product_knowledgearticle
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_quote_details")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.QuoteDetail> product_quote_details
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_product_knowledgearticle")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.KnowledgeArticle> msdyn_product_knowledgearticle
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.QuoteDetail>("product_quote_details", null);
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("msdyn_product_knowledgearticle", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("product_quote_details");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.QuoteDetail>("product_quote_details", null, value);
-				this.OnPropertyChanged("product_quote_details");
+				this.OnPropertyChanging("msdyn_product_knowledgearticle");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("msdyn_product_knowledgearticle", null, value);
+				this.OnPropertyChanged("msdyn_product_knowledgearticle");
 			}
 		}
 		
 		/// <summary>
-		/// N:N adx_accountproduct
+		/// N:N product_knowledgebaserecord
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("adx_accountproduct")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Account> adx_accountproduct
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_knowledgebaserecord")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord> product_knowledgebaserecord
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Account>("adx_accountproduct", null);
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("product_knowledgebaserecord", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("adx_accountproduct");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Account>("adx_accountproduct", null, value);
-				this.OnPropertyChanged("adx_accountproduct");
+				this.OnPropertyChanging("product_knowledgebaserecord");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("product_knowledgebaserecord", null, value);
+				this.OnPropertyChanged("product_knowledgebaserecord");
 			}
 		}
 		
 		/// <summary>
-		/// N:N adx_contactproduct
+		/// N:1 lk_product_createdonbehalfby
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("adx_contactproduct")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Contact> adx_contactproduct
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_product_createdonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_product_createdonbehalfby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Contact>("adx_contactproduct", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_product_createdonbehalfby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("adx_contactproduct");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Contact>("adx_contactproduct", null, value);
-				this.OnPropertyChanged("adx_contactproduct");
+				this.OnPropertyChanging("lk_product_createdonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_product_createdonbehalfby", null, value);
+				this.OnPropertyChanged("lk_product_createdonbehalfby");
 			}
 		}
 		
 		/// <summary>
-		/// N:N leadproduct_association
+		/// N:1 lk_product_modifiedonbehalfby
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("leadproduct_association")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Lead> leadproduct_association
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_product_modifiedonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_product_modifiedonbehalfby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Lead>("leadproduct_association", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_product_modifiedonbehalfby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("leadproduct_association");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Lead>("leadproduct_association", null, value);
-				this.OnPropertyChanged("leadproduct_association");
+				this.OnPropertyChanging("lk_product_modifiedonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_product_modifiedonbehalfby", null, value);
+				this.OnPropertyChanged("lk_product_modifiedonbehalfby");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 msdyn_account_product_DefaultVendor
+		/// N:1 lk_productbase_createdby
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_defaultvendor")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_account_product_DefaultVendor")]
-		public SWA.CRM.D365.Entities.Base.Account msdyn_account_product_DefaultVendor
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_productbase_createdby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_productbase_createdby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("msdyn_account_product_DefaultVendor", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_productbase_createdby", null);
 			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_productbase_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_productbase_modifiedby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_productbase_modifiedby
+		{
 			[System.Diagnostics.DebuggerNonUserCode()]
-			set
+			get
 			{
-				this.OnPropertyChanging("msdyn_account_product_DefaultVendor");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("msdyn_account_product_DefaultVendor", null, value);
-				this.OnPropertyChanged("msdyn_account_product_DefaultVendor");
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_productbase_modifiedby", null);
 			}
 		}
 		
@@ -1621,6 +1530,69 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("Referencingproduct_parent_product");
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Product>("product_parent_product", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
 				this.OnPropertyChanged("Referencingproduct_parent_product");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 transactioncurrency_product
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("transactioncurrency_product")]
+		public SWA.CRM.D365.Entities.Base.TransactionCurrency transactioncurrency_product
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("transactioncurrency_product", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("transactioncurrency_product");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("transactioncurrency_product", null, value);
+				this.OnPropertyChanged("transactioncurrency_product");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 unit_of_measurement_products
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultuomid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("unit_of_measurement_products")]
+		public SWA.CRM.D365.Entities.Base.UoM unit_of_measurement_products
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.UoM>("unit_of_measurement_products", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("unit_of_measurement_products");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.UoM>("unit_of_measurement_products", null, value);
+				this.OnPropertyChanged("unit_of_measurement_products");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 unit_of_measurement_schedule_products
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultuomscheduleid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("unit_of_measurement_schedule_products")]
+		public SWA.CRM.D365.Entities.Base.UoMSchedule unit_of_measurement_schedule_products
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.UoMSchedule>("unit_of_measurement_schedule_products", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("unit_of_measurement_schedule_products");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.UoMSchedule>("unit_of_measurement_schedule_products", null, value);
+				this.OnPropertyChanged("unit_of_measurement_schedule_products");
 			}
 		}
 		

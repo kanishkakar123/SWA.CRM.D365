@@ -1643,6 +1643,26 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// 1:N IncidentResolution_Annotation
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("IncidentResolution_Annotation")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Annotation> IncidentResolution_Annotation
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("IncidentResolution_Annotation", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("IncidentResolution_Annotation");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("IncidentResolution_Annotation", null, value);
+				this.OnPropertyChanged("IncidentResolution_Annotation");
+			}
+		}
+		
+		/// <summary>
 		/// N:1 account_IncidentResolutions
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
@@ -1685,6 +1705,20 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// N:1 business_unit_incident_resolution_activities
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_incident_resolution_activities")]
+		public SWA.CRM.D365.Entities.Base.BusinessUnit business_unit_incident_resolution_activities
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.BusinessUnit>("business_unit_incident_resolution_activities", null);
+			}
+		}
+		
+		/// <summary>
 		/// N:1 Incident_IncidentResolutions
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incidentid")]
@@ -1706,23 +1740,219 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// N:1 lead_IncidentResolutions
+		/// N:1 incidentresolution_owner_ownerid
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_IncidentResolutions")]
-		public SWA.CRM.D365.Entities.Base.Lead lead_IncidentResolutions
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incidentresolution_owner_ownerid")]
+		public SWA.CRM.D365.Entities.Base.Owner incidentresolution_owner_ownerid
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Lead>("lead_IncidentResolutions", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("incidentresolution_owner_ownerid", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("lead_IncidentResolutions");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Lead>("lead_IncidentResolutions", null, value);
-				this.OnPropertyChanged("lead_IncidentResolutions");
+				this.OnPropertyChanging("incidentresolution_owner_ownerid");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("incidentresolution_owner_ownerid", null, value);
+				this.OnPropertyChanged("incidentresolution_owner_ownerid");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 incidentresolution_sla_slaid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incidentresolution_sla_slaid")]
+		public SWA.CRM.D365.Entities.Base.SLA incidentresolution_sla_slaid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("incidentresolution_sla_slaid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("incidentresolution_sla_slaid");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("incidentresolution_sla_slaid", null, value);
+				this.OnPropertyChanged("incidentresolution_sla_slaid");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 incidentresolution_sla_slainvokedid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incidentresolution_sla_slainvokedid")]
+		public SWA.CRM.D365.Entities.Base.SLA incidentresolution_sla_slainvokedid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("incidentresolution_sla_slainvokedid", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 incidentresolution_transactioncurrency_transactioncurrencyid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incidentresolution_transactioncurrency_transactioncurrencyid")]
+		public SWA.CRM.D365.Entities.Base.TransactionCurrency incidentresolution_transactioncurrency_transactioncurrencyid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("incidentresolution_transactioncurrency_transactioncurrencyid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("incidentresolution_transactioncurrency_transactioncurrencyid");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("incidentresolution_transactioncurrency_transactioncurrencyid", null, value);
+				this.OnPropertyChanged("incidentresolution_transactioncurrency_transactioncurrencyid");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 knowledgearticle_IncidentResolutions
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("knowledgearticle_IncidentResolutions")]
+		public SWA.CRM.D365.Entities.Base.KnowledgeArticle knowledgearticle_IncidentResolutions
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("knowledgearticle_IncidentResolutions", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("knowledgearticle_IncidentResolutions");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("knowledgearticle_IncidentResolutions", null, value);
+				this.OnPropertyChanged("knowledgearticle_IncidentResolutions");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 knowledgebaserecord_IncidentResolutions
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("knowledgebaserecord_IncidentResolutions")]
+		public SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord knowledgebaserecord_IncidentResolutions
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("knowledgebaserecord_IncidentResolutions", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("knowledgebaserecord_IncidentResolutions");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("knowledgebaserecord_IncidentResolutions", null, value);
+				this.OnPropertyChanged("knowledgebaserecord_IncidentResolutions");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_incidentresolution_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_incidentresolution_createdby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_incidentresolution_createdby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentresolution_createdby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_incidentresolution_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_incidentresolution_createdonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_incidentresolution_createdonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentresolution_createdonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_incidentresolution_createdonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentresolution_createdonbehalfby", null, value);
+				this.OnPropertyChanged("lk_incidentresolution_createdonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_incidentresolution_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_incidentresolution_modifiedby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_incidentresolution_modifiedby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentresolution_modifiedby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_incidentresolution_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_incidentresolution_modifiedonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_incidentresolution_modifiedonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentresolution_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_incidentresolution_modifiedonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentresolution_modifiedonbehalfby", null, value);
+				this.OnPropertyChanged("lk_incidentresolution_modifiedonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 team_incidentresolution
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_incidentresolution")]
+		public SWA.CRM.D365.Entities.Base.Team team_incidentresolution
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Team>("team_incidentresolution", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 user_incidentresolution
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_incidentresolution")]
+		public SWA.CRM.D365.Entities.Base.SystemUser user_incidentresolution
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("user_incidentresolution", null);
 			}
 		}
 		

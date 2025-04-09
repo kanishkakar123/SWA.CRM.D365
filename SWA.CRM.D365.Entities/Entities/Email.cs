@@ -1238,6 +1238,46 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_sentiment")]
+		public virtual Email_msdyn_sentiment? msdyn_sentiment
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((Email_msdyn_sentiment?)(EntityOptionSetEnum.GetEnum(this, "msdyn_sentiment")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_sentiment");
+				this.SetAttributeValue("msdyn_sentiment", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("msdyn_sentiment");
+			}
+		}
+		
+		/// <summary>
+		/// Sentiment Reason
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_sentimentreason")]
+		public virtual Email_msdyn_sentimentreason? msdyn_sentimentreason
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((Email_msdyn_sentimentreason?)(EntityOptionSetEnum.GetEnum(this, "msdyn_sentimentreason")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_sentimentreason");
+				this.SetAttributeValue("msdyn_sentimentreason", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("msdyn_sentimentreason");
+			}
+		}
+		
+		/// <summary>
 		/// Select the notification code to identify issues with the email recipients or attachments, such as blocked attachments.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("notifications")]
@@ -1392,6 +1432,19 @@ namespace SWA.CRM.D365.Entities.Base
 		/// <summary>
 		/// For internal use only.
 		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentsensitivitylabelid")]
+		public System.Nullable<System.Guid> ParentSensitivityLabelId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("parentsensitivitylabelid");
+			}
+		}
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("postponeemailprocessinguntil")]
 		public System.Nullable<System.DateTime> PostponeEmailProcessingUntil
 		{
@@ -1483,7 +1536,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the object with which the e-mail is associated.
+		/// Choose the record that the email relates to.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
 		public Microsoft.Xrm.Sdk.EntityReference RegardingObjectId
@@ -1687,6 +1740,46 @@ namespace SWA.CRM.D365.Entities.Base
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("sendersaccount");
+			}
+		}
+		
+		/// <summary>
+		/// The sensitivity label assigned to the Email.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sensitivitylabelid")]
+		public Microsoft.Xrm.Sdk.EntityReference SensitivityLabelId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("sensitivitylabelid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SensitivityLabelId");
+				this.SetAttributeValue("sensitivitylabelid", value);
+				this.OnPropertyChanged("SensitivityLabelId");
+			}
+		}
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sensitivitylabelinfo")]
+		public string SensitivityLabelInfo
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("sensitivitylabelinfo");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SensitivityLabelInfo");
+				this.SetAttributeValue("sensitivitylabelinfo", value);
+				this.OnPropertyChanged("SensitivityLabelInfo");
 			}
 		}
 		
@@ -2121,6 +2214,26 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// 1:N Email_Annotation
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Email_Annotation")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Annotation> Email_Annotation
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("Email_Annotation", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Email_Annotation");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("Email_Annotation", null, value);
+				this.OnPropertyChanged("Email_Annotation");
+			}
+		}
+		
+		/// <summary>
 		/// 1:N email_email_CorrelatedActivityId
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("email_email_CorrelatedActivityId", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
@@ -2157,6 +2270,46 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("Referencedemail_email_parentactivityid");
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Email>("email_email_parentactivityid", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
 				this.OnPropertyChanged("Referencedemail_email_parentactivityid");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N Email_QueueItem
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Email_QueueItem")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.QueueItem> Email_QueueItem
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.QueueItem>("Email_QueueItem", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Email_QueueItem");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.QueueItem>("Email_QueueItem", null, value);
+				this.OnPropertyChanged("Email_QueueItem");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N slakpiinstance_email
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("slakpiinstance_email")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.SLAKPIInstance> slakpiinstance_email
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.SLAKPIInstance>("slakpiinstance_email", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("slakpiinstance_email");
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.SLAKPIInstance>("slakpiinstance_email", null, value);
+				this.OnPropertyChanged("slakpiinstance_email");
 			}
 		}
 		
@@ -2231,6 +2384,20 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// N:1 business_unit_email_activities
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_email_activities")]
+		public SWA.CRM.D365.Entities.Base.BusinessUnit business_unit_email_activities
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.BusinessUnit>("business_unit_email_activities", null);
+			}
+		}
+		
+		/// <summary>
 		/// N:1 Contact_Email_EmailSender
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailsender")]
@@ -2262,6 +2429,48 @@ namespace SWA.CRM.D365.Entities.Base
 				this.OnPropertyChanging("Contact_Emails");
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Contact>("Contact_Emails", null, value);
 				this.OnPropertyChanged("Contact_Emails");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 email_acceptingentity_queue
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("acceptingentityid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("email_acceptingentity_queue")]
+		public SWA.CRM.D365.Entities.Base.Queue email_acceptingentity_queue
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Queue>("email_acceptingentity_queue", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("email_acceptingentity_queue");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Queue>("email_acceptingentity_queue", null, value);
+				this.OnPropertyChanged("email_acceptingentity_queue");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 email_acceptingentity_systemuser
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("acceptingentityid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("email_acceptingentity_systemuser")]
+		public SWA.CRM.D365.Entities.Base.SystemUser email_acceptingentity_systemuser
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("email_acceptingentity_systemuser", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("email_acceptingentity_systemuser");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("email_acceptingentity_systemuser", null, value);
+				this.OnPropertyChanged("email_acceptingentity_systemuser");
 			}
 		}
 		
@@ -2308,6 +2517,27 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// N:1 Email_EmailTemplate
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("templateid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Email_EmailTemplate")]
+		public SWA.CRM.D365.Entities.Base.Template Email_EmailTemplate
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Template>("Email_EmailTemplate", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Email_EmailTemplate");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Template>("Email_EmailTemplate", null, value);
+				this.OnPropertyChanged("Email_EmailTemplate");
+			}
+		}
+		
+		/// <summary>
 		/// N:1 Incident_Emails
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
@@ -2329,37 +2559,135 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// N:1 Lead_Email_EmailSender
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailsender")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Lead_Email_EmailSender")]
-		public SWA.CRM.D365.Entities.Base.Lead Lead_Email_EmailSender
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Lead>("Lead_Email_EmailSender", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 Lead_Emails
+		/// N:1 KnowledgeArticle_Emails
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Lead_Emails")]
-		public SWA.CRM.D365.Entities.Base.Lead Lead_Emails
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeArticle_Emails")]
+		public SWA.CRM.D365.Entities.Base.KnowledgeArticle KnowledgeArticle_Emails
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Lead>("Lead_Emails", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("KnowledgeArticle_Emails", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("Lead_Emails");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Lead>("Lead_Emails", null, value);
-				this.OnPropertyChanged("Lead_Emails");
+				this.OnPropertyChanging("KnowledgeArticle_Emails");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("KnowledgeArticle_Emails", null, value);
+				this.OnPropertyChanged("KnowledgeArticle_Emails");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 KnowledgeBaseRecord_Emails
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_Emails")]
+		public SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord KnowledgeBaseRecord_Emails
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("KnowledgeBaseRecord_Emails", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("KnowledgeBaseRecord_Emails");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("KnowledgeBaseRecord_Emails", null, value);
+				this.OnPropertyChanged("KnowledgeBaseRecord_Emails");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_email_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_email_createdby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_email_createdby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_email_createdby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_email_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_email_createdonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_email_createdonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_email_createdonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_email_createdonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_email_createdonbehalfby", null, value);
+				this.OnPropertyChanged("lk_email_createdonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_email_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_email_modifiedby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_email_modifiedby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_email_modifiedby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_email_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_email_modifiedonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_email_modifiedonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_email_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_email_modifiedonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_email_modifiedonbehalfby", null, value);
+				this.OnPropertyChanged("lk_email_modifiedonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 manualsla_email
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("manualsla_email")]
+		public SWA.CRM.D365.Entities.Base.SLA manualsla_email
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("manualsla_email", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("manualsla_email");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("manualsla_email", null, value);
+				this.OnPropertyChanged("manualsla_email");
 			}
 		}
 		
@@ -2385,44 +2713,114 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// N:1 Quote_Emails
+		/// N:1 owner_emails
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Quote_Emails")]
-		public SWA.CRM.D365.Entities.Base.Quote Quote_Emails
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("owner_emails")]
+		public SWA.CRM.D365.Entities.Base.Owner owner_emails
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Quote>("Quote_Emails", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("owner_emails", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("Quote_Emails");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Quote>("Quote_Emails", null, value);
-				this.OnPropertyChanged("Quote_Emails");
+				this.OnPropertyChanging("owner_emails");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("owner_emails", null, value);
+				this.OnPropertyChanged("owner_emails");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 SalesOrder_Emails
+		/// N:1 Queue_Email_EmailSender
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SalesOrder_Emails")]
-		public SWA.CRM.D365.Entities.Base.SalesOrder SalesOrder_Emails
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailsender")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Queue_Email_EmailSender")]
+		public SWA.CRM.D365.Entities.Base.Queue Queue_Email_EmailSender
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SalesOrder>("SalesOrder_Emails", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Queue>("Queue_Email_EmailSender", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 sla_email
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sla_email")]
+		public SWA.CRM.D365.Entities.Base.SLA sla_email
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("sla_email", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 SystemUser_Email_EmailSender
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailsender")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SystemUser_Email_EmailSender")]
+		public SWA.CRM.D365.Entities.Base.SystemUser SystemUser_Email_EmailSender
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("SystemUser_Email_EmailSender", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 team_email
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_email")]
+		public SWA.CRM.D365.Entities.Base.Team team_email
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Team>("team_email", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 TransactionCurrency_Email
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("TransactionCurrency_Email")]
+		public SWA.CRM.D365.Entities.Base.TransactionCurrency TransactionCurrency_Email
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_Email", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("SalesOrder_Emails");
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SalesOrder>("SalesOrder_Emails", null, value);
-				this.OnPropertyChanged("SalesOrder_Emails");
+				this.OnPropertyChanging("TransactionCurrency_Email");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_Email", null, value);
+				this.OnPropertyChanged("TransactionCurrency_Email");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 user_email
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_email")]
+		public SWA.CRM.D365.Entities.Base.SystemUser user_email
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("user_email", null);
 			}
 		}
 		

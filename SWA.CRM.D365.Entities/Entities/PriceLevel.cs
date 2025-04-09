@@ -281,26 +281,6 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_breakhoursbillable")]
-		public System.Nullable<bool> msdyn_BreakHoursBillable
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<bool>>("msdyn_breakhoursbillable");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("msdyn_BreakHoursBillable");
-				this.SetAttributeValue("msdyn_breakhoursbillable", value);
-				this.OnPropertyChanged("msdyn_BreakHoursBillable");
-			}
-		}
-		
-		/// <summary>
 		/// Name of the price list.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("name")]
@@ -565,46 +545,6 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 1:N msdyn_pricelevel_opportunityproduct_PriceList
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_pricelevel_opportunityproduct_PriceList")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.OpportunityProduct> msdyn_pricelevel_opportunityproduct_PriceList
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.OpportunityProduct>("msdyn_pricelevel_opportunityproduct_PriceList", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("msdyn_pricelevel_opportunityproduct_PriceList");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.OpportunityProduct>("msdyn_pricelevel_opportunityproduct_PriceList", null, value);
-				this.OnPropertyChanged("msdyn_pricelevel_opportunityproduct_PriceList");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N msdyn_pricelevel_quotedetail_PriceList
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_pricelevel_quotedetail_PriceList")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.QuoteDetail> msdyn_pricelevel_quotedetail_PriceList
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.QuoteDetail>("msdyn_pricelevel_quotedetail_PriceList", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("msdyn_pricelevel_quotedetail_PriceList");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.QuoteDetail>("msdyn_pricelevel_quotedetail_PriceList", null, value);
-				this.OnPropertyChanged("msdyn_pricelevel_quotedetail_PriceList");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N price_level_accounts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("price_level_accounts")]
@@ -665,26 +605,6 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 1:N price_level_orders
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("price_level_orders")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.SalesOrder> price_level_orders
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.SalesOrder>("price_level_orders", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("price_level_orders");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.SalesOrder>("price_level_orders", null, value);
-				this.OnPropertyChanged("price_level_orders");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N price_level_product_price_levels
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("price_level_product_price_levels")]
@@ -725,22 +645,72 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 1:N price_level_quotes
+		/// N:1 lk_pricelevel_createdonbehalfby
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("price_level_quotes")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Quote> price_level_quotes
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_pricelevel_createdonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_pricelevel_createdonbehalfby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Quote>("price_level_quotes", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_pricelevel_createdonbehalfby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("price_level_quotes");
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Quote>("price_level_quotes", null, value);
-				this.OnPropertyChanged("price_level_quotes");
+				this.OnPropertyChanging("lk_pricelevel_createdonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_pricelevel_createdonbehalfby", null, value);
+				this.OnPropertyChanged("lk_pricelevel_createdonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_pricelevel_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_pricelevel_modifiedonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_pricelevel_modifiedonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_pricelevel_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_pricelevel_modifiedonbehalfby");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_pricelevel_modifiedonbehalfby", null, value);
+				this.OnPropertyChanged("lk_pricelevel_modifiedonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_pricelevelbase_createdby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_pricelevelbase_createdby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_pricelevelbase_createdby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_pricelevelbase_createdby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_pricelevelbase_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_pricelevelbase_modifiedby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_pricelevelbase_modifiedby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_pricelevelbase_modifiedby", null);
 			}
 		}
 		
@@ -755,6 +725,27 @@ namespace SWA.CRM.D365.Entities.Base
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Organization>("organization_price_levels", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 transactioncurrency_pricelevel
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("transactioncurrency_pricelevel")]
+		public SWA.CRM.D365.Entities.Base.TransactionCurrency transactioncurrency_pricelevel
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("transactioncurrency_pricelevel", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("transactioncurrency_pricelevel");
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("transactioncurrency_pricelevel", null, value);
+				this.OnPropertyChanged("transactioncurrency_pricelevel");
 			}
 		}
 		
