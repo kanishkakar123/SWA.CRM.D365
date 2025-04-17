@@ -182,6 +182,7 @@
     <Compile Include="EntityManipulation\SetStateEntityManipulation.cs" />
     <Compile Include="EntityManipulation\UpdateEntityManipulation.cs" />
     <Compile Include="EntityManipulation\UpSertEntityManipulation.cs" />
+    <Compile Include="EntityQuery\Incident.partial.cs" />
     <Compile Include="EntityQuery\Account.partial.cs" />
     <Compile Include="EntityQuery\Contact.partial.cs" />
     <Compile Include="EntityQuery\FetchXMLHelper.cs" />
