@@ -42,18 +42,6 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.AccountLeads"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.AccountLeads> AccountLeadsSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.AccountLeads>();
-			}
-		}
-		
-		/// <summary>
 		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.ActivityParty"/> entities.
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.ActivityParty> ActivityPartySet
@@ -98,42 +86,6 @@ namespace SWA.CRM.D365.Entities.Base
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Appointment>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.AttributePicklistValue"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.AttributePicklistValue> AttributePicklistValueSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.AttributePicklistValue>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.businessprocess"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.businessprocess> businessprocessSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.businessprocess>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.BusinessProcessFlowInstance"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.BusinessProcessFlowInstance> BusinessProcessFlowInstanceSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.BusinessProcessFlowInstance>();
 			}
 		}
 		
@@ -185,17 +137,6 @@ namespace SWA.CRM.D365.Entities.Base
 			}
 		}
 		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.Entity_Ent"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Entity_Ent> Entity_EntSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Entity_Ent>();
-			}
-		}
 		
 		/// <summary>
 		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.Incident"/> entities.
@@ -222,162 +163,6 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.KbArticle"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.KbArticle> KbArticleSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.KbArticle>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.KbArticleComment"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.KbArticleComment> KbArticleCommentSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.KbArticleComment>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.KbArticleTemplate"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.KbArticleTemplate> KbArticleTemplateSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.KbArticleTemplate>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.KnowledgeArticle"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.KnowledgeArticle> KnowledgeArticleSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.KnowledgeArticle>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.KnowledgeArticleIncident"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.KnowledgeArticleIncident> KnowledgeArticleIncidentSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.KnowledgeArticleIncident>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.KnowledgeArticlesCategories"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.KnowledgeArticlesCategories> KnowledgeArticlesCategoriesSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.KnowledgeArticlesCategories>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.KnowledgeArticleViews"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.KnowledgeArticleViews> KnowledgeArticleViewsSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.KnowledgeArticleViews>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord> KnowledgeBaseRecordSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.listoperation"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.listoperation> listoperationSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.listoperation>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.msdyn_slakpi"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.msdyn_slakpi> msdyn_slakpiSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.msdyn_slakpi>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.mspp_entitylist"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.mspp_entitylist> mspp_entitylistSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.mspp_entitylist>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.Opportunity"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Opportunity> OpportunitySet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Opportunity>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.OpportunityProduct"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.OpportunityProduct> OpportunityProductSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.OpportunityProduct>();
-			}
-		}
-		
-		/// <summary>
 		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.OptionSet"/> entities.
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.OptionSet> OptionSetSet
@@ -386,18 +171,6 @@ namespace SWA.CRM.D365.Entities.Base
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.OptionSet>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.Organization"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Organization> OrganizationSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Organization>();
 			}
 		}
 		
@@ -438,30 +211,6 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.Product"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Product> ProductSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Product>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.ProductAssociation"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.ProductAssociation> ProductAssociationSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.ProductAssociation>();
-			}
-		}
-		
-		/// <summary>
 		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.ProductPriceLevel"/> entities.
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.ProductPriceLevel> ProductPriceLevelSet
@@ -470,126 +219,6 @@ namespace SWA.CRM.D365.Entities.Base
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.ProductPriceLevel>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.Queue"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Queue> QueueSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Queue>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.QueueItem"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.QueueItem> QueueItemSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.QueueItem>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.Relationship_Ent"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Relationship_Ent> Relationship_EntSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Relationship_Ent>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.Report"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Report> ReportSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Report>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.ReportCategory"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.ReportCategory> ReportCategorySet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.ReportCategory>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.ReportEntity"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.ReportEntity> ReportEntitySet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.ReportEntity>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.ReportLink"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.ReportLink> ReportLinkSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.ReportLink>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.ReportParameter"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.ReportParameter> ReportParameterSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.ReportParameter>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.ReportVisibility"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.ReportVisibility> ReportVisibilitySet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.ReportVisibility>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.Role"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Role> RoleSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Role>();
 			}
 		}
 		
@@ -606,66 +235,6 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.SLA"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.SLA> SLASet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.SLA>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.SLAItem"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.SLAItem> SLAItemSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.SLAItem>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.SLAKPIInstance"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.SLAKPIInstance> SLAKPIInstanceSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.SLAKPIInstance>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.StatusMap"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.StatusMap> StatusMapSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.StatusMap>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.StringMap"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.StringMap> StringMapSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.StringMap>();
-			}
-		}
-		
-		/// <summary>
 		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.swa_casecategory"/> entities.
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.swa_casecategory> swa_casecategorySet
@@ -674,18 +243,6 @@ namespace SWA.CRM.D365.Entities.Base
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.swa_casecategory>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.swa_caseprocessflow"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.swa_caseprocessflow> swa_caseprocessflowSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.swa_caseprocessflow>();
 			}
 		}
 		
@@ -798,18 +355,6 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.TeamProfiles"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.TeamProfiles> TeamProfilesSet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.TeamProfiles>();
-			}
-		}
-		
-		/// <summary>
 		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.Template"/> entities.
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Template> TemplateSet
@@ -854,18 +399,6 @@ namespace SWA.CRM.D365.Entities.Base
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.UoMSchedule>();
-			}
-		}
-		
-		/// <summary>
-		/// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.UserQuery"/> entities.
-		/// </summary>
-		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.UserQuery> UserQuerySet
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.CreateQuery<SWA.CRM.D365.Entities.Base.UserQuery>();
 			}
 		}
 	}

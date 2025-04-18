@@ -12,16 +12,20 @@ namespace SWA.CRM.D365.Entities.Base
 {
 	
 	
+	/// <summary>
+	/// User-owned dashboards.
+	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("swa_casecategory")]
-	public partial class swa_casecategory : Microsoft.Xrm.Sdk.Entity
+	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("userform")]
+	public partial class UserForm : Microsoft.Xrm.Sdk.Entity
 	{
 		
 		/// <summary>
-		/// Available fields, a the time of codegen, for the swa_casecategory entity
+		/// Available fields, a the time of codegen, for the userform entity
 		/// </summary>
 		public partial class Fields
 		{
+			public const string business_unit_userform = "business_unit_userform";
 			public const string CreatedBy = "createdby";
 			public const string CreatedByName = "createdbyname";
 			public const string CreatedByYomiName = "createdbyyominame";
@@ -29,11 +33,14 @@ namespace SWA.CRM.D365.Entities.Base
 			public const string CreatedOnBehalfBy = "createdonbehalfby";
 			public const string CreatedOnBehalfByName = "createdonbehalfbyname";
 			public const string CreatedOnBehalfByYomiName = "createdonbehalfbyyominame";
-			public const string ImportSequenceNumber = "importsequencenumber";
-			public const string lk_swa_casecategory_createdby = "lk_swa_casecategory_createdby";
-			public const string lk_swa_casecategory_createdonbehalfby = "lk_swa_casecategory_createdonbehalfby";
-			public const string lk_swa_casecategory_modifiedby = "lk_swa_casecategory_modifiedby";
-			public const string lk_swa_casecategory_modifiedonbehalfby = "lk_swa_casecategory_modifiedonbehalfby";
+			public const string Description = "description";
+			public const string FormJson = "formjson";
+			public const string FormXml = "formxml";
+			public const string IsTabletEnabled = "istabletenabled";
+			public const string lk_userform_createdby = "lk_userform_createdby";
+			public const string lk_userform_modifiedby = "lk_userform_modifiedby";
+			public const string lk_userformbase_createdonbehalfby = "lk_userformbase_createdonbehalfby";
+			public const string lk_userformbase_modifiedonbehalfby = "lk_userformbase_modifiedonbehalfby";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedByName = "modifiedbyname";
 			public const string ModifiedByYomiName = "modifiedbyyominame";
@@ -41,40 +48,39 @@ namespace SWA.CRM.D365.Entities.Base
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
 			public const string ModifiedOnBehalfByName = "modifiedonbehalfbyname";
 			public const string ModifiedOnBehalfByYomiName = "modifiedonbehalfbyyominame";
-			public const string OrganizationId = "organizationid";
-			public const string OrganizationIdName = "organizationidname";
-			public const string OverriddenCreatedOn = "overriddencreatedon";
-			public const string StateCode = "statecode";
-			public const string statecodeName = "statecodename";
-			public const string StatusCode = "statuscode";
-			public const string statuscodeName = "statuscodename";
-			public const string swa_casecategoryId = "swa_casecategoryid";
-			public const string Id = "swa_casecategoryid";
-			public const string swa_casetypeid = "swa_casetypeid";
-			public const string swa_casetypeidName = "swa_casetypeidname";
-			public const string swa_name = "swa_name";
-			public const string swa_swa_casecategory_incident_casecategoryid = "swa_swa_casecategory_incident_casecategoryid";
-			public const string swa_swa_casecategory_swa_casesubcategory_casecategoryid = "swa_swa_casecategory_swa_casesubcategory_casecategoryid";
-			public const string swa_swa_casetype_swa_casecategory_casetypeid = "swa_swa_casetype_swa_casecategory_casetypeid";
-			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
-			public const string UTCConversionTimeZoneCode = "utcconversiontimezonecode";
+			public const string Name = "name";
+			public const string ObjectTypeCode = "objecttypecode";
+			public const string ObjectTypeCodeName = "objecttypecodename";
+			public const string owner_userform = "owner_userform";
+			public const string OwnerId = "ownerid";
+			public const string OwnerIdName = "owneridname";
+			public const string OwnerIdYomiName = "owneridyominame";
+			public const string OwningBusinessUnit = "owningbusinessunit";
+			public const string OwningTeam = "owningteam";
+			public const string OwningUser = "owninguser";
+			public const string team_userform = "team_userform";
+			public const string Type = "type";
+			public const string TypeName = "typename";
+			public const string user_userform = "user_userform";
+			public const string UserFormId = "userformid";
+			public const string Id = "userformid";
 			public const string VersionNumber = "versionnumber";
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public swa_casecategory(System.Guid id) : 
+		public UserForm(System.Guid id) : 
 				base(EntityLogicalName, id)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public swa_casecategory(string keyName, object keyValue) : 
+		public UserForm(string keyName, object keyValue) : 
 				base(EntityLogicalName, keyName, keyValue)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public swa_casecategory(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
+		public UserForm(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
 				base(EntityLogicalName, keyAttributes)
 		{
 		}
@@ -83,27 +89,27 @@ namespace SWA.CRM.D365.Entities.Base
 		/// Default Constructor.
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public swa_casecategory() : 
+		public UserForm() : 
 				base(EntityLogicalName)
 		{
 		}
 		
-		public const string PrimaryIdAttribute = "swa_casecategoryid";
+		public const string PrimaryIdAttribute = "userformid";
 		
-		public const string PrimaryNameAttribute = "swa_name";
+		public const string PrimaryNameAttribute = "name";
 		
-		public const string EntitySchemaName = "swa_casecategory";
+		public const string EntitySchemaName = "UserForm";
 		
-		public const string EntityLogicalName = "swa_casecategory";
+		public const string EntityLogicalName = "userform";
 		
-		public const string EntityLogicalCollectionName = "swa_casecategories";
+		public const string EntityLogicalCollectionName = "userforms";
 		
-		public const string EntitySetName = "swa_casecategories";
+		public const string EntitySetName = "userforms";
 		
-		public const int EntityTypeCode = 10113;
+		public const int EntityTypeCode = 1031;
 		
 		/// <summary>
-		/// Unique identifier of the user who created the record.
+		/// Shows who created the record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -150,7 +156,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Date and time when the record was created.
+		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
@@ -163,7 +169,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the record.
+		/// Shows who created the record on behalf of another user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -215,25 +221,79 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Sequence number of the import that created this record.
+		/// Type additional information to describe the form or dashboard, such as the filter criteria or intended audience.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
-		public System.Nullable<int> ImportSequenceNumber
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("description")]
+		public string Description
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("importsequencenumber");
+				return this.GetAttributeValue<string>("description");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("importsequencenumber", value);
+				this.SetAttributeValue("description", value);
 			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who modified the record.
+		/// Json representation of the form layout.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("formjson")]
+		public string FormJson
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("formjson");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("formjson", value);
+			}
+		}
+		
+		/// <summary>
+		/// Shows the XML representation of the layout of the form or dashboard.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("formxml")]
+		public string FormXml
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("formxml");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("formxml", value);
+			}
+		}
+		
+		/// <summary>
+		/// Information that specifies whether the dashboard is enabled for tablet.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("istabletenabled")]
+		public System.Nullable<bool> IsTabletEnabled
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("istabletenabled");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("istabletenabled", value);
+			}
+		}
+		
+		/// <summary>
+		/// Shows who last updated the record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -280,7 +340,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Date and time when the record was modified.
+		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
@@ -293,7 +353,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who modified the record.
+		/// Shows who created the record on behalf of another user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -345,27 +405,53 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier for the organization
+		/// Type a descriptive name for the form or dashboard.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
-		public Microsoft.Xrm.Sdk.EntityReference OrganizationId
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("name")]
+		public string Name
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("organizationid");
+				return this.GetAttributeValue<string>("name");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("name", value);
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationidname")]
-		public string OrganizationIdName
+		/// <summary>
+		/// Shows the record type (entity) code that the form applies to.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objecttypecode")]
+		public string ObjectTypeCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				if (this.FormattedValues.Contains("organizationid"))
+				return this.GetAttributeValue<string>("objecttypecode");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("objecttypecode", value);
+			}
+		}
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objecttypecodename")]
+		public string ObjectTypeCodeName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("objecttypecode"))
 				{
-					return this.FormattedValues["organizationid"];
+					return this.FormattedValues["objecttypecode"];
 				}
 				else
 				{
@@ -375,50 +461,49 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Date and time that the record was migrated.
+		/// Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overriddencreatedon")]
-		public System.Nullable<System.DateTime> OverriddenCreatedOn
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
+		public Microsoft.Xrm.Sdk.EntityReference OwnerId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("overriddencreatedon");
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("ownerid");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("overriddencreatedon", value);
+				this.SetAttributeValue("ownerid", value);
 			}
 		}
 		
-		/// <summary>
-		/// Status of the Case Category
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
-		public virtual swa_casecategory_statecode? StateCode
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owneridname")]
+		public string OwnerIdName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((swa_casecategory_statecode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("statecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecodename")]
-		public string statecodeName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("statecode"))
+				if (this.FormattedValues.Contains("ownerid"))
 				{
-					return this.FormattedValues["statecode"];
+					return this.FormattedValues["ownerid"];
+				}
+				else
+				{
+					return default(string);
+				}
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owneridyominame")]
+		public string OwnerIdYomiName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("ownerid"))
+				{
+					return this.FormattedValues["ownerid"];
 				}
 				else
 				{
@@ -428,32 +513,71 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Reason for the status of the Case Category
+		/// Shows the business unit that the record owner belongs to.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual swa_casecategory_StatusCode? StatusCode
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
+		public Microsoft.Xrm.Sdk.EntityReference OwningBusinessUnit
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((swa_casecategory_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier of the team who owns the dashboard.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
+		public Microsoft.Xrm.Sdk.EntityReference OwningTeam
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier of the user who owns the dashboard.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
+		public Microsoft.Xrm.Sdk.EntityReference OwningUser
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
+			}
+		}
+		
+		/// <summary>
+		/// Select the form type.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("type")]
+		public virtual UserForm_Type? Type
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((UserForm_Type?)(EntityOptionSetEnum.GetEnum(this, "type")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("statuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.SetAttributeValue("type", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscodename")]
-		public string statuscodeName
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("typename")]
+		public string TypeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				if (this.FormattedValues.Contains("statuscode"))
+				if (this.FormattedValues.Contains("type"))
 				{
-					return this.FormattedValues["statuscode"];
+					return this.FormattedValues["type"];
 				}
 				else
 				{
@@ -463,20 +587,20 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier for entity instances
+		/// Unique identifier of the user dashboard.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_casecategoryid")]
-		public System.Nullable<System.Guid> swa_casecategoryId
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("userformid")]
+		public System.Nullable<System.Guid> UserFormId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("swa_casecategoryid");
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("userformid");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("swa_casecategoryid", value);
+				this.SetAttributeValue("userformid", value);
 				if (value.HasValue)
 				{
 					base.Id = value.Value;
@@ -488,7 +612,7 @@ namespace SWA.CRM.D365.Entities.Base
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_casecategoryid")]
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("userformid")]
 		public override System.Guid Id
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
@@ -499,99 +623,10 @@ namespace SWA.CRM.D365.Entities.Base
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.swa_casecategoryId = value;
+				this.UserFormId = value;
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_casetypeid")]
-		public Microsoft.Xrm.Sdk.EntityReference swa_casetypeid
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("swa_casetypeid");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("swa_casetypeid", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_casetypeidname")]
-		public string swa_casetypeidName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("swa_casetypeid"))
-				{
-					return this.FormattedValues["swa_casetypeid"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		/// <summary>
-		/// The name of the custom entity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_name")]
-		public string swa_name
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("swa_name");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("swa_name", value);
-			}
-		}
-		
-		/// <summary>
-		/// For internal use only.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
-		public System.Nullable<int> TimeZoneRuleVersionNumber
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<int>>("timezoneruleversionnumber");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("timezoneruleversionnumber", value);
-			}
-		}
-		
-		/// <summary>
-		/// Time zone code that was in use when the record was created.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
-		public System.Nullable<int> UTCConversionTimeZoneCode
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<int>>("utcconversiontimezonecode");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("utcconversiontimezonecode", value);
-			}
-		}
-		
-		/// <summary>
-		/// Version Number
-		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
 		{
@@ -603,123 +638,129 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 1:N swa_swa_casecategory_incident_casecategoryid
+		/// N:1 business_unit_userform
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_swa_casecategory_incident_casecategoryid")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Incident> swa_swa_casecategory_incident_casecategoryid
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_userform")]
+		public SWA.CRM.D365.Entities.Base.BusinessUnit business_unit_userform
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Incident>("swa_swa_casecategory_incident_casecategoryid", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Incident>("swa_swa_casecategory_incident_casecategoryid", null, value);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.BusinessUnit>("business_unit_userform", null);
 			}
 		}
 		
 		/// <summary>
-		/// 1:N swa_swa_casecategory_swa_casesubcategory_casecategoryid
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_swa_casecategory_swa_casesubcategory_casecategoryid")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.swa_casesubcategory> swa_swa_casecategory_swa_casesubcategory_casecategoryid
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_casesubcategory>("swa_swa_casecategory_swa_casesubcategory_casecategoryid", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_casesubcategory>("swa_swa_casecategory_swa_casesubcategory_casecategoryid", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_swa_casecategory_createdby
+		/// N:1 lk_userform_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_swa_casecategory_createdby")]
-		public SWA.CRM.D365.Entities.Base.SystemUser lk_swa_casecategory_createdby
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_userform_createdby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_userform_createdby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_swa_casecategory_createdby", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_userform_createdby", null);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_swa_casecategory_createdonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_swa_casecategory_createdonbehalfby")]
-		public SWA.CRM.D365.Entities.Base.SystemUser lk_swa_casecategory_createdonbehalfby
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_swa_casecategory_createdonbehalfby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_swa_casecategory_createdonbehalfby", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_swa_casecategory_modifiedby
+		/// N:1 lk_userform_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_swa_casecategory_modifiedby")]
-		public SWA.CRM.D365.Entities.Base.SystemUser lk_swa_casecategory_modifiedby
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_userform_modifiedby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_userform_modifiedby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_swa_casecategory_modifiedby", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_userform_modifiedby", null);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_swa_casecategory_modifiedonbehalfby
+		/// N:1 lk_userformbase_createdonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_userformbase_createdonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_userformbase_createdonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_userformbase_createdonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_userformbase_createdonbehalfby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_userformbase_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_swa_casecategory_modifiedonbehalfby")]
-		public SWA.CRM.D365.Entities.Base.SystemUser lk_swa_casecategory_modifiedonbehalfby
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_userformbase_modifiedonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_userformbase_modifiedonbehalfby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_swa_casecategory_modifiedonbehalfby", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_userformbase_modifiedonbehalfby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_swa_casecategory_modifiedonbehalfby", null, value);
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_userformbase_modifiedonbehalfby", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 swa_swa_casetype_swa_casecategory_casetypeid
+		/// N:1 owner_userform
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("swa_casetypeid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("swa_swa_casetype_swa_casecategory_casetypeid")]
-		public SWA.CRM.D365.Entities.Base.swa_casetype swa_swa_casetype_swa_casecategory_casetypeid
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("owner_userform")]
+		public SWA.CRM.D365.Entities.Base.Owner owner_userform
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.swa_casetype>("swa_swa_casetype_swa_casecategory_casetypeid", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("owner_userform", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.swa_casetype>("swa_swa_casetype_swa_casecategory_casetypeid", null, value);
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("owner_userform", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 team_userform
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_userform")]
+		public SWA.CRM.D365.Entities.Base.Team team_userform
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Team>("team_userform", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 user_userform
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_userform")]
+		public SWA.CRM.D365.Entities.Base.SystemUser user_userform
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("user_userform", null);
 			}
 		}
 		
@@ -728,7 +769,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public swa_casecategory(object anonymousType) : 
+		public UserForm(object anonymousType) : 
 				this()
 		{
             foreach (var p in anonymousType.GetType().GetProperties())
@@ -746,9 +787,9 @@ namespace SWA.CRM.D365.Entities.Base
                 {
                     case "id":
                         base.Id = (System.Guid)value;
-                        Attributes["swa_casecategoryid"] = base.Id;
+                        Attributes["userformid"] = base.Id;
                         break;
-                    case "swa_casecategoryid":
+                    case "userformid":
                         var id = (System.Nullable<System.Guid>) value;
                         if(id == null){ continue; }
                         base.Id = id.Value;

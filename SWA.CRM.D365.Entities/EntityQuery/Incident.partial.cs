@@ -20,7 +20,7 @@ namespace SWA.CRM.D365.Entities.Base
         {
             return (from entity in dataContext.AccountSet
                     where entity.Name.Equals(organizationName.Trim())
-                    where entity.StateCode.Value == (int)AccountState.Active
+                    where entity.StateCode.Value == (int)account_statecode.Active
                     select entity).FirstOrDefault();
         }
 
@@ -35,7 +35,7 @@ namespace SWA.CRM.D365.Entities.Base
         {
             return (from entity in dataContext.AccountSet
                     where entity.Name.Contains(organizationName.Trim())
-                    where entity.StateCode.Value == (int)AccountState.Active
+                    where entity.StateCode.Value == (int)account_statecode.Active
                     select entity).FirstOrDefault();
         }
 
@@ -43,7 +43,7 @@ namespace SWA.CRM.D365.Entities.Base
         {
             return (from entity in dataContext.AccountSet
                     where entity.AccountNumber.Equals(organizationNo.Trim())
-                    where entity.StateCode.Value == (int)AccountState.Active
+                    where entity.StateCode.Value == (int)account_statecode.Active
                     select entity).FirstOrDefault();
         }
 
@@ -58,7 +58,7 @@ namespace SWA.CRM.D365.Entities.Base
         {
             var orgs = (from entity in dataContext.AccountSet
                         where entity.Name.Equals(newOrganizationName.Trim())
-                        where entity.StateCode.Value == (int)AccountState.Active
+                        where entity.StateCode.Value == (int)account_statecode.Active
                         select entity.Id).ToList();
 
             return (orgs.Any());

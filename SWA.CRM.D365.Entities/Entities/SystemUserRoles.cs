@@ -12,41 +12,38 @@ namespace SWA.CRM.D365.Entities.Base
 {
 	
 	
-	/// <summary>
-	/// Category for a Knowledge Article.
-	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("knowledgearticlescategories")]
-	public partial class KnowledgeArticlesCategories : Microsoft.Xrm.Sdk.Entity
+	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("systemuserroles")]
+	public partial class SystemUserRoles : Microsoft.Xrm.Sdk.Entity
 	{
 		
 		/// <summary>
-		/// Available fields, a the time of codegen, for the knowledgearticlescategories entity
+		/// Available fields, a the time of codegen, for the systemuserroles entity
 		/// </summary>
 		public partial class Fields
 		{
-			public const string CategoryId = "categoryid";
-			public const string knowledgearticle_category = "knowledgearticle_category";
-			public const string KnowledgeArticleCategoryId = "knowledgearticlecategoryid";
-			public const string Id = "knowledgearticlecategoryid";
-			public const string KnowledgeArticleId = "knowledgearticleid";
+			public const string RoleId = "roleid";
+			public const string SystemUserId = "systemuserid";
+			public const string SystemUserRoleId = "systemuserroleid";
+			public const string Id = "systemuserroleid";
+			public const string systemuserroles_association = "systemuserroles_association";
 			public const string VersionNumber = "versionnumber";
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KnowledgeArticlesCategories(System.Guid id) : 
+		public SystemUserRoles(System.Guid id) : 
 				base(EntityLogicalName, id)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KnowledgeArticlesCategories(string keyName, object keyValue) : 
+		public SystemUserRoles(string keyName, object keyValue) : 
 				base(EntityLogicalName, keyName, keyValue)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KnowledgeArticlesCategories(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
+		public SystemUserRoles(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
 				base(EntityLogicalName, keyAttributes)
 		{
 		}
@@ -55,48 +52,58 @@ namespace SWA.CRM.D365.Entities.Base
 		/// Default Constructor.
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KnowledgeArticlesCategories() : 
+		public SystemUserRoles() : 
 				base(EntityLogicalName)
 		{
 		}
 		
-		public const string PrimaryIdAttribute = "knowledgearticlecategoryid";
+		public const string PrimaryIdAttribute = "systemuserroleid";
 		
-		public const string EntitySchemaName = "KnowledgeArticlesCategories";
+		public const string EntitySchemaName = "SystemUserRoles";
 		
-		public const string EntityLogicalName = "knowledgearticlescategories";
+		public const string EntityLogicalName = "systemuserroles";
 		
 		public const string EntityLogicalCollectionName = null;
 		
-		public const string EntitySetName = "KnowledgeArticleCategories";
+		public const string EntitySetName = "systemuserrolescollection";
 		
-		public const int EntityTypeCode = 9960;
+		public const int EntityTypeCode = 15;
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("categoryid")]
-		public System.Nullable<System.Guid> CategoryId
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("roleid")]
+		public System.Nullable<System.Guid> RoleId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("categoryid");
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("roleid");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("systemuserid")]
+		public System.Nullable<System.Guid> SystemUserId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("systemuserid");
 			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the Category for the knowledge article.
+		/// For internal use only.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("knowledgearticlecategoryid")]
-		public System.Nullable<System.Guid> KnowledgeArticleCategoryId
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("systemuserroleid")]
+		public System.Nullable<System.Guid> SystemUserRoleId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("knowledgearticlecategoryid");
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("systemuserroleid");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("knowledgearticlecategoryid", value);
+				this.SetAttributeValue("systemuserroleid", value);
 				if (value.HasValue)
 				{
 					base.Id = value.Value;
@@ -108,7 +115,7 @@ namespace SWA.CRM.D365.Entities.Base
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("knowledgearticlecategoryid")]
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("systemuserroleid")]
 		public override System.Guid Id
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
@@ -119,17 +126,7 @@ namespace SWA.CRM.D365.Entities.Base
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.KnowledgeArticleCategoryId = value;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("knowledgearticleid")]
-		public System.Nullable<System.Guid> KnowledgeArticleId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("knowledgearticleid");
+				this.SystemUserRoleId = value;
 			}
 		}
 		
@@ -144,20 +141,20 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// N:N knowledgearticle_category
+		/// N:N systemuserroles_association
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("knowledgearticle_category")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.KnowledgeArticle> knowledgearticle_category
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("systemuserroles_association")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.SystemUser> systemuserroles_association
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("knowledgearticle_category", null);
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.SystemUser>("systemuserroles_association", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("knowledgearticle_category", null, value);
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.SystemUser>("systemuserroles_association", null, value);
 			}
 		}
 		
@@ -166,7 +163,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KnowledgeArticlesCategories(object anonymousType) : 
+		public SystemUserRoles(object anonymousType) : 
 				this()
 		{
             foreach (var p in anonymousType.GetType().GetProperties())
@@ -184,9 +181,9 @@ namespace SWA.CRM.D365.Entities.Base
                 {
                     case "id":
                         base.Id = (System.Guid)value;
-                        Attributes["knowledgearticlecategoryid"] = base.Id;
+                        Attributes["systemuserroleid"] = base.Id;
                         break;
-                    case "knowledgearticlecategoryid":
+                    case "systemuserroleid":
                         var id = (System.Nullable<System.Guid>) value;
                         if(id == null){ continue; }
                         base.Id = id.Value;

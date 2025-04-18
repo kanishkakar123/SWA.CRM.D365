@@ -13,19 +13,19 @@ namespace SWA.CRM.D365.Entities.Base
 	
 	
 	/// <summary>
-	/// Comment on a knowledge base article.
+	/// User Mapping
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("kbarticlecomment")]
-	public partial class KbArticleComment : Microsoft.Xrm.Sdk.Entity
+	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("usermapping")]
+	public partial class UserMapping : Microsoft.Xrm.Sdk.Entity
 	{
 		
 		/// <summary>
-		/// Available fields, a the time of codegen, for the kbarticlecomment entity
+		/// Available fields, a the time of codegen, for the usermapping entity
 		/// </summary>
 		public partial class Fields
 		{
-			public const string CommentText = "commenttext";
+			public const string ClaimType = "claimtype";
 			public const string CreatedBy = "createdby";
 			public const string CreatedByName = "createdbyname";
 			public const string CreatedByYomiName = "createdbyyominame";
@@ -33,14 +33,11 @@ namespace SWA.CRM.D365.Entities.Base
 			public const string CreatedOnBehalfBy = "createdonbehalfby";
 			public const string CreatedOnBehalfByName = "createdonbehalfbyname";
 			public const string CreatedOnBehalfByYomiName = "createdonbehalfbyyominame";
-			public const string kbarticle_comments = "kbarticle_comments";
-			public const string KbArticleCommentId = "kbarticlecommentid";
-			public const string Id = "kbarticlecommentid";
-			public const string KbArticleId = "kbarticleid";
-			public const string lk_kbarticlecomment_createdonbehalfby = "lk_kbarticlecomment_createdonbehalfby";
-			public const string lk_kbarticlecomment_modifiedonbehalfby = "lk_kbarticlecomment_modifiedonbehalfby";
-			public const string lk_kbarticlecommentbase_createdby = "lk_kbarticlecommentbase_createdby";
-			public const string lk_kbarticlecommentbase_modifiedby = "lk_kbarticlecommentbase_modifiedby";
+			public const string ExchangeRate = "exchangerate";
+			public const string lk_usermapping_createdby = "lk_usermapping_createdby";
+			public const string lk_usermapping_createdonbehalfby = "lk_usermapping_createdonbehalfby";
+			public const string lk_usermapping_modifiedby = "lk_usermapping_modifiedby";
+			public const string lk_usermapping_modifiedonbehalfby = "lk_usermapping_modifiedonbehalfby";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedByName = "modifiedbyname";
 			public const string ModifiedByYomiName = "modifiedbyyominame";
@@ -49,24 +46,33 @@ namespace SWA.CRM.D365.Entities.Base
 			public const string ModifiedOnBehalfByName = "modifiedonbehalfbyname";
 			public const string ModifiedOnBehalfByYomiName = "modifiedonbehalfbyyominame";
 			public const string OrganizationId = "organizationid";
-			public const string Title = "title";
+			public const string OrganizationIdName = "organizationidname";
+			public const string PartnerApplicationType = "partnerapplicationtype";
+			public const string SystemUserAttributeName = "systemuserattributename";
+			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
+			public const string TransactionCurrency_UserMapping = "TransactionCurrency_UserMapping";
+			public const string TransactionCurrencyId = "transactioncurrencyid";
+			public const string TransactionCurrencyIdName = "transactioncurrencyidname";
+			public const string UserMappingId = "usermappingid";
+			public const string Id = "usermappingid";
+			public const string UTCConversionTimeZoneCode = "utcconversiontimezonecode";
 			public const string VersionNumber = "versionnumber";
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KbArticleComment(System.Guid id) : 
+		public UserMapping(System.Guid id) : 
 				base(EntityLogicalName, id)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KbArticleComment(string keyName, object keyValue) : 
+		public UserMapping(string keyName, object keyValue) : 
 				base(EntityLogicalName, keyName, keyValue)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KbArticleComment(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
+		public UserMapping(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
 				base(EntityLogicalName, keyAttributes)
 		{
 		}
@@ -75,45 +81,43 @@ namespace SWA.CRM.D365.Entities.Base
 		/// Default Constructor.
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KbArticleComment() : 
+		public UserMapping() : 
 				base(EntityLogicalName)
 		{
 		}
 		
-		public const string PrimaryIdAttribute = "kbarticlecommentid";
+		public const string PrimaryIdAttribute = "usermappingid";
 		
-		public const string PrimaryNameAttribute = "title";
+		public const string EntitySchemaName = "UserMapping";
 		
-		public const string EntitySchemaName = "KbArticleComment";
+		public const string EntityLogicalName = "usermapping";
 		
-		public const string EntityLogicalName = "kbarticlecomment";
+		public const string EntityLogicalCollectionName = "usermappings";
 		
-		public const string EntityLogicalCollectionName = "kbarticlecomments";
+		public const string EntitySetName = "usermappings";
 		
-		public const string EntitySetName = "kbarticlecomments";
-		
-		public const int EntityTypeCode = 1082;
+		public const int EntityTypeCode = 2016;
 		
 		/// <summary>
-		/// Comment text for the knowledge base article.
+		/// The Claim Type
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("commenttext")]
-		public string CommentText
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("claimtype")]
+		public string ClaimType
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<string>("commenttext");
+				return this.GetAttributeValue<string>("claimtype");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("commenttext", value);
+				this.SetAttributeValue("claimtype", value);
 			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who created the knowledge base article comment.
+		/// Unique identifier of the user who created the record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -160,7 +164,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Date and time when the knowledge base article comment was created.
+		/// Date and time when the record was created.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
@@ -173,7 +177,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the kbarticlecomment.
+		/// Unique identifier of the delegate user who created the record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -225,66 +229,20 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the knowledge base article comment.
+		/// Exchange rate for the currency associated with the UserMapping with respect to the base currency.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kbarticlecommentid")]
-		public System.Nullable<System.Guid> KbArticleCommentId
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
+		public System.Nullable<decimal> ExchangeRate
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("kbarticlecommentid");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("kbarticlecommentid", value);
-				if (value.HasValue)
-				{
-					base.Id = value.Value;
-				}
-				else
-				{
-					base.Id = System.Guid.Empty;
-				}
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kbarticlecommentid")]
-		public override System.Guid Id
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return base.Id;
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.KbArticleCommentId = value;
+				return this.GetAttributeValue<System.Nullable<decimal>>("exchangerate");
 			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the knowledge base article to which the comment applies.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kbarticleid")]
-		public Microsoft.Xrm.Sdk.EntityReference KbArticleId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("kbarticleid");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("kbarticleid", value);
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier of the user who last modified the knowledge base article comment.
+		/// Unique identifier of the user who modified the record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -331,7 +289,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Date and time when the knowledge base article comment was last modified.
+		/// Date and time when the record was modified.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
@@ -344,7 +302,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who last modified the kbarticlecomment.
+		/// Unique identifier of the delegate user who modified the record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -396,33 +354,180 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the organization with which the article comment is associated.
+		/// Unique identifier for the organization
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
-		public System.Nullable<System.Guid> OrganizationId
+		public Microsoft.Xrm.Sdk.EntityReference OrganizationId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("organizationid");
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("organizationid");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationidname")]
+		public string OrganizationIdName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("organizationid"))
+				{
+					return this.FormattedValues["organizationid"];
+				}
+				else
+				{
+					return default(string);
+				}
 			}
 		}
 		
 		/// <summary>
-		/// Title of the knowledge base article comment.
+		/// The partner application for which this claim mapping is to be used. (exchange or sharepoint)
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("title")]
-		public string Title
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partnerapplicationtype")]
+		public virtual UserMapping_PartnerApplicationType? PartnerApplicationType
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<string>("title");
+				return ((UserMapping_PartnerApplicationType?)(EntityOptionSetEnum.GetEnum(this, "partnerapplicationtype")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("title", value);
+				this.SetAttributeValue("partnerapplicationtype", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+			}
+		}
+		
+		/// <summary>
+		/// The user attribute.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("systemuserattributename")]
+		public string SystemUserAttributeName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("systemuserattributename");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("systemuserattributename", value);
+			}
+		}
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
+		public System.Nullable<int> TimeZoneRuleVersionNumber
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("timezoneruleversionnumber");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("timezoneruleversionnumber", value);
+			}
+		}
+		
+		/// <summary>
+		/// Exchange rate for the currency associated with the UserMapping with respect to the base currency.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("transactioncurrencyid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("transactioncurrencyid", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyidname")]
+		public string TransactionCurrencyIdName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("transactioncurrencyid"))
+				{
+					return this.FormattedValues["transactioncurrencyid"];
+				}
+				else
+				{
+					return default(string);
+				}
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("usermappingid")]
+		public System.Nullable<System.Guid> UserMappingId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("usermappingid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("usermappingid", value);
+				if (value.HasValue)
+				{
+					base.Id = value.Value;
+				}
+				else
+				{
+					base.Id = System.Guid.Empty;
+				}
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("usermappingid")]
+		public override System.Guid Id
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return base.Id;
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.UserMappingId = value;
+			}
+		}
+		
+		/// <summary>
+		/// Time zone code that was in use when the record was created.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
+		public System.Nullable<int> UTCConversionTimeZoneCode
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("utcconversiontimezonecode");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("utcconversiontimezonecode", value);
 			}
 		}
 		
@@ -437,87 +542,87 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// N:1 kbarticle_comments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kbarticleid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("kbarticle_comments")]
-		public SWA.CRM.D365.Entities.Base.KbArticle kbarticle_comments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KbArticle>("kbarticle_comments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KbArticle>("kbarticle_comments", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_kbarticlecomment_createdonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kbarticlecomment_createdonbehalfby")]
-		public SWA.CRM.D365.Entities.Base.SystemUser lk_kbarticlecomment_createdonbehalfby
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_kbarticlecomment_createdonbehalfby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_kbarticlecomment_createdonbehalfby", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_kbarticlecomment_modifiedonbehalfby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kbarticlecomment_modifiedonbehalfby")]
-		public SWA.CRM.D365.Entities.Base.SystemUser lk_kbarticlecomment_modifiedonbehalfby
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_kbarticlecomment_modifiedonbehalfby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_kbarticlecomment_modifiedonbehalfby", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_kbarticlecommentbase_createdby
+		/// N:1 lk_usermapping_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kbarticlecommentbase_createdby")]
-		public SWA.CRM.D365.Entities.Base.SystemUser lk_kbarticlecommentbase_createdby
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_usermapping_createdby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_usermapping_createdby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_kbarticlecommentbase_createdby", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_usermapping_createdby", null);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_kbarticlecommentbase_modifiedby
+		/// N:1 lk_usermapping_createdonbehalfby
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_kbarticlecommentbase_modifiedby")]
-		public SWA.CRM.D365.Entities.Base.SystemUser lk_kbarticlecommentbase_modifiedby
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_usermapping_createdonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_usermapping_createdonbehalfby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_kbarticlecommentbase_modifiedby", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_usermapping_createdonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_usermapping_createdonbehalfby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_usermapping_modifiedby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_usermapping_modifiedby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_usermapping_modifiedby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_usermapping_modifiedby", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_usermapping_modifiedonbehalfby
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_usermapping_modifiedonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_usermapping_modifiedonbehalfby
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_usermapping_modifiedonbehalfby", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_usermapping_modifiedonbehalfby", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 TransactionCurrency_UserMapping
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("TransactionCurrency_UserMapping")]
+		public SWA.CRM.D365.Entities.Base.TransactionCurrency TransactionCurrency_UserMapping
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_UserMapping", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_UserMapping", null, value);
 			}
 		}
 		
@@ -526,7 +631,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public KbArticleComment(object anonymousType) : 
+		public UserMapping(object anonymousType) : 
 				this()
 		{
             foreach (var p in anonymousType.GetType().GetProperties())
@@ -544,9 +649,9 @@ namespace SWA.CRM.D365.Entities.Base
                 {
                     case "id":
                         base.Id = (System.Guid)value;
-                        Attributes["kbarticlecommentid"] = base.Id;
+                        Attributes["usermappingid"] = base.Id;
                         break;
-                    case "kbarticlecommentid":
+                    case "usermappingid":
                         var id = (System.Nullable<System.Guid>) value;
                         if(id == null){ continue; }
                         base.Id = id.Value;

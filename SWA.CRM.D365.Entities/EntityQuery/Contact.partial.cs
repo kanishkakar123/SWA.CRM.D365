@@ -17,7 +17,7 @@ namespace SWA.CRM.D365.Entities.Base
         {
             return (from entity in dataContext.ContactSet
                     where entity.FullName.Equals(contactFullName)
-                    where entity.StateCode.Value == (int)ContactState.Active
+                    where entity.StateCode.Value == (int)contact_statecode.Active
                     orderby entity.ModifiedOn descending
                     select entity).FirstOrDefault();
         }
@@ -27,7 +27,7 @@ namespace SWA.CRM.D365.Entities.Base
             return (from entity in dataContext.ContactSet
                     where entity.FullName.Equals(contactFullName)
                     where entity.ParentCustomerId.Id.Equals(organizationId)
-                    where entity.StateCode.Value == (int)ContactState.Active
+                    where entity.StateCode.Value == (int)contact_statecode.Active
                     select entity).FirstOrDefault();
         }
 
@@ -36,7 +36,7 @@ namespace SWA.CRM.D365.Entities.Base
             return (from entity in dataContext.ContactSet
                     where entity.FullName.Equals(contactFullName)
                     where entity.ParentCustomerId.Id.Equals(organizationId)
-                    where entity.StateCode.Value == (int)ContactState.Active
+                    where entity.StateCode.Value == (int)contact_statecode.Active
                     where entity.EMailAddress1 == null
                     select entity).FirstOrDefault();
         }
@@ -46,7 +46,7 @@ namespace SWA.CRM.D365.Entities.Base
         {
             return (from entity in dataContext.ContactSet
                     where entity.EMailAddress1.Equals(contactEmailAddress, StringComparison.OrdinalIgnoreCase)
-                    where entity.StateCode.Value == (int)ContactState.Active
+                    where entity.StateCode.Value == (int)contact_statecode.Active
                     select entity).FirstOrDefault();
         }
 
@@ -54,7 +54,7 @@ namespace SWA.CRM.D365.Entities.Base
         {
             IEnumerable<Guid> contactExist = (from entity in dataContext.ContactSet
                                               where entity.EMailAddress1.Equals(contactEmailAddress, StringComparison.OrdinalIgnoreCase)
-                                              where entity.StateCode.Value == (int)ContactState.Active
+                                              where entity.StateCode.Value == (int)contact_statecode.Active
                                               select entity.Id);
 
             return (contactExist.Any());

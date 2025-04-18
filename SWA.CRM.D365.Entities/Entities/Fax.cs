@@ -13,21 +13,20 @@ namespace SWA.CRM.D365.Entities.Base
 	
 	
 	/// <summary>
-	/// Special type of activity that includes description of the resolution, billing status, and the duration of the case.
+	/// Activity that tracks call outcome and number of pages for a fax and optionally stores an electronic copy of the document.
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("incidentresolution")]
-	public partial class IncidentResolution : Microsoft.Xrm.Sdk.Entity
+	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("fax")]
+	public partial class Fax : Microsoft.Xrm.Sdk.Entity
 	{
 		
 		/// <summary>
-		/// Available fields, a the time of codegen, for the incidentresolution entity
+		/// Available fields, a the time of codegen, for the fax entity
 		/// </summary>
 		public partial class Fields
 		{
-			public const string account_IncidentResolutions = "account_IncidentResolutions";
-			public const string activity_pointer_incident_resolution = "activity_pointer_incident_resolution";
-			public const string ActivityAdditionalParams = "activityadditionalparams";
+			public const string Account_Faxes = "Account_Faxes";
+			public const string activity_pointer_fax = "activity_pointer_fax";
 			public const string ActivityId = "activityid";
 			public const string Id = "activityid";
 			public const string ActivityTypeCode = "activitytypecode";
@@ -35,100 +34,78 @@ namespace SWA.CRM.D365.Entities.Base
 			public const string ActualDurationMinutes = "actualdurationminutes";
 			public const string ActualEnd = "actualend";
 			public const string ActualStart = "actualstart";
-			public const string Bcc = "bcc";
-			public const string business_unit_incident_resolution_activities = "business_unit_incident_resolution_activities";
+			public const string BillingCode = "billingcode";
+			public const string business_unit_fax_activities = "business_unit_fax_activities";
 			public const string Category = "category";
-			public const string Cc = "cc";
-			public const string Community = "community";
-			public const string CommunityName = "communityname";
+			public const string Contact_Faxes = "Contact_Faxes";
+			public const string CoverPageName = "coverpagename";
 			public const string CreatedBy = "createdby";
-			public const string CreatedByExternalParty = "createdbyexternalparty";
-			public const string CreatedByExternalPartyName = "createdbyexternalpartyname";
-			public const string CreatedByExternalPartyYomiName = "createdbyexternalpartyyominame";
 			public const string CreatedByName = "createdbyname";
 			public const string CreatedByYomiName = "createdbyyominame";
 			public const string CreatedOn = "createdon";
 			public const string CreatedOnBehalfBy = "createdonbehalfby";
 			public const string CreatedOnBehalfByName = "createdonbehalfbyname";
 			public const string CreatedOnBehalfByYomiName = "createdonbehalfbyyominame";
-			public const string Customers = "customers";
-			public const string DeliveryLastAttemptedOn = "deliverylastattemptedon";
-			public const string DeliveryPriorityCode = "deliveryprioritycode";
-			public const string DeliveryPriorityCodeName = "deliveryprioritycodename";
 			public const string Description = "description";
-			public const string ExchangeItemId = "exchangeitemid";
+			public const string DirectionCode = "directioncode";
+			public const string DirectionCodeName = "directioncodename";
+			public const string entitlement_Faxes = "entitlement_Faxes";
 			public const string ExchangeRate = "exchangerate";
-			public const string ExchangeWebLink = "exchangeweblink";
+			public const string fax_activity_parties = "fax_activity_parties";
+			public const string Fax_Annotation = "Fax_Annotation";
+			public const string Fax_QueueItem = "Fax_QueueItem";
+			public const string FaxNumber = "faxnumber";
 			public const string From = "from";
 			public const string ImportSequenceNumber = "importsequencenumber";
-			public const string Incident_IncidentResolutions = "Incident_IncidentResolutions";
-			public const string IncidentId = "incidentid";
-			public const string IncidentIdName = "incidentidname";
-			public const string incidentresolution_activity_parties = "incidentresolution_activity_parties";
-			public const string IncidentResolution_Annotation = "IncidentResolution_Annotation";
-			public const string incidentresolution_owner_ownerid = "incidentresolution_owner_ownerid";
-			public const string incidentresolution_transactioncurrency_transactioncurrencyid = "incidentresolution_transactioncurrency_transactioncurrencyid";
-			public const string InstanceTypeCode = "instancetypecode";
-			public const string InstanceTypeCodeName = "instancetypecodename";
+			public const string Incident_Faxes = "Incident_Faxes";
 			public const string IsBilled = "isbilled";
 			public const string IsBilledName = "isbilledname";
-			public const string IsMapiPrivate = "ismapiprivate";
-			public const string IsMapiPrivateName = "ismapiprivatename";
 			public const string IsRegularActivity = "isregularactivity";
 			public const string IsRegularActivityName = "isregularactivityname";
 			public const string IsWorkflowCreated = "isworkflowcreated";
 			public const string IsWorkflowCreatedName = "isworkflowcreatedname";
+			public const string KnowledgeArticle_Faxes = "KnowledgeArticle_Faxes";
+			public const string KnowledgeBaseRecord_Faxes = "KnowledgeBaseRecord_Faxes";
 			public const string LastOnHoldTime = "lastonholdtime";
-			public const string LeftVoiceMail = "leftvoicemail";
-			public const string LeftVoiceMailName = "leftvoicemailname";
-			public const string lk_incidentresolution_createdby = "lk_incidentresolution_createdby";
-			public const string lk_incidentresolution_createdonbehalfby = "lk_incidentresolution_createdonbehalfby";
-			public const string lk_incidentresolution_modifiedby = "lk_incidentresolution_modifiedby";
-			public const string lk_incidentresolution_modifiedonbehalfby = "lk_incidentresolution_modifiedonbehalfby";
+			public const string lk_fax_createdby = "lk_fax_createdby";
+			public const string lk_fax_createdonbehalfby = "lk_fax_createdonbehalfby";
+			public const string lk_fax_modifiedby = "lk_fax_modifiedby";
+			public const string lk_fax_modifiedonbehalfby = "lk_fax_modifiedonbehalfby";
+			public const string manualsla_fax = "manualsla_fax";
 			public const string ModifiedBy = "modifiedby";
-			public const string ModifiedByExternalParty = "modifiedbyexternalparty";
-			public const string ModifiedByExternalPartyName = "modifiedbyexternalpartyname";
-			public const string ModifiedByExternalPartyYomiName = "modifiedbyexternalpartyyominame";
 			public const string ModifiedByName = "modifiedbyname";
 			public const string ModifiedByYomiName = "modifiedbyyominame";
 			public const string ModifiedOn = "modifiedon";
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
 			public const string ModifiedOnBehalfByName = "modifiedonbehalfbyname";
 			public const string ModifiedOnBehalfByYomiName = "modifiedonbehalfbyyominame";
+			public const string NumberOfPages = "numberofpages";
 			public const string OnHoldTime = "onholdtime";
-			public const string OptionalAttendees = "optionalattendees";
-			public const string Organizer = "organizer";
 			public const string OverriddenCreatedOn = "overriddencreatedon";
+			public const string owner_faxes = "owner_faxes";
 			public const string OwnerId = "ownerid";
 			public const string OwnerIdName = "owneridname";
 			public const string OwnerIdYomiName = "owneridyominame";
 			public const string OwningBusinessUnit = "owningbusinessunit";
 			public const string OwningTeam = "owningteam";
 			public const string OwningUser = "owninguser";
-			public const string Partners = "partners";
-			public const string PostponeActivityProcessingUntil = "postponeactivityprocessinguntil";
 			public const string PriorityCode = "prioritycode";
 			public const string PriorityCodeName = "prioritycodename";
 			public const string ProcessId = "processid";
 			public const string RegardingObjectId = "regardingobjectid";
 			public const string RegardingObjectIdName = "regardingobjectidname";
 			public const string RegardingObjectIdYomiName = "regardingobjectidyominame";
-			public const string RequiredAttendees = "requiredattendees";
-			public const string ResolutionTypeCode = "resolutiontypecode";
-			public const string resolutiontypecodeName = "resolutiontypecodename";
-			public const string Resources = "resources";
 			public const string ScheduledDurationMinutes = "scheduleddurationminutes";
 			public const string ScheduledEnd = "scheduledend";
 			public const string ScheduledStart = "scheduledstart";
-			public const string SenderMailboxId = "sendermailboxid";
-			public const string SenderMailboxIdName = "sendermailboxidname";
-			public const string SentOn = "senton";
-			public const string SeriesId = "seriesid";
+			public const string service_faxes = "service_faxes";
 			public const string ServiceId = "serviceid";
 			public const string ServiceIdName = "serviceidname";
+			public const string sla_fax = "sla_fax";
 			public const string SLAId = "slaid";
 			public const string SLAInvokedId = "slainvokedid";
 			public const string SLAInvokedIdName = "slainvokedidname";
+			public const string slakpiinstance_fax = "slakpiinstance_fax";
 			public const string SLAName = "slaname";
 			public const string SortDate = "sortdate";
 			public const string StageId = "stageid";
@@ -138,33 +115,34 @@ namespace SWA.CRM.D365.Entities.Base
 			public const string StatusCodeName = "statuscodename";
 			public const string Subcategory = "subcategory";
 			public const string Subject = "subject";
-			public const string team_incidentresolution = "team_incidentresolution";
-			public const string TimeSpent = "timespent";
+			public const string SubscriptionId = "subscriptionid";
+			public const string team_fax = "team_fax";
 			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
 			public const string To = "to";
-			public const string TotalTimeSpent = "totaltimespent";
+			public const string TransactionCurrency_Fax = "TransactionCurrency_Fax";
 			public const string TransactionCurrencyId = "transactioncurrencyid";
 			public const string TransactionCurrencyIdName = "transactioncurrencyidname";
 			public const string TraversedPath = "traversedpath";
-			public const string user_incidentresolution = "user_incidentresolution";
+			public const string Tsid = "tsid";
+			public const string user_fax = "user_fax";
 			public const string UTCConversionTimeZoneCode = "utcconversiontimezonecode";
 			public const string VersionNumber = "versionnumber";
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public IncidentResolution(System.Guid id) : 
+		public Fax(System.Guid id) : 
 				base(EntityLogicalName, id)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public IncidentResolution(string keyName, object keyValue) : 
+		public Fax(string keyName, object keyValue) : 
 				base(EntityLogicalName, keyName, keyValue)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public IncidentResolution(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
+		public Fax(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
 				base(EntityLogicalName, keyAttributes)
 		{
 		}
@@ -173,7 +151,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// Default Constructor.
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public IncidentResolution() : 
+		public Fax() : 
 				base(EntityLogicalName)
 		{
 		}
@@ -182,36 +160,18 @@ namespace SWA.CRM.D365.Entities.Base
 		
 		public const string PrimaryNameAttribute = "subject";
 		
-		public const string EntitySchemaName = "IncidentResolution";
+		public const string EntitySchemaName = "Fax";
 		
-		public const string EntityLogicalName = "incidentresolution";
+		public const string EntityLogicalName = "fax";
 		
-		public const string EntityLogicalCollectionName = "incidentresolutions";
+		public const string EntityLogicalCollectionName = "faxes";
 		
-		public const string EntitySetName = "incidentresolutions";
+		public const string EntitySetName = "faxes";
 		
-		public const int EntityTypeCode = 4206;
-		
-		/// <summary>
-		/// Additional information provided by the external application as JSON. For internal use only.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityadditionalparams")]
-		public string ActivityAdditionalParams
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("activityadditionalparams");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("activityadditionalparams", value);
-			}
-		}
+		public const int EntityTypeCode = 4204;
 		
 		/// <summary>
-		/// Unique identifier of the case resolution activity.
+		/// Unique identifier of the fax activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
 		public System.Nullable<System.Guid> ActivityId
@@ -282,7 +242,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Actual duration of the case resolution activity in minutes.
+		/// Type the number of minutes spent creating and sending the fax. The duration is used in reporting.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("actualdurationminutes")]
 		public System.Nullable<int> ActualDurationMinutes
@@ -300,7 +260,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Actual end time of the case resolution activity.
+		/// Enter the actual end date and time of the fax. By default, it displays the date and time when the activity was completed or canceled, but can be edited to capture the actual time to create and send the fax.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("actualend")]
 		public System.Nullable<System.DateTime> ActualEnd
@@ -318,7 +278,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Actual start time of the case resolution activity.
+		/// Enter the actual start date and time for the fax. By default, it displays the date and time when the activity was created, but can be edited to capture the actual time to create and send the fax.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("actualstart")]
 		public System.Nullable<System.DateTime> ActualStart
@@ -336,41 +296,25 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Blind Carbon-copy (bcc) recipients of the activity.
+		/// Type the billing code for the fax to make sure the fax is charged to the correct sender or customer account.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("bcc")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> Bcc
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("billingcode")]
+		public string BillingCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("bcc");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
+				return this.GetAttributeValue<string>("billingcode");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				if ((value == null))
-				{
-					this.SetAttributeValue("bcc", value);
-				}
-				else
-				{
-					this.SetAttributeValue("bcc", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
+				this.SetAttributeValue("billingcode", value);
 			}
 		}
 		
 		/// <summary>
-		/// Category for the case resolution activity.
+		/// Type a category to identify the fax type, such as sales offer or press release, to tie the fax to a business group or function.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("category")]
 		public string Category
@@ -388,76 +332,25 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Carbon-copy (cc) recipients of the activity.
+		/// Type the name of the cover page to use when sending the fax.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("cc")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> Cc
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("coverpagename")]
+		public string CoverPageName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("cc");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
+				return this.GetAttributeValue<string>("coverpagename");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				if ((value == null))
-				{
-					this.SetAttributeValue("cc", value);
-				}
-				else
-				{
-					this.SetAttributeValue("cc", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
+				this.SetAttributeValue("coverpagename", value);
 			}
 		}
 		
 		/// <summary>
-		/// Shows how contact about the social activity originated, such as from Twitter or Facebook. This field is read-only.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("community")]
-		public virtual SocialProfile_Community? Community
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((SocialProfile_Community?)(EntityOptionSetEnum.GetEnum(this, "community")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("community", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("communityname")]
-		public string CommunityName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("community"))
-				{
-					return this.FormattedValues["community"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier of the user who created the case resolution activity.
+		/// Shows who created the record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -466,53 +359,6 @@ namespace SWA.CRM.D365.Entities.Base
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
-			}
-		}
-		
-		/// <summary>
-		/// Shows the external party who created the record.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyexternalparty")]
-		public Microsoft.Xrm.Sdk.EntityReference CreatedByExternalParty
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdbyexternalparty");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyexternalpartyname")]
-		public string CreatedByExternalPartyName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("createdbyexternalparty"))
-				{
-					return this.FormattedValues["createdbyexternalparty"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyexternalpartyyominame")]
-		public string CreatedByExternalPartyYomiName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("createdbyexternalparty"))
-				{
-					return this.FormattedValues["createdbyexternalparty"];
-				}
-				else
-				{
-					return default(string);
-				}
 			}
 		}
 		
@@ -551,7 +397,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Date and time when the case resolution activity was created.
+		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
@@ -564,7 +410,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the incidentresolution.
+		/// Shows who created the record on behalf of another user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -616,89 +462,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Customer with which the activity is associated.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customers")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> Customers
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("customers");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				if ((value == null))
-				{
-					this.SetAttributeValue("customers", value);
-				}
-				else
-				{
-					this.SetAttributeValue("customers", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
-			}
-		}
-		
-		/// <summary>
-		/// Date and time when the delivery of the activity was last attempted.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("deliverylastattemptedon")]
-		public System.Nullable<System.DateTime> DeliveryLastAttemptedOn
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("deliverylastattemptedon");
-			}
-		}
-		
-		/// <summary>
-		/// Priority of delivery of the activity to the email server.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("deliveryprioritycode")]
-		public virtual activitypointer_DeliveryPriorityCode? DeliveryPriorityCode
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((activitypointer_DeliveryPriorityCode?)(EntityOptionSetEnum.GetEnum(this, "deliveryprioritycode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("deliveryprioritycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("deliveryprioritycodename")]
-		public string DeliveryPriorityCodeName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("deliveryprioritycode"))
-				{
-					return this.FormattedValues["deliveryprioritycode"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		/// <summary>
-		/// Type additional information that describes the case resolution.
+		/// Type additional information to describe the fax, such as the primary message or the products and services featured.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("description")]
 		public string Description
@@ -716,25 +480,42 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// The message id of activity which is returned from Exchange Server.
+		/// Select the direction of the fax as incoming or outbound.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangeitemid")]
-		public string ExchangeItemId
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("directioncode")]
+		public System.Nullable<bool> DirectionCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<string>("exchangeitemid");
+				return this.GetAttributeValue<System.Nullable<bool>>("directioncode");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("exchangeitemid", value);
+				this.SetAttributeValue("directioncode", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("directioncodename")]
+		public string DirectionCodeName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("directioncode"))
+				{
+					return this.FormattedValues["directioncode"];
+				}
+				else
+				{
+					return default(string);
+				}
 			}
 		}
 		
 		/// <summary>
-		/// Exchange rate for the currency associated with the activitypointer with respect to the base currency.
+		/// Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
 		public System.Nullable<decimal> ExchangeRate
@@ -747,25 +528,25 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Shows the web link of Activity of type email.
+		/// Type the recipient's fax number.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangeweblink")]
-		public string ExchangeWebLink
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("faxnumber")]
+		public string FaxNumber
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<string>("exchangeweblink");
+				return this.GetAttributeValue<string>("faxnumber");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("exchangeweblink", value);
+				this.SetAttributeValue("faxnumber", value);
 			}
 		}
 		
 		/// <summary>
-		/// Person who the activity is from.
+		/// Enter the account, contact, lead, queue, or user who sent the fax.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("from")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> From
@@ -799,7 +580,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Sequence number of the import that created this record.
+		/// Unique identifier of the data import or data migration that created this record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
 		public System.Nullable<int> ImportSequenceNumber
@@ -817,72 +598,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the case.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incidentid")]
-		public Microsoft.Xrm.Sdk.EntityReference IncidentId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("incidentid");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("incidentid", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incidentidname")]
-		public string IncidentIdName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("incidentid"))
-				{
-					return this.FormattedValues["incidentid"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		/// <summary>
-		/// Type of instance of a recurring series.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("instancetypecode")]
-		public virtual IncidentResolution_InstanceTypeCode? InstanceTypeCode
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((IncidentResolution_InstanceTypeCode?)(EntityOptionSetEnum.GetEnum(this, "instancetypecode")));
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("instancetypecodename")]
-		public string InstanceTypeCodeName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("instancetypecode"))
-				{
-					return this.FormattedValues["instancetypecode"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		/// <summary>
-		/// Information about whether the case resolution activity was billed as part of resolving a case.
+		/// Information regarding whether the fax activity was billed as part of resolving a case.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isbilled")]
 		public System.Nullable<bool> IsBilled
@@ -908,41 +624,6 @@ namespace SWA.CRM.D365.Entities.Base
 				if (this.FormattedValues.Contains("isbilled"))
 				{
 					return this.FormattedValues["isbilled"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		/// <summary>
-		/// For internal use only.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismapiprivate")]
-		public System.Nullable<bool> IsMapiPrivate
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<bool>>("ismapiprivate");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("ismapiprivate", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismapiprivatename")]
-		public string IsMapiPrivateName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("ismapiprivate"))
-				{
-					return this.FormattedValues["ismapiprivate"];
 				}
 				else
 				{
@@ -982,7 +663,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Information that specifies if the case resolution activity was created from a workflow rule.
+		/// Indication of whether the fax activity was created by a workflow rule.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isworkflowcreated")]
 		public System.Nullable<bool> IsWorkflowCreated
@@ -1035,42 +716,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Left the voice mail
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("leftvoicemail")]
-		public System.Nullable<bool> LeftVoiceMail
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<bool>>("leftvoicemail");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("leftvoicemail", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("leftvoicemailname")]
-		public string LeftVoiceMailName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("leftvoicemail"))
-				{
-					return this.FormattedValues["leftvoicemail"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier of the user who last modified the case resolution activity.
+		/// Shows who last updated the record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -1079,53 +725,6 @@ namespace SWA.CRM.D365.Entities.Base
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
-			}
-		}
-		
-		/// <summary>
-		/// Shows the external party who modified the record.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyexternalparty")]
-		public Microsoft.Xrm.Sdk.EntityReference ModifiedByExternalParty
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedbyexternalparty");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyexternalpartyname")]
-		public string ModifiedByExternalPartyName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("modifiedbyexternalparty"))
-				{
-					return this.FormattedValues["modifiedbyexternalparty"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyexternalpartyyominame")]
-		public string ModifiedByExternalPartyYomiName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("modifiedbyexternalparty"))
-				{
-					return this.FormattedValues["modifiedbyexternalparty"];
-				}
-				else
-				{
-					return default(string);
-				}
 			}
 		}
 		
@@ -1164,7 +763,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Date and time when the case resolution activity was last modified.
+		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
@@ -1177,7 +776,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who last modified the incidentresolution.
+		/// Shows who last updated the record on behalf of another user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -1229,6 +828,24 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// Type the number of pages included in the fax.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("numberofpages")]
+		public System.Nullable<int> NumberOfPages
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("numberofpages");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("numberofpages", value);
+			}
+		}
+		
+		/// <summary>
 		/// Shows how long, in minutes, that the record was on hold.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("onholdtime")]
@@ -1238,74 +855,6 @@ namespace SWA.CRM.D365.Entities.Base
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("onholdtime");
-			}
-		}
-		
-		/// <summary>
-		/// List of optional attendees for the activity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("optionalattendees")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> OptionalAttendees
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("optionalattendees");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				if ((value == null))
-				{
-					this.SetAttributeValue("optionalattendees", value);
-				}
-				else
-				{
-					this.SetAttributeValue("optionalattendees", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
-			}
-		}
-		
-		/// <summary>
-		/// Person who organized the activity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizer")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> Organizer
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("organizer");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				if ((value == null))
-				{
-					this.SetAttributeValue("organizer", value);
-				}
-				else
-				{
-					this.SetAttributeValue("organizer", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
 			}
 		}
 		
@@ -1328,7 +877,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user or team who owns the activity.
+		/// Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
 		public Microsoft.Xrm.Sdk.EntityReference OwnerId
@@ -1380,7 +929,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the business unit that owns the activity.
+		/// Unique identifier of the business unit that owns the fax activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningBusinessUnit
@@ -1393,7 +942,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the team that owns the activity.
+		/// Unique identifier of the team that owns the fax activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningTeam
@@ -1406,7 +955,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user that owns the activity.
+		/// Unique identifier of the user that owns the fax activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningUser
@@ -1419,62 +968,15 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Outsource vendor with which activity is associated.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partners")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> Partners
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("partners");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				if ((value == null))
-				{
-					this.SetAttributeValue("partners", value);
-				}
-				else
-				{
-					this.SetAttributeValue("partners", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
-			}
-		}
-		
-		/// <summary>
-		/// For internal use only.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("postponeactivityprocessinguntil")]
-		public System.Nullable<System.DateTime> PostponeActivityProcessingUntil
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("postponeactivityprocessinguntil");
-			}
-		}
-		
-		/// <summary>
-		/// Priority of the activity.
+		/// Select the priority so that preferred customers or critical issues are handled quickly.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prioritycode")]
-		public virtual IncidentResolution_PriorityCode? PriorityCode
+		public virtual Fax_PriorityCode? PriorityCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((IncidentResolution_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
+				return ((Fax_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1501,7 +1003,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the Process.
+		/// Shows the ID of the process.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("processid")]
 		public System.Nullable<System.Guid> ProcessId
@@ -1519,7 +1021,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the object with which the activity is associated.
+		/// Choose the record that the fax relates to.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
 		public Microsoft.Xrm.Sdk.EntityReference RegardingObjectId
@@ -1551,11 +1053,6 @@ namespace SWA.CRM.D365.Entities.Base
 					return default(string);
 				}
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("regardingobjectidname", value);
-			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectidyominame")]
@@ -1573,115 +1070,10 @@ namespace SWA.CRM.D365.Entities.Base
 					return default(string);
 				}
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("regardingobjectidyominame", value);
-			}
 		}
 		
 		/// <summary>
-		/// List of required attendees for the activity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("requiredattendees")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> RequiredAttendees
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("requiredattendees");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				if ((value == null))
-				{
-					this.SetAttributeValue("requiredattendees", value);
-				}
-				else
-				{
-					this.SetAttributeValue("requiredattendees", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resolutiontypecode")]
-		public virtual IncidentResolution_ResolutionTypeCode? ResolutionTypeCode
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((IncidentResolution_ResolutionTypeCode?)(EntityOptionSetEnum.GetEnum(this, "resolutiontypecode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("resolutiontypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resolutiontypecodename")]
-		public string resolutiontypecodeName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("resolutiontypecode"))
-				{
-					return this.FormattedValues["resolutiontypecode"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		/// <summary>
-		/// Users or facility/equipment that are required for the activity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resources")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> Resources
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("resources");
-				if (((collection != null) 
-							&& (collection.Entities != null)))
-				{
-					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, SWA.CRM.D365.Entities.Base.ActivityParty>(collection.Entities, e => e.ToEntity<SWA.CRM.D365.Entities.Base.ActivityParty>());
-				}
-				else
-				{
-					return null;
-				}
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				if ((value == null))
-				{
-					this.SetAttributeValue("resources", value);
-				}
-				else
-				{
-					this.SetAttributeValue("resources", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
-				}
-			}
-		}
-		
-		/// <summary>
-		/// Scheduled duration of the case resolution activity, specified in minutes.
+		/// Shows the expected duration of the fax activity, in minutes.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scheduleddurationminutes")]
 		public System.Nullable<int> ScheduledDurationMinutes
@@ -1694,7 +1086,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Scheduled end time of the case resolution activity.
+		/// Enter the expected due date and time.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scheduledend")]
 		public System.Nullable<System.DateTime> ScheduledEnd
@@ -1712,7 +1104,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Scheduled start time of the case resolution activity.
+		/// Enter the expected due date and time.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scheduledstart")]
 		public System.Nullable<System.DateTime> ScheduledStart
@@ -1730,63 +1122,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the mailbox associated with the sender of the email message.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sendermailboxid")]
-		public Microsoft.Xrm.Sdk.EntityReference SenderMailboxId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("sendermailboxid");
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sendermailboxidname")]
-		public string SenderMailboxIdName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("sendermailboxid"))
-				{
-					return this.FormattedValues["sendermailboxid"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		/// <summary>
-		/// Date and time when the activity was sent.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("senton")]
-		public System.Nullable<System.DateTime> SentOn
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.DateTime>>("senton");
-			}
-		}
-		
-		/// <summary>
-		/// Uniqueidentifier specifying the id of recurring series of an instance.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("seriesid")]
-		public System.Nullable<System.Guid> SeriesId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("seriesid");
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier of the service with which the case resolution activity is associated.
+		/// Unique identifier for an associated service.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("serviceid")]
 		public Microsoft.Xrm.Sdk.EntityReference ServiceId
@@ -1821,7 +1157,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Choose the service level agreement (SLA) that you want to apply to the case record.
+		/// Choose the service level agreement (SLA) that you want to apply to the fax record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
 		public Microsoft.Xrm.Sdk.EntityReference SLAId
@@ -1839,7 +1175,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Last SLA that was applied to this case. This field is for internal use only.
+		/// Last SLA that was applied to this fax. This field is for internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
 		public Microsoft.Xrm.Sdk.EntityReference SLAInvokedId
@@ -1904,7 +1240,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Unique identifier of the Stage.
+		/// Shows the ID of the stage.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stageid")]
 		public System.Nullable<System.Guid> StageId
@@ -1922,15 +1258,15 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Shows whether the case resolution is open, completed, or canceled. By default, all case resolutions are completed and the status value can't be changed.
+		/// Shows whether the fax activity is open, completed, or canceled. Completed and canceled fax activities are read-only and can't be edited.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
-		public virtual incidentresolution_statecode? StateCode
+		public virtual fax_statecode? StateCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((incidentresolution_statecode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
+				return ((fax_statecode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1957,15 +1293,15 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Reason for the status of the case resolution activity.
+		/// Select the fax's status.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual IncidentResolution_StatusCode? StatusCode
+		public virtual Fax_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((IncidentResolution_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
+				return ((Fax_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -1992,7 +1328,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Subcategory of the case resolution activity.
+		/// Type a subcategory to identify the fax type to relate the activity to a specific product, sales region, business group, or other function.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subcategory")]
 		public string Subcategory
@@ -2010,7 +1346,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Subject associated with the case resolution activity.
+		/// Type a short description about the objective or primary topic of the fax.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subject")]
 		public string Subject
@@ -2028,20 +1364,20 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Time spent on the case resolution activity.
+		/// For internal use only.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timespent")]
-		public System.Nullable<int> TimeSpent
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subscriptionid")]
+		public System.Nullable<System.Guid> SubscriptionId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<int>>("timespent");
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("subscriptionid");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("timespent", value);
+				this.SetAttributeValue("subscriptionid", value);
 			}
 		}
 		
@@ -2064,7 +1400,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Person who is the receiver of the activity.
+		/// Enter the account, contact, lead, queue, or user recipients for the fax.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("to")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> To
@@ -2098,25 +1434,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Total time spent on the case resolution activity.
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("totaltimespent")]
-		public System.Nullable<int> TotalTimeSpent
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<int>>("totaltimespent");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("totaltimespent", value);
-			}
-		}
-		
-		/// <summary>
-		/// Unique identifier of the currency associated with the activitypointer.
+		/// Choose the local currency for the record to make sure budgets are reported in the correct currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
@@ -2169,6 +1487,24 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
+		/// Type the Transmitting Subscriber ID (TSID) associated with a send action. This is typically a combination of the recipient's fax or phone number and company name.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("tsid")]
+		public string Tsid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("tsid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("tsid", value);
+			}
+		}
+		
+		/// <summary>
 		/// Time zone code that was in use when the record was created.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
@@ -2187,7 +1523,7 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// Version number of the activity.
+		/// Version number of the fax.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
@@ -2200,241 +1536,405 @@ namespace SWA.CRM.D365.Entities.Base
 		}
 		
 		/// <summary>
-		/// 1:N incidentresolution_activity_parties
+		/// 1:N fax_activity_parties
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incidentresolution_activity_parties")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> incidentresolution_activity_parties
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("fax_activity_parties")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityParty> fax_activity_parties
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityParty>("incidentresolution_activity_parties", null);
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityParty>("fax_activity_parties", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityParty>("incidentresolution_activity_parties", null, value);
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityParty>("fax_activity_parties", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// 1:N IncidentResolution_Annotation
+		/// 1:N Fax_Annotation
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("IncidentResolution_Annotation")]
-		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Annotation> IncidentResolution_Annotation
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Fax_Annotation")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Annotation> Fax_Annotation
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("IncidentResolution_Annotation", null);
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("Fax_Annotation", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("IncidentResolution_Annotation", null, value);
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("Fax_Annotation", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 account_IncidentResolutions
+		/// 1:N Fax_QueueItem
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Fax_QueueItem")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.QueueItem> Fax_QueueItem
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.QueueItem>("Fax_QueueItem", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.QueueItem>("Fax_QueueItem", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// 1:N slakpiinstance_fax
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("slakpiinstance_fax")]
+		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.SLAKPIInstance> slakpiinstance_fax
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.SLAKPIInstance>("slakpiinstance_fax", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.SLAKPIInstance>("slakpiinstance_fax", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 Account_Faxes
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_IncidentResolutions")]
-		public SWA.CRM.D365.Entities.Base.Account account_IncidentResolutions
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Account_Faxes")]
+		public SWA.CRM.D365.Entities.Base.Account Account_Faxes
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("account_IncidentResolutions", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("Account_Faxes", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("account_IncidentResolutions", null, value);
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Account>("Account_Faxes", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 activity_pointer_incident_resolution
+		/// N:1 activity_pointer_fax
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("activity_pointer_incident_resolution")]
-		public SWA.CRM.D365.Entities.Base.ActivityPointer activity_pointer_incident_resolution
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("activity_pointer_fax")]
+		public SWA.CRM.D365.Entities.Base.ActivityPointer activity_pointer_fax
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.ActivityPointer>("activity_pointer_incident_resolution", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.ActivityPointer>("activity_pointer_fax", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.ActivityPointer>("activity_pointer_incident_resolution", null, value);
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.ActivityPointer>("activity_pointer_fax", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 business_unit_incident_resolution_activities
+		/// N:1 business_unit_fax_activities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_incident_resolution_activities")]
-		public SWA.CRM.D365.Entities.Base.BusinessUnit business_unit_incident_resolution_activities
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_fax_activities")]
+		public SWA.CRM.D365.Entities.Base.BusinessUnit business_unit_fax_activities
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.BusinessUnit>("business_unit_incident_resolution_activities", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.BusinessUnit>("business_unit_fax_activities", null);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 Incident_IncidentResolutions
+		/// N:1 Contact_Faxes
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incidentid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_IncidentResolutions")]
-		public SWA.CRM.D365.Entities.Base.Incident Incident_IncidentResolutions
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Contact_Faxes")]
+		public SWA.CRM.D365.Entities.Base.Contact Contact_Faxes
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Incident>("Incident_IncidentResolutions", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Contact>("Contact_Faxes", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Incident>("Incident_IncidentResolutions", null, value);
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Contact>("Contact_Faxes", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 incidentresolution_owner_ownerid
+		/// N:1 entitlement_Faxes
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incidentresolution_owner_ownerid")]
-		public SWA.CRM.D365.Entities.Base.Owner incidentresolution_owner_ownerid
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("entitlement_Faxes")]
+		public SWA.CRM.D365.Entities.Base.Entitlement entitlement_Faxes
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("incidentresolution_owner_ownerid", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Entitlement>("entitlement_Faxes", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("incidentresolution_owner_ownerid", null, value);
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Entitlement>("entitlement_Faxes", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 incidentresolution_transactioncurrency_transactioncurrencyid
+		/// N:1 Incident_Faxes
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incidentresolution_transactioncurrency_transactioncurrencyid")]
-		public SWA.CRM.D365.Entities.Base.TransactionCurrency incidentresolution_transactioncurrency_transactioncurrencyid
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_Faxes")]
+		public SWA.CRM.D365.Entities.Base.Incident Incident_Faxes
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("incidentresolution_transactioncurrency_transactioncurrencyid", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Incident>("Incident_Faxes", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("incidentresolution_transactioncurrency_transactioncurrencyid", null, value);
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Incident>("Incident_Faxes", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_incidentresolution_createdby
+		/// N:1 KnowledgeArticle_Faxes
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeArticle_Faxes")]
+		public SWA.CRM.D365.Entities.Base.KnowledgeArticle KnowledgeArticle_Faxes
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("KnowledgeArticle_Faxes", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeArticle>("KnowledgeArticle_Faxes", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 KnowledgeBaseRecord_Faxes
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_Faxes")]
+		public SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord KnowledgeBaseRecord_Faxes
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("KnowledgeBaseRecord_Faxes", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.KnowledgeBaseRecord>("KnowledgeBaseRecord_Faxes", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_fax_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_incidentresolution_createdby")]
-		public SWA.CRM.D365.Entities.Base.SystemUser lk_incidentresolution_createdby
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_fax_createdby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_fax_createdby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentresolution_createdby", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_fax_createdby", null);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_incidentresolution_createdonbehalfby
+		/// N:1 lk_fax_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_incidentresolution_createdonbehalfby")]
-		public SWA.CRM.D365.Entities.Base.SystemUser lk_incidentresolution_createdonbehalfby
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_fax_createdonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_fax_createdonbehalfby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentresolution_createdonbehalfby", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_fax_createdonbehalfby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentresolution_createdonbehalfby", null, value);
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_fax_createdonbehalfby", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_incidentresolution_modifiedby
+		/// N:1 lk_fax_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_incidentresolution_modifiedby")]
-		public SWA.CRM.D365.Entities.Base.SystemUser lk_incidentresolution_modifiedby
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_fax_modifiedby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_fax_modifiedby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentresolution_modifiedby", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_fax_modifiedby", null);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_incidentresolution_modifiedonbehalfby
+		/// N:1 lk_fax_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_incidentresolution_modifiedonbehalfby")]
-		public SWA.CRM.D365.Entities.Base.SystemUser lk_incidentresolution_modifiedonbehalfby
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_fax_modifiedonbehalfby")]
+		public SWA.CRM.D365.Entities.Base.SystemUser lk_fax_modifiedonbehalfby
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentresolution_modifiedonbehalfby", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_fax_modifiedonbehalfby", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_incidentresolution_modifiedonbehalfby", null, value);
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_fax_modifiedonbehalfby", null, value);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 team_incidentresolution
+		/// N:1 manualsla_fax
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("manualsla_fax")]
+		public SWA.CRM.D365.Entities.Base.SLA manualsla_fax
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("manualsla_fax", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("manualsla_fax", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 owner_faxes
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("owner_faxes")]
+		public SWA.CRM.D365.Entities.Base.Owner owner_faxes
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("owner_faxes", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Owner>("owner_faxes", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 service_faxes
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("serviceid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("service_faxes")]
+		public SWA.CRM.D365.Entities.Base.Service service_faxes
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Service>("service_faxes", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.Service>("service_faxes", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 sla_fax
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sla_fax")]
+		public SWA.CRM.D365.Entities.Base.SLA sla_fax
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SLA>("sla_fax", null);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 team_fax
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_incidentresolution")]
-		public SWA.CRM.D365.Entities.Base.Team team_incidentresolution
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_fax")]
+		public SWA.CRM.D365.Entities.Base.Team team_fax
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Team>("team_incidentresolution", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Team>("team_fax", null);
 			}
 		}
 		
 		/// <summary>
-		/// N:1 user_incidentresolution
+		/// N:1 TransactionCurrency_Fax
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_incidentresolution")]
-		public SWA.CRM.D365.Entities.Base.SystemUser user_incidentresolution
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("TransactionCurrency_Fax")]
+		public SWA.CRM.D365.Entities.Base.TransactionCurrency TransactionCurrency_Fax
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("user_incidentresolution", null);
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_Fax", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_Fax", null, value);
+			}
+		}
+		
+		/// <summary>
+		/// N:1 user_fax
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_fax")]
+		public SWA.CRM.D365.Entities.Base.SystemUser user_fax
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("user_fax", null);
 			}
 		}
 		
@@ -2443,7 +1943,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public IncidentResolution(object anonymousType) : 
+		public Fax(object anonymousType) : 
 				this()
 		{
             foreach (var p in anonymousType.GetType().GetProperties())
