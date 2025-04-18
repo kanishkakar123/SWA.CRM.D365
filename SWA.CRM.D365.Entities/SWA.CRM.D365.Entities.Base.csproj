@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <Compile Include="EntityQuery\swa_configuration.partial.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

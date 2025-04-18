@@ -19,24 +19,15 @@ namespace SWA.CRM.D365.Common.Services
 
         public SMSServiceResponse SendSMS(SMSServiceRequest request)
         {
-            string baseUrl = serviceConfiguration.BaseURL.ProductionAPI;
-            string endpoint = serviceConfiguration.SMSServiceConfig.SendSMSEndpoint;
+            string endpoint = serviceConfiguration.SMSServiceConfig.SMSEndpoint;
             string appKey = serviceConfiguration.SMSServiceConfig.AppKey;
             var properties = from p in request.GetType().GetProperties()
                              where p.GetValue(request, null) != null && !string.IsNullOrEmpty(p.GetValue(request, null).ToString())
                              select p.Name + "=" + HttpUtility.UrlEncode(p.GetValue(request, null).ToString());
             string queryString = String.Join("&", properties.ToArray());
-            string requestUrl = baseUrl + endpoint + queryString;
+            string requestUrl = endpoint + queryString;
 
             SMSServiceResponse serviceResponse = ServiceInvocation.ServiceRequest<SMSServiceResponse>(RequestMethod.GET, AuthorizationType.AppKey, requestUrl, null, appKey, null);
-
-            return serviceResponse;
-        }
-
-        public SMSServiceResponse SendSMS(string mobileNumber, string message)
-        {
-            SMSServiceResponse serviceResponse = null;
-
 
             return serviceResponse;
         }

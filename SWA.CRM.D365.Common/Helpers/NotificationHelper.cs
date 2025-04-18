@@ -43,13 +43,13 @@ namespace SWA.CRM.D365.Common.Helpers
             return emailEntity;
         }
 
-        public static Entity MapSMS(Entity smsEntity, string message, string mobileNumber, EntityReference toEntity, EntityReference regardingEntity)
+        public static swa_sms MapSMS(swa_sms sms, string subject, string message, EntityReference toEntity, EntityReference regardingEntity)
         {
-            smsEntity["To"] = new ActivityParty[] { new ActivityParty() { PartyId = toEntity } };
-            smsEntity["swa_mobilenumber"] = mobileNumber;
-            smsEntity["Description"] = message;
-            smsEntity["RegardingObjectId"] = regardingEntity;
-            return smsEntity;
+            sms.To = new ActivityParty[] { new ActivityParty() { PartyId = toEntity } };
+            sms.Subject = subject;
+            sms.Description = message;
+            sms.RegardingObjectId = regardingEntity;
+            return sms;
         }
 
         public static string GetMobileNumber(string entityLogicalName, Guid entityId, IOrganizationService service) 

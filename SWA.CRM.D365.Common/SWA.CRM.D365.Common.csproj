@@ -129,6 +129,7 @@
     <Compile Include="Helpers\JSONHelper.cs" />
     <Compile Include="Helpers\NotificationHelper.cs" />
     <Compile Include="Model\Common\AccessToken.cs" />
+    <Compile Include="Model\Common\ServiceConfigStructs.cs" />
     <Compile Include="Model\DemoService\DemoServiceRequest.cs" />
     <Compile Include="Model\DemoService\DemoServiceResponse.cs" />
     <Compile Include="Model\Common\ErrorMessage.cs" />

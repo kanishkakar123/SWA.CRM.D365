@@ -1,45 +1,25 @@
 ﻿using Microsoft.Xrm.Sdk;
+using Newtonsoft.Json;
+using SWA.CRM.D365.Common.Model;
+using SWA.CRM.D365.Entities.Base;
 
 namespace SWA.CRM.D365.Common.Services
 {
-    public enum ServiceCategory { SMSService, EmailService, OAuthService }
-    public struct BaseURL
-    {
-        public string ProductionAPI { get; set; }
-        public string StagingAPI { get; set; }
-        public string AlibabaOSS { get; set; }
-        public string BotpressCloud { get; set; }
-    }
-    public struct SMSServiceConfig
-    {
-        public string SendSMSEndpoint { get; set; } ///SMSGateway/Api/smssender/SendSms
-        public string AppKey { get; set; } // 6B59BB27-38B5-44D3-AFE0-************
-    }
-    public struct OAuthServiceConfig
-    {
-        public static string apiKey => "";
-
-        public static string apiSecret => "";
-
-        public static string BaseTokenUrl => "";
-
-        public static string GetRequestUrl => "";
-
-        public static string PostRequestUrl => "";
-    }
+    public enum ServiceCategory { SMSService, Survey, IVR, ATIT, OAuthService }
 
     public class ServiceConfiguration
     {
         private IOrganizationService organizationService;
-        //private Entity swaConfig;
+        private CRMDataContext dataContext;
+        private swa_configuration swaConfig;
 
-        public BaseURL BaseURL { get; set; }
         public SMSServiceConfig SMSServiceConfig { get; set; }
         public OAuthServiceConfig OAuthServiceConfig { get; set; }
 
         public ServiceConfiguration(IOrganizationService organizationService, ServiceCategory serviceCategory)
         {
             this.organizationService = organizationService;
+            this.dataContext = new CRMDataContext(organizationService);
             BuildServiceConfiguration(serviceCategory);
         }
 
@@ -48,22 +28,20 @@ namespace SWA.CRM.D365.Common.Services
             // Get Particular Service Config Data metioned in 'serviceCategory' from CRM entity 'SWA Config' and store in the structures
             GetServiceConfigurationCRM(serviceCategory);
 
-            BaseURL = new BaseURL()
-            {
-                // Get values from SWA Config record in BaseURL properties
-            };
-
-            switch (serviceCategory) 
+            // Get values from SWA Config record in ServiceConfigStructs
+            switch (serviceCategory)
             {
                 case ServiceCategory.SMSService:
-
-                    SMSServiceConfig = new SMSServiceConfig()
-                    {
-                        // Get values from SWA Config record in SMSServiceConfig properties
-                    };
+                    SMSServiceConfig = JsonConvert.DeserializeObject<SMSServiceConfig>(swaConfig.swa_value);
                     break;
 
-                case ServiceCategory.EmailService:
+                case ServiceCategory.Survey:
+                    break;
+
+                case ServiceCategory.IVR:
+                    break;
+
+                case ServiceCategory.ATIT:
                     break;
 
                 case ServiceCategory.OAuthService:
@@ -77,7 +55,32 @@ namespace SWA.CRM.D365.Common.Services
 
         private void GetServiceConfigurationCRM(ServiceCategory serviceCategory)
         {
+            string configName = string.Empty;
 
+            switch (serviceCategory)
+            {
+                case ServiceCategory.SMSService:
+                    configName = "SmsApiUrl";
+                    break;
+
+                case ServiceCategory.Survey:
+                    break;
+
+                case ServiceCategory.IVR:
+                    break;
+
+                case ServiceCategory.ATIT:
+                    break;
+
+                case ServiceCategory.OAuthService:
+                    OAuthServiceConfig = new OAuthServiceConfig()
+                    {
+                        // Get values from SWA Config record in OAuthServiceConfig properties
+                    };
+                    break;
+            }
+
+            swaConfig = swa_configuration.GetByName(dataContext, configName);
         }
     }
 }

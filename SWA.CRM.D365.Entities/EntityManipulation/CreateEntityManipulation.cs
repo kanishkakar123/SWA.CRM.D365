@@ -16,5 +16,11 @@ namespace SWA.CRM.D365.Entities.Base
             this.TargetEntity.EntityState = (new EntityState?((EntityState)1));
             organizationService.Create(this.TargetEntity);
         }
+
+        public System.Guid Create(IOrganizationService organizationService)
+        {
+            this.TargetEntity.EntityState = (new EntityState?((EntityState)1));
+            return organizationService.Create(this.TargetEntity);
+        }
     }
 }
