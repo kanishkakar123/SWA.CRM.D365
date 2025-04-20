@@ -72,19 +72,19 @@ namespace SWA.CRM.D365.Entities.Base
 			public const string VersionNumber = "versionnumber";
 		}
 		
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public KnowledgeBaseRecord(System.Guid id) : 
 				base(EntityLogicalName, id)
 		{
 		}
 		
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public KnowledgeBaseRecord(string keyName, object keyValue) : 
 				base(EntityLogicalName, keyName, keyValue)
 		{
 		}
 		
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public KnowledgeBaseRecord(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
 				base(EntityLogicalName, keyAttributes)
 		{
@@ -93,7 +93,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// <summary>
 		/// Default Constructor.
 		/// </summary>
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public KnowledgeBaseRecord() : 
 				base(EntityLogicalName)
 		{
@@ -119,7 +119,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
@@ -129,7 +129,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyname")]
 		public string CreatedByName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("createdby"))
@@ -146,7 +146,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyyominame")]
 		public string CreatedByYomiName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("createdby"))
@@ -166,7 +166,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
@@ -179,12 +179,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdonbehalfby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("createdonbehalfby", value);
@@ -194,7 +194,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfbyname")]
 		public string CreatedOnBehalfByName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("createdonbehalfby"))
@@ -211,7 +211,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfbyyominame")]
 		public string CreatedOnBehalfByYomiName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("createdonbehalfby"))
@@ -231,7 +231,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
 		public System.Nullable<decimal> ExchangeRate
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<decimal>>("exchangerate");
@@ -244,12 +244,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("knowledgebaserecordid")]
 		public System.Nullable<System.Guid> KnowledgeBaseRecordId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("knowledgebaserecordid");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("knowledgebaserecordid", value);
@@ -267,12 +267,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("knowledgebaserecordid")]
 		public override System.Guid Id
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return base.Id;
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.KnowledgeBaseRecordId = value;
@@ -285,7 +285,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
@@ -295,7 +295,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyname")]
 		public string ModifiedByName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("modifiedby"))
@@ -312,7 +312,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyyominame")]
 		public string ModifiedByYomiName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("modifiedby"))
@@ -332,7 +332,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
@@ -345,12 +345,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedonbehalfby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("modifiedonbehalfby", value);
@@ -360,7 +360,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfbyname")]
 		public string ModifiedOnBehalfByName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("modifiedonbehalfby"))
@@ -377,7 +377,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfbyyominame")]
 		public string ModifiedOnBehalfByYomiName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("modifiedonbehalfby"))
@@ -397,7 +397,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
 		public Microsoft.Xrm.Sdk.EntityReference OrganizationId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("organizationid");
@@ -407,7 +407,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationidname")]
 		public string OrganizationIdName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("organizationid"))
@@ -427,12 +427,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("privateurl")]
 		public string PrivateUrl
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("privateurl");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("privateurl", value);
@@ -445,12 +445,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("publicurl")]
 		public string PublicUrl
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("publicurl");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("publicurl", value);
@@ -463,12 +463,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
 		public System.Nullable<int> TimeZoneRuleVersionNumber
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezoneruleversionnumber");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezoneruleversionnumber", value);
@@ -481,12 +481,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("title")]
 		public string Title
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("title");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("title", value);
@@ -499,12 +499,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("transactioncurrencyid");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("transactioncurrencyid", value);
@@ -514,7 +514,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyidname")]
 		public string TransactionCurrencyIdName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("transactioncurrencyid"))
@@ -534,12 +534,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("uniqueid")]
 		public string UniqueId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("uniqueid");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("uniqueid", value);
@@ -549,7 +549,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<long>>("versionnumber");
@@ -562,12 +562,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_ActivityPointers")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ActivityPointer> KnowledgeBaseRecord_ActivityPointers
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityPointer>("KnowledgeBaseRecord_ActivityPointers", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.ActivityPointer>("KnowledgeBaseRecord_ActivityPointers", null, value);
@@ -580,12 +580,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_Annotations")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Annotation> KnowledgeBaseRecord_Annotations
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("KnowledgeBaseRecord_Annotations", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Annotation>("KnowledgeBaseRecord_Annotations", null, value);
@@ -598,12 +598,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_Appointments")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Appointment> KnowledgeBaseRecord_Appointments
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Appointment>("KnowledgeBaseRecord_Appointments", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Appointment>("KnowledgeBaseRecord_Appointments", null, value);
@@ -616,12 +616,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_Emails")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Email> KnowledgeBaseRecord_Emails
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Email>("KnowledgeBaseRecord_Emails", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Email>("KnowledgeBaseRecord_Emails", null, value);
@@ -634,12 +634,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_Faxes")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Fax> KnowledgeBaseRecord_Faxes
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Fax>("KnowledgeBaseRecord_Faxes", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Fax>("KnowledgeBaseRecord_Faxes", null, value);
@@ -652,12 +652,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("knowledgebaserecord_IncidentResolutions")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.IncidentResolution> knowledgebaserecord_IncidentResolutions
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.IncidentResolution>("knowledgebaserecord_IncidentResolutions", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.IncidentResolution>("knowledgebaserecord_IncidentResolutions", null, value);
@@ -670,12 +670,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_Letters")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Letter> KnowledgeBaseRecord_Letters
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Letter>("KnowledgeBaseRecord_Letters", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Letter>("KnowledgeBaseRecord_Letters", null, value);
@@ -688,12 +688,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_PhoneCalls")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.PhoneCall> KnowledgeBaseRecord_PhoneCalls
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.PhoneCall>("KnowledgeBaseRecord_PhoneCalls", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.PhoneCall>("KnowledgeBaseRecord_PhoneCalls", null, value);
@@ -706,12 +706,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_ServiceAppointments")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.ServiceAppointment> KnowledgeBaseRecord_ServiceAppointments
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.ServiceAppointment>("KnowledgeBaseRecord_ServiceAppointments", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.ServiceAppointment>("KnowledgeBaseRecord_ServiceAppointments", null, value);
@@ -724,12 +724,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("knowledgebaserecord_swa_smses")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.swa_sms> knowledgebaserecord_swa_smses
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_sms>("knowledgebaserecord_swa_smses", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.swa_sms>("knowledgebaserecord_swa_smses", null, value);
@@ -742,12 +742,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_Tasks")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Task> KnowledgeBaseRecord_Tasks
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Task>("KnowledgeBaseRecord_Tasks", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Task>("KnowledgeBaseRecord_Tasks", null, value);
@@ -760,12 +760,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_Incident")]
 		public System.Collections.Generic.IEnumerable<SWA.CRM.D365.Entities.Base.Incident> KnowledgeBaseRecord_Incident
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntities<SWA.CRM.D365.Entities.Base.Incident>("KnowledgeBaseRecord_Incident", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntities<SWA.CRM.D365.Entities.Base.Incident>("KnowledgeBaseRecord_Incident", null, value);
@@ -779,7 +779,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_KnowledgeBaseRecord_createdby")]
 		public SWA.CRM.D365.Entities.Base.SystemUser lk_KnowledgeBaseRecord_createdby
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_KnowledgeBaseRecord_createdby", null);
@@ -793,12 +793,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_KnowledgeBaseRecord_createdonbehalfby")]
 		public SWA.CRM.D365.Entities.Base.SystemUser lk_KnowledgeBaseRecord_createdonbehalfby
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_KnowledgeBaseRecord_createdonbehalfby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_KnowledgeBaseRecord_createdonbehalfby", null, value);
@@ -812,7 +812,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_KnowledgeBaseRecord_modifiedby")]
 		public SWA.CRM.D365.Entities.Base.SystemUser lk_KnowledgeBaseRecord_modifiedby
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_KnowledgeBaseRecord_modifiedby", null);
@@ -826,12 +826,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_KnowledgeBaseRecord_modifiedonbehalfby")]
 		public SWA.CRM.D365.Entities.Base.SystemUser lk_KnowledgeBaseRecord_modifiedonbehalfby
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_KnowledgeBaseRecord_modifiedonbehalfby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_KnowledgeBaseRecord_modifiedonbehalfby", null, value);
@@ -845,7 +845,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("organization_KnowledgeBaseRecord")]
 		public SWA.CRM.D365.Entities.Base.Organization organization_KnowledgeBaseRecord
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.Organization>("organization_KnowledgeBaseRecord", null);
@@ -859,12 +859,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("TransactionCurrency_KnowledgeBaseRecord")]
 		public SWA.CRM.D365.Entities.Base.TransactionCurrency TransactionCurrency_KnowledgeBaseRecord
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_KnowledgeBaseRecord", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("TransactionCurrency_KnowledgeBaseRecord", null, value);
@@ -875,7 +875,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// Constructor for populating via LINQ queries given a LINQ anonymous type
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public KnowledgeBaseRecord(object anonymousType) : 
 				this()
 		{

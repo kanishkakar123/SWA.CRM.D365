@@ -152,19 +152,19 @@ namespace SWA.CRM.D365.Entities.Base
 			public const string WorkdayStopTime = "workdaystoptime";
 		}
 		
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public UserSettings(System.Guid id) : 
 				base(EntityLogicalName, id)
 		{
 		}
 		
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public UserSettings(string keyName, object keyValue) : 
 				base(EntityLogicalName, keyName, keyValue)
 		{
 		}
 		
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public UserSettings(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
 				base(EntityLogicalName, keyAttributes)
 		{
@@ -173,7 +173,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// <summary>
 		/// Default Constructor.
 		/// </summary>
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public UserSettings() : 
 				base(EntityLogicalName)
 		{
@@ -197,12 +197,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("addressbooksyncinterval")]
 		public System.Nullable<int> AddressBookSyncInterval
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("addressbooksyncinterval");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("addressbooksyncinterval", value);
@@ -215,12 +215,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("advancedfindstartupmode")]
 		public System.Nullable<int> AdvancedFindStartupMode
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("advancedfindstartupmode");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("advancedfindstartupmode", value);
@@ -234,7 +234,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[System.ObsoleteAttribute()]
 		public System.Nullable<bool> AllowEmailCredentials
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("allowemailcredentials");
@@ -244,7 +244,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("allowemailcredentialsname")]
 		public string AllowEmailCredentialsName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("allowemailcredentials"))
@@ -264,12 +264,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("amdesignator")]
 		public string AMDesignator
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("amdesignator");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("amdesignator", value);
@@ -282,12 +282,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("autocaptureuserstatus")]
 		public System.Nullable<int> AutoCaptureUserStatus
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("autocaptureuserstatus");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("autocaptureuserstatus", value);
@@ -300,12 +300,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("autocreatecontactonpromote")]
 		public System.Nullable<int> AutoCreateContactOnPromote
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("autocreatecontactonpromote");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("autocreatecontactonpromote", value);
@@ -318,12 +318,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businessunitid")]
 		public System.Nullable<System.Guid> BusinessUnitId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("businessunitid");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("businessunitid", value);
@@ -333,7 +333,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businessunitidname")]
 		public string BusinessUnitIdName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("businessunitid"))
@@ -353,12 +353,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("calendartype")]
 		public System.Nullable<int> CalendarType
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("calendartype");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("calendartype", value);
@@ -371,7 +371,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
@@ -381,7 +381,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyname")]
 		public string CreatedByName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("createdby"))
@@ -398,7 +398,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyyominame")]
 		public string CreatedByYomiName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("createdby"))
@@ -418,7 +418,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
@@ -431,12 +431,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdonbehalfby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("createdonbehalfby", value);
@@ -446,7 +446,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfbyname")]
 		public string CreatedOnBehalfByName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("createdonbehalfby"))
@@ -463,7 +463,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfbyyominame")]
 		public string CreatedOnBehalfByYomiName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("createdonbehalfby"))
@@ -484,12 +484,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[System.ObsoleteAttribute()]
 		public System.Nullable<int> CurrencyDecimalPrecision
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("currencydecimalprecision");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("currencydecimalprecision", value);
@@ -502,12 +502,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currencyformatcode")]
 		public System.Nullable<int> CurrencyFormatCode
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("currencyformatcode");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("currencyformatcode", value);
@@ -520,12 +520,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("currencysymbol")]
 		public string CurrencySymbol
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("currencysymbol");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("currencysymbol", value);
@@ -538,12 +538,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("datavalidationmodeforexporttoexcel")]
 		public virtual UserSettings_DataValidationModeForExportToExcel? DataValidationModeForExportToExcel
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return ((UserSettings_DataValidationModeForExportToExcel?)(EntityOptionSetEnum.GetEnum(this, "datavalidationmodeforexporttoexcel")));
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("datavalidationmodeforexporttoexcel", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
@@ -553,7 +553,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("datavalidationmodeforexporttoexcelname")]
 		public string DataValidationModeForExportToExcelName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("datavalidationmodeforexporttoexcel"))
@@ -573,12 +573,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("dateformatcode")]
 		public System.Nullable<int> DateFormatCode
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("dateformatcode");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("dateformatcode", value);
@@ -591,12 +591,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("dateformatstring")]
 		public string DateFormatString
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("dateformatstring");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("dateformatstring", value);
@@ -609,12 +609,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("dateseparator")]
 		public string DateSeparator
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("dateseparator");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("dateseparator", value);
@@ -627,12 +627,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("decimalsymbol")]
 		public string DecimalSymbol
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("decimalsymbol");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("decimalsymbol", value);
@@ -645,12 +645,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultcalendarview")]
 		public System.Nullable<int> DefaultCalendarView
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("defaultcalendarview");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("defaultcalendarview", value);
@@ -663,12 +663,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultcountrycode")]
 		public string DefaultCountryCode
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("defaultcountrycode");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("defaultcountrycode", value);
@@ -681,12 +681,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultdashboardid")]
 		public System.Nullable<System.Guid> DefaultDashboardId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("defaultdashboardid");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("defaultdashboardid", value);
@@ -699,12 +699,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultsearchexperience")]
 		public virtual UserSettings_DefaultSearchExperience? DefaultSearchExperience
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return ((UserSettings_DefaultSearchExperience?)(EntityOptionSetEnum.GetEnum(this, "defaultsearchexperience")));
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("defaultsearchexperience", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
@@ -714,7 +714,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultsearchexperiencename")]
 		public string DefaultSearchExperienceName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("defaultsearchexperience"))
@@ -735,7 +735,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[System.ObsoleteAttribute()]
 		public string EmailPassword
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("emailpassword");
@@ -749,7 +749,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[System.ObsoleteAttribute()]
 		public string EmailUsername
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("emailusername");
@@ -762,12 +762,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityformmode")]
 		public virtual UserSettings_EntityFormMode? EntityFormMode
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return ((UserSettings_EntityFormMode?)(EntityOptionSetEnum.GetEnum(this, "entityformmode")));
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("entityformmode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
@@ -780,12 +780,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fullnameconventioncode")]
 		public System.Nullable<int> FullNameConventionCode
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("fullnameconventioncode");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("fullnameconventioncode", value);
@@ -798,12 +798,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("getstartedpanecontentenabled")]
 		public System.Nullable<bool> GetStartedPaneContentEnabled
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("getstartedpanecontentenabled");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("getstartedpanecontentenabled", value);
@@ -816,12 +816,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("helplanguageid")]
 		public System.Nullable<int> HelpLanguageId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("helplanguageid");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("helplanguageid", value);
@@ -834,12 +834,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("homepagearea")]
 		public string HomepageArea
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("homepagearea");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("homepagearea", value);
@@ -852,12 +852,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("homepagelayout")]
 		public string HomepageLayout
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("homepagelayout");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("homepagelayout", value);
@@ -870,12 +870,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("homepagesubarea")]
 		public string HomepageSubarea
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("homepagesubarea");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("homepagesubarea", value);
@@ -888,12 +888,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ignoreunsolicitedemail")]
 		public System.Nullable<bool> IgnoreUnsolicitedEmail
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("ignoreunsolicitedemail");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("ignoreunsolicitedemail", value);
@@ -903,7 +903,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ignoreunsolicitedemailname")]
 		public string IgnoreUnsolicitedEmailName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("ignoreunsolicitedemail"))
@@ -923,12 +923,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incomingemailfilteringmethod")]
 		public virtual UserSettings_IncomingEmailFilteringMethod? IncomingEmailFilteringMethod
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return ((UserSettings_IncomingEmailFilteringMethod?)(EntityOptionSetEnum.GetEnum(this, "incomingemailfilteringmethod")));
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("incomingemailfilteringmethod", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
@@ -938,7 +938,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incomingemailfilteringmethodname")]
 		public string IncomingEmailFilteringMethodName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("incomingemailfilteringmethod"))
@@ -958,12 +958,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isappsforcrmalertdismissed")]
 		public System.Nullable<bool> IsAppsForCrmAlertDismissed
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("isappsforcrmalertdismissed");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("isappsforcrmalertdismissed", value);
@@ -976,12 +976,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isautodatacaptureenabled")]
 		public System.Nullable<bool> IsAutoDataCaptureEnabled
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("isautodatacaptureenabled");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("isautodatacaptureenabled", value);
@@ -994,12 +994,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdefaultcountrycodecheckenabled")]
 		public System.Nullable<bool> IsDefaultCountryCodeCheckEnabled
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("isdefaultcountrycodecheckenabled");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("isdefaultcountrycodecheckenabled", value);
@@ -1012,12 +1012,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isduplicatedetectionenabledwhengoingonline")]
 		public System.Nullable<bool> IsDuplicateDetectionEnabledWhenGoingOnline
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("isduplicatedetectionenabledwhengoingonline");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("isduplicatedetectionenabledwhengoingonline", value);
@@ -1030,12 +1030,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isemailconversationviewenabled")]
 		public System.Nullable<bool> IsEmailConversationViewEnabled
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("isemailconversationviewenabled");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("isemailconversationviewenabled", value);
@@ -1048,12 +1048,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isguidedhelpenabled")]
 		public System.Nullable<bool> IsGuidedHelpEnabled
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("isguidedhelpenabled");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("isguidedhelpenabled", value);
@@ -1066,12 +1066,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isresourcebookingexchangesyncenabled")]
 		public System.Nullable<bool> IsResourceBookingExchangeSyncEnabled
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("isresourcebookingexchangesyncenabled");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("isresourcebookingexchangesyncenabled", value);
@@ -1084,12 +1084,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("issendasallowed")]
 		public System.Nullable<bool> IsSendAsAllowed
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("issendasallowed");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("issendasallowed", value);
@@ -1102,12 +1102,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastalertsviewedtime")]
 		public System.Nullable<System.DateTime> LastAlertsViewedTime
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("lastalertsviewedtime");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("lastalertsviewedtime", value);
@@ -1120,12 +1120,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("localeid")]
 		public System.Nullable<int> LocaleId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("localeid");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("localeid", value);
@@ -1138,12 +1138,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("longdateformatcode")]
 		public System.Nullable<int> LongDateFormatCode
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("longdateformatcode");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("longdateformatcode", value);
@@ -1156,7 +1156,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
@@ -1166,7 +1166,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyname")]
 		public string ModifiedByName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("modifiedby"))
@@ -1183,7 +1183,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyyominame")]
 		public string ModifiedByYomiName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("modifiedby"))
@@ -1203,7 +1203,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
@@ -1216,12 +1216,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedonbehalfby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("modifiedonbehalfby", value);
@@ -1231,7 +1231,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfbyname")]
 		public string ModifiedOnBehalfByName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("modifiedonbehalfby"))
@@ -1248,7 +1248,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfbyyominame")]
 		public string ModifiedOnBehalfByYomiName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("modifiedonbehalfby"))
@@ -1268,12 +1268,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("negativecurrencyformatcode")]
 		public System.Nullable<int> NegativeCurrencyFormatCode
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("negativecurrencyformatcode");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("negativecurrencyformatcode", value);
@@ -1286,12 +1286,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("negativeformatcode")]
 		public System.Nullable<int> NegativeFormatCode
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("negativeformatcode");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("negativeformatcode", value);
@@ -1304,12 +1304,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("nexttrackingnumber")]
 		public System.Nullable<int> NextTrackingNumber
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("nexttrackingnumber");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("nexttrackingnumber", value);
@@ -1322,12 +1322,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("numbergroupformat")]
 		public string NumberGroupFormat
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("numbergroupformat");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("numbergroupformat", value);
@@ -1340,12 +1340,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("numberseparator")]
 		public string NumberSeparator
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("numberseparator");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("numberseparator", value);
@@ -1358,12 +1358,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("offlinesyncinterval")]
 		public System.Nullable<int> OfflineSyncInterval
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("offlinesyncinterval");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("offlinesyncinterval", value);
@@ -1376,12 +1376,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("outlooksyncinterval")]
 		public System.Nullable<int> OutlookSyncInterval
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("outlooksyncinterval");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("outlooksyncinterval", value);
@@ -1394,12 +1394,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("paginglimit")]
 		public System.Nullable<int> PagingLimit
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("paginglimit");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("paginglimit", value);
@@ -1412,12 +1412,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("personalizationsettings")]
 		public string PersonalizationSettings
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("personalizationsettings");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("personalizationsettings", value);
@@ -1430,12 +1430,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pmdesignator")]
 		public string PMDesignator
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("pmdesignator");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("pmdesignator", value);
@@ -1449,12 +1449,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[System.ObsoleteAttribute()]
 		public System.Nullable<int> PricingDecimalPrecision
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("pricingdecimalprecision");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("pricingdecimalprecision", value);
@@ -1467,12 +1467,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("reportscripterrors")]
 		public virtual UserSettings_ReportScriptErrors? ReportScriptErrors
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return ((UserSettings_ReportScriptErrors?)(EntityOptionSetEnum.GetEnum(this, "reportscripterrors")));
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("reportscripterrors", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
@@ -1482,7 +1482,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("reportscripterrorsname")]
 		public string ReportScriptErrorsName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("reportscripterrors"))
@@ -1502,12 +1502,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resourcebookingexchangesyncversion")]
 		public System.Nullable<long> ResourceBookingExchangeSyncVersion
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<long>>("resourcebookingexchangesyncversion");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("resourcebookingexchangesyncversion", value);
@@ -1520,12 +1520,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("selectedglobalfilterid")]
 		public System.Nullable<System.Guid> SelectedGlobalFilterId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("selectedglobalfilterid");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("selectedglobalfilterid", value);
@@ -1538,12 +1538,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("showweeknumber")]
 		public System.Nullable<bool> ShowWeekNumber
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("showweeknumber");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("showweeknumber", value);
@@ -1556,12 +1556,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("splitviewstate")]
 		public System.Nullable<bool> SplitViewState
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("splitviewstate");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("splitviewstate", value);
@@ -1574,12 +1574,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("synccontactcompany")]
 		public System.Nullable<bool> SyncContactCompany
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("synccontactcompany");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("synccontactcompany", value);
@@ -1592,12 +1592,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("systemuserid")]
 		public System.Nullable<System.Guid> SystemUserId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("systemuserid");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("systemuserid", value);
@@ -1615,12 +1615,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("systemuserid")]
 		public override System.Guid Id
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return base.Id;
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SystemUserId = value;
@@ -1633,12 +1633,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timeformatcode")]
 		public System.Nullable<int> TimeFormatCode
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timeformatcode");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timeformatcode", value);
@@ -1651,12 +1651,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timeformatstring")]
 		public string TimeFormatString
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("timeformatstring");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timeformatstring", value);
@@ -1669,12 +1669,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timeseparator")]
 		public string TimeSeparator
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("timeseparator");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timeseparator", value);
@@ -1687,12 +1687,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonebias")]
 		public System.Nullable<int> TimeZoneBias
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonebias");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonebias", value);
@@ -1705,12 +1705,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonecode")]
 		public System.Nullable<int> TimeZoneCode
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonecode");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonecode", value);
@@ -1723,12 +1723,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonedaylightbias")]
 		public System.Nullable<int> TimeZoneDaylightBias
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonedaylightbias");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonedaylightbias", value);
@@ -1741,12 +1741,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonedaylightday")]
 		public System.Nullable<int> TimeZoneDaylightDay
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonedaylightday");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonedaylightday", value);
@@ -1759,12 +1759,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonedaylightdayofweek")]
 		public System.Nullable<int> TimeZoneDaylightDayOfWeek
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonedaylightdayofweek");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonedaylightdayofweek", value);
@@ -1777,12 +1777,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonedaylighthour")]
 		public System.Nullable<int> TimeZoneDaylightHour
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonedaylighthour");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonedaylighthour", value);
@@ -1795,12 +1795,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonedaylightminute")]
 		public System.Nullable<int> TimeZoneDaylightMinute
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonedaylightminute");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonedaylightminute", value);
@@ -1813,12 +1813,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonedaylightmonth")]
 		public System.Nullable<int> TimeZoneDaylightMonth
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonedaylightmonth");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonedaylightmonth", value);
@@ -1831,12 +1831,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonedaylightsecond")]
 		public System.Nullable<int> TimeZoneDaylightSecond
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonedaylightsecond");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonedaylightsecond", value);
@@ -1849,12 +1849,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonedaylightyear")]
 		public System.Nullable<int> TimeZoneDaylightYear
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonedaylightyear");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonedaylightyear", value);
@@ -1867,12 +1867,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonestandardbias")]
 		public System.Nullable<int> TimeZoneStandardBias
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonestandardbias");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonestandardbias", value);
@@ -1885,12 +1885,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonestandardday")]
 		public System.Nullable<int> TimeZoneStandardDay
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonestandardday");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonestandardday", value);
@@ -1903,12 +1903,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonestandarddayofweek")]
 		public System.Nullable<int> TimeZoneStandardDayOfWeek
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonestandarddayofweek");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonestandarddayofweek", value);
@@ -1921,12 +1921,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonestandardhour")]
 		public System.Nullable<int> TimeZoneStandardHour
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonestandardhour");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonestandardhour", value);
@@ -1939,12 +1939,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonestandardminute")]
 		public System.Nullable<int> TimeZoneStandardMinute
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonestandardminute");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonestandardminute", value);
@@ -1957,12 +1957,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonestandardmonth")]
 		public System.Nullable<int> TimeZoneStandardMonth
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonestandardmonth");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonestandardmonth", value);
@@ -1975,12 +1975,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonestandardsecond")]
 		public System.Nullable<int> TimeZoneStandardSecond
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonestandardsecond");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonestandardsecond", value);
@@ -1993,12 +1993,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezonestandardyear")]
 		public System.Nullable<int> TimeZoneStandardYear
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("timezonestandardyear");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("timezonestandardyear", value);
@@ -2011,12 +2011,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("trackingtokenid")]
 		public System.Nullable<int> TrackingTokenId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("trackingtokenid");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("trackingtokenid", value);
@@ -2029,12 +2029,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("transactioncurrencyid");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("transactioncurrencyid", value);
@@ -2044,7 +2044,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyidname")]
 		public string TransactionCurrencyIdName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("transactioncurrencyid"))
@@ -2064,12 +2064,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("uilanguageid")]
 		public System.Nullable<int> UILanguageId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("uilanguageid");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("uilanguageid", value);
@@ -2082,12 +2082,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("usecrmformforappointment")]
 		public System.Nullable<bool> UseCrmFormForAppointment
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("usecrmformforappointment");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("usecrmformforappointment", value);
@@ -2100,12 +2100,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("usecrmformforcontact")]
 		public System.Nullable<bool> UseCrmFormForContact
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("usecrmformforcontact");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("usecrmformforcontact", value);
@@ -2118,12 +2118,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("usecrmformforemail")]
 		public System.Nullable<bool> UseCrmFormForEmail
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("usecrmformforemail");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("usecrmformforemail", value);
@@ -2136,12 +2136,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("usecrmformfortask")]
 		public System.Nullable<bool> UseCrmFormForTask
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("usecrmformfortask");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("usecrmformfortask", value);
@@ -2154,12 +2154,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("useimagestrips")]
 		public System.Nullable<bool> UseImageStrips
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("useimagestrips");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("useimagestrips", value);
@@ -2172,12 +2172,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("userprofile")]
 		public string UserProfile
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("userprofile");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("userprofile", value);
@@ -2187,7 +2187,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<long>>("versionnumber");
@@ -2200,12 +2200,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("visualizationpanelayout")]
 		public virtual UserSettings_VisualizationPaneLayout? VisualizationPaneLayout
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return ((UserSettings_VisualizationPaneLayout?)(EntityOptionSetEnum.GetEnum(this, "visualizationpanelayout")));
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("visualizationpanelayout", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
@@ -2215,7 +2215,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("visualizationpanelayoutname")]
 		public string VisualizationPaneLayoutName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("visualizationpanelayout"))
@@ -2235,12 +2235,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("workdaystarttime")]
 		public string WorkdayStartTime
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("workdaystarttime");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("workdaystarttime", value);
@@ -2253,12 +2253,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("workdaystoptime")]
 		public string WorkdayStopTime
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("workdaystoptime");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("workdaystoptime", value);
@@ -2272,12 +2272,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_user_settings")]
 		public SWA.CRM.D365.Entities.Base.BusinessUnit business_unit_user_settings
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.BusinessUnit>("business_unit_user_settings", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.BusinessUnit>("business_unit_user_settings", null, value);
@@ -2291,12 +2291,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_usersettings_createdonbehalfby")]
 		public SWA.CRM.D365.Entities.Base.SystemUser lk_usersettings_createdonbehalfby
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_usersettings_createdonbehalfby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_usersettings_createdonbehalfby", null, value);
@@ -2310,12 +2310,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_usersettings_modifiedonbehalfby")]
 		public SWA.CRM.D365.Entities.Base.SystemUser lk_usersettings_modifiedonbehalfby
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_usersettings_modifiedonbehalfby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_usersettings_modifiedonbehalfby", null, value);
@@ -2329,7 +2329,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_usersettingsbase_createdby")]
 		public SWA.CRM.D365.Entities.Base.SystemUser lk_usersettingsbase_createdby
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_usersettingsbase_createdby", null);
@@ -2343,7 +2343,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_usersettingsbase_modifiedby")]
 		public SWA.CRM.D365.Entities.Base.SystemUser lk_usersettingsbase_modifiedby
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_usersettingsbase_modifiedby", null);
@@ -2357,12 +2357,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("transactioncurrency_usersettings")]
 		public SWA.CRM.D365.Entities.Base.TransactionCurrency transactioncurrency_usersettings
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("transactioncurrency_usersettings", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.TransactionCurrency>("transactioncurrency_usersettings", null, value);
@@ -2376,12 +2376,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_settings")]
 		public SWA.CRM.D365.Entities.Base.SystemUser user_settings
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("user_settings", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("user_settings", null, value);
@@ -2392,7 +2392,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// Constructor for populating via LINQ queries given a LINQ anonymous type
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public UserSettings(object anonymousType) : 
 				this()
 		{

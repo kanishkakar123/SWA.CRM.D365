@@ -86,19 +86,19 @@ namespace SWA.CRM.D365.Entities.Base
 			public const string VersionNumber = "versionnumber";
 		}
 		
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public SavedQuery(System.Guid id) : 
 				base(EntityLogicalName, id)
 		{
 		}
 		
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public SavedQuery(string keyName, object keyValue) : 
 				base(EntityLogicalName, keyName, keyValue)
 		{
 		}
 		
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public SavedQuery(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
 				base(EntityLogicalName, keyAttributes)
 		{
@@ -107,7 +107,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// <summary>
 		/// Default Constructor.
 		/// </summary>
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public SavedQuery() : 
 				base(EntityLogicalName)
 		{
@@ -133,12 +133,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("advancedgroupby")]
 		public string AdvancedGroupBy
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("advancedgroupby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("advancedgroupby", value);
@@ -151,12 +151,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canbedeleted")]
 		public Microsoft.Xrm.Sdk.BooleanManagedProperty CanBeDeleted
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.BooleanManagedProperty>("canbedeleted");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("canbedeleted", value);
@@ -169,12 +169,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("columnsetxml")]
 		public string ColumnSetXml
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("columnsetxml");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("columnsetxml", value);
@@ -187,7 +187,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
 		public virtual ComponentState? ComponentState
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
@@ -200,12 +200,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("conditionalformatting")]
 		public string ConditionalFormatting
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("conditionalformatting");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("conditionalformatting", value);
@@ -218,7 +218,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
@@ -228,7 +228,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyname")]
 		public string CreatedByName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("createdby"))
@@ -245,7 +245,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyyominame")]
 		public string CreatedByYomiName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("createdby"))
@@ -265,7 +265,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
@@ -278,12 +278,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdonbehalfby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("createdonbehalfby", value);
@@ -293,7 +293,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfbyname")]
 		public string CreatedOnBehalfByName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("createdonbehalfby"))
@@ -310,7 +310,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfbyyominame")]
 		public string CreatedOnBehalfByYomiName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("createdonbehalfby"))
@@ -330,12 +330,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("description")]
 		public string Description
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("description");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("description", value);
@@ -348,12 +348,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("fetchxml")]
 		public string FetchXml
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("fetchxml");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("fetchxml", value);
@@ -366,12 +366,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("introducedversion")]
 		public string IntroducedVersion
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("introducedversion");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("introducedversion", value);
@@ -384,7 +384,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iscustom")]
 		public System.Nullable<bool> IsCustom
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("iscustom");
@@ -397,12 +397,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iscustomizable")]
 		public Microsoft.Xrm.Sdk.BooleanManagedProperty IsCustomizable
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.BooleanManagedProperty>("iscustomizable");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("iscustomizable", value);
@@ -412,7 +412,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iscustomizablename")]
 		public string IsCustomizableName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("iscustomizable"))
@@ -432,12 +432,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdefault")]
 		public System.Nullable<bool> IsDefault
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("isdefault");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("isdefault", value);
@@ -447,7 +447,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdefaultname")]
 		public string IsDefaultName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("isdefault"))
@@ -467,7 +467,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismanaged")]
 		public System.Nullable<bool> IsManaged
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("ismanaged");
@@ -477,7 +477,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismanagedname")]
 		public string IsManagedName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("ismanaged"))
@@ -498,7 +498,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[System.ObsoleteAttribute()]
 		public System.Nullable<bool> IsPrivate
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("isprivate");
@@ -511,12 +511,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isquickfindquery")]
 		public System.Nullable<bool> IsQuickFindQuery
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("isquickfindquery");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("isquickfindquery", value);
@@ -526,7 +526,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isquickfindqueryname")]
 		public string IsQuickFindQueryName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("isquickfindquery"))
@@ -546,7 +546,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isuserdefined")]
 		public System.Nullable<bool> IsUserDefined
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("isuserdefined");
@@ -556,7 +556,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isuserdefinedname")]
 		public string IsUserDefinedName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("isuserdefined"))
@@ -576,12 +576,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("layoutjson")]
 		public string LayoutJson
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("layoutjson");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("layoutjson", value);
@@ -594,12 +594,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("layoutxml")]
 		public string LayoutXml
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("layoutxml");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("layoutxml", value);
@@ -612,7 +612,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
@@ -622,7 +622,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyname")]
 		public string ModifiedByName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("modifiedby"))
@@ -639,7 +639,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyyominame")]
 		public string ModifiedByYomiName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("modifiedby"))
@@ -659,7 +659,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
@@ -672,12 +672,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedonbehalfby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("modifiedonbehalfby", value);
@@ -687,7 +687,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfbyname")]
 		public string ModifiedOnBehalfByName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("modifiedonbehalfby"))
@@ -704,7 +704,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfbyyominame")]
 		public string ModifiedOnBehalfByYomiName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("modifiedonbehalfby"))
@@ -724,12 +724,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("name")]
 		public string Name
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("name");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("name", value);
@@ -742,12 +742,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("offlinesqlquery")]
 		public string OfflineSqlQuery
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("offlinesqlquery");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("offlinesqlquery", value);
@@ -760,7 +760,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
 		public Microsoft.Xrm.Sdk.EntityReference OrganizationId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("organizationid");
@@ -770,7 +770,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationidname")]
 		public string OrganizationIdName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("organizationid"))
@@ -790,7 +790,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationtaborder")]
 		public System.Nullable<int> OrganizationTabOrder
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("organizationtaborder");
@@ -803,7 +803,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overwritetime")]
 		public System.Nullable<System.DateTime> OverwriteTime
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("overwritetime");
@@ -816,7 +816,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("queryapi")]
 		public string QueryAPI
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("queryapi");
@@ -829,12 +829,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("queryappusage")]
 		public System.Nullable<int> QueryAppUsage
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("queryappusage");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("queryappusage", value);
@@ -847,12 +847,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("querytype")]
 		public System.Nullable<int> QueryType
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("querytype");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("querytype", value);
@@ -865,12 +865,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("returnedtypecode")]
 		public string ReturnedTypeCode
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("returnedtypecode");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("returnedtypecode", value);
@@ -883,12 +883,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("savedqueryid")]
 		public System.Nullable<System.Guid> SavedQueryId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("savedqueryid");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("savedqueryid", value);
@@ -906,12 +906,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("savedqueryid")]
 		public override System.Guid Id
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return base.Id;
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SavedQueryId = value;
@@ -924,7 +924,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("savedqueryidunique")]
 		public System.Nullable<System.Guid> SavedQueryIdUnique
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("savedqueryidunique");
@@ -937,7 +937,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("solutionid")]
 		public System.Nullable<System.Guid> SolutionId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("solutionid");
@@ -950,12 +950,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
 		public virtual savedquery_statecode? StateCode
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return ((savedquery_statecode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("statecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
@@ -965,7 +965,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecodename")]
 		public string StateCodeName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("statecode"))
@@ -985,12 +985,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
 		public virtual SavedQuery_StatusCode? StatusCode
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return ((SavedQuery_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetAttributeValue("statuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
@@ -1000,7 +1000,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscodename")]
 		public string StatusCodeName
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				if (this.FormattedValues.Contains("statuscode"))
@@ -1020,7 +1020,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
 		public System.Nullable<long> VersionNumber
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<long>>("versionnumber");
@@ -1034,12 +1034,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_savedquery_createdonbehalfby")]
 		public SWA.CRM.D365.Entities.Base.SystemUser lk_savedquery_createdonbehalfby
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_savedquery_createdonbehalfby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_savedquery_createdonbehalfby", null, value);
@@ -1053,12 +1053,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_savedquery_modifiedonbehalfby")]
 		public SWA.CRM.D365.Entities.Base.SystemUser lk_savedquery_modifiedonbehalfby
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_savedquery_modifiedonbehalfby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.SetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_savedquery_modifiedonbehalfby", null, value);
@@ -1072,7 +1072,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_savedquerybase_createdby")]
 		public SWA.CRM.D365.Entities.Base.SystemUser lk_savedquerybase_createdby
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_savedquerybase_createdby", null);
@@ -1086,7 +1086,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_savedquerybase_modifiedby")]
 		public SWA.CRM.D365.Entities.Base.SystemUser lk_savedquerybase_modifiedby
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetRelatedEntity<SWA.CRM.D365.Entities.Base.SystemUser>("lk_savedquerybase_modifiedby", null);
@@ -1097,7 +1097,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// Constructor for populating via LINQ queries given a LINQ anonymous type
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public SavedQuery(object anonymousType) : 
 				this()
 		{

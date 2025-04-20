@@ -8,7 +8,7 @@
 // Created via this command line: "C:\Users\0001H7744\AppData\Roaming\MscrmTools\XrmToolBox\Plugins\DLaB.EarlyBoundGenerator\crmsvcutil.exe" /url:"https://org4850410d.api.crm8.dynamics.com" /namespace:"SWA.CRM.D365.Entities.Base" /SuppressGeneratedCodeAttribute /out:"C:\Kanishka\Project\SWA\EarlyBound\Online Trial\CRMDataContext.cs" /servicecontextname:"CRMDataContext" /codecustomization:"DLaB.CrmSvcUtilExtensions.Entity.CustomizeCodeDomService,DLaB.CrmSvcUtilExtensions" /codegenerationservice:"DLaB.CrmSvcUtilExtensions.Entity.CustomCodeGenerationService,DLaB.CrmSvcUtilExtensions" /codewriterfilter:"DLaB.CrmSvcUtilExtensions.Entity.CodeWriterFilterService,DLaB.CrmSvcUtilExtensions" /namingservice:"DLaB.CrmSvcUtilExtensions.NamingService,DLaB.CrmSvcUtilExtensions" /metadataproviderservice:"DLaB.CrmSvcUtilExtensions.Entity.MetadataProviderService,DLaB.CrmSvcUtilExtensions" /username:"kanishka@d365team.onmicrosoft.com" /password:"**********" 
 //------------------------------------------------------------------------------
 
-[assembly: Microsoft.Xrm.Sdk.Client.ProxyTypesAssemblyAttribute()]
+//[assembly: Microsoft.Xrm.Sdk.Client.ProxyTypesAssemblyAttribute()]
 [assembly: System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.95")]
 
 namespace SWA.CRM.D365.Entities.Base
@@ -23,7 +23,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public CRMDataContext(Microsoft.Xrm.Sdk.IOrganizationService service) : 
 				base(service)
 		{
@@ -34,7 +34,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Account> AccountSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Account>();
@@ -46,7 +46,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.ActivityParty> ActivityPartySet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.ActivityParty>();
@@ -58,7 +58,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.ActivityPointer> ActivityPointerSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.ActivityPointer>();
@@ -70,7 +70,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Annotation> AnnotationSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Annotation>();
@@ -82,7 +82,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Appointment> AppointmentSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Appointment>();
@@ -94,7 +94,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.BusinessUnit> BusinessUnitSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.BusinessUnit>();
@@ -106,7 +106,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Contact> ContactSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Contact>();
@@ -118,7 +118,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.CustomerAddress> CustomerAddressSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.CustomerAddress>();
@@ -130,7 +130,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Email> EmailSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Email>();
@@ -143,7 +143,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Incident> IncidentSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Incident>();
@@ -155,7 +155,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.IncidentResolution> IncidentResolutionSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.IncidentResolution>();
@@ -167,7 +167,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.OptionSet> OptionSetSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.OptionSet>();
@@ -179,7 +179,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Owner> OwnerSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Owner>();
@@ -191,7 +191,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.PhoneCall> PhoneCallSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.PhoneCall>();
@@ -203,7 +203,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.PriceLevel> PriceLevelSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.PriceLevel>();
@@ -215,7 +215,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.ProductPriceLevel> ProductPriceLevelSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.ProductPriceLevel>();
@@ -227,7 +227,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.SavedQuery> SavedQuerySet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.SavedQuery>();
@@ -239,7 +239,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.swa_casecategory> swa_casecategorySet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.swa_casecategory>();
@@ -251,7 +251,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.swa_casesubcategory> swa_casesubcategorySet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.swa_casesubcategory>();
@@ -263,7 +263,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.swa_casetype> swa_casetypeSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.swa_casetype>();
@@ -275,7 +275,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.swa_city> swa_citySet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.swa_city>();
@@ -287,7 +287,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.swa_configuration> swa_configurationSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.swa_configuration>();
@@ -299,7 +299,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.swa_region> swa_regionSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.swa_region>();
@@ -311,7 +311,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.swa_sms> swa_smsSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.swa_sms>();
@@ -323,7 +323,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.SystemUser> SystemUserSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.SystemUser>();
@@ -335,7 +335,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Task> TaskSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Task>();
@@ -347,7 +347,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Team> TeamSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Team>();
@@ -359,7 +359,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Template> TemplateSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.Template>();
@@ -371,7 +371,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.TransactionCurrency> TransactionCurrencySet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.TransactionCurrency>();
@@ -383,7 +383,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.UoM> UoMSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.UoM>();
@@ -395,7 +395,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.UoMSchedule> UoMScheduleSet
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.UoMSchedule>();
@@ -406,7 +406,7 @@ namespace SWA.CRM.D365.Entities.Base
 	internal sealed class EntityOptionSetEnum
 	{
 		
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public static System.Nullable<int> GetEnum(Microsoft.Xrm.Sdk.Entity entity, string attributeLogicalName)
 		{
 			if (entity.Attributes.ContainsKey(attributeLogicalName))
@@ -461,7 +461,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// <param name="color">Color of the value.</param>
 		/// <param name="description">Description of the value.</param>
 		/// <param name="externalValue">External value of the value.</param>
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public OptionSetMetadataAttribute(string name, int displayIndex, string color = null, string description = null, string externalValue = null)
 		{
 			this.Color = color;
@@ -483,7 +483,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// </summary>
 		/// <typeparam name="T">OptionSet Enum Type</typeparam>
 		/// <param name="value">Enum Value with OptionSetMetadataAttribute</param>
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public static OptionSetMetadataAttribute GetMetadata<T>(this T value)
 			where T :  struct, System.IConvertible
 		{

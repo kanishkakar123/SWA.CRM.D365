@@ -72,7 +72,7 @@ namespace SWA.CRM.D365.Plugins
                 try
                 {
                     // enables early bound/proxy types !
-                    ((IProxyTypesAssemblyProvider)PluginExecutionContext).ProxyTypesAssembly = typeof(Entities.Base.Account).Assembly;
+                    ((IProxyTypesAssemblyProvider)PluginExecutionContext).ProxyTypesAssembly = typeof(Entities.Base.Template).Assembly;
                 }
                 catch (System.InvalidCastException)
                 {

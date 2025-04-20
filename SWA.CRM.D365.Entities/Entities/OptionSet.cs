@@ -22,7 +22,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// <summary>
 		/// Default Constructor.
 		/// </summary>
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public OptionSet() : 
 				base(EntityLogicalName)
 		{
@@ -48,7 +48,7 @@ namespace SWA.CRM.D365.Entities.Base
 		
 		public event System.ComponentModel.PropertyChangingEventHandler PropertyChanging;
 		
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		private void OnPropertyChanged(string propertyName)
 		{
 			if ((this.PropertyChanged != null))
@@ -57,7 +57,7 @@ namespace SWA.CRM.D365.Entities.Base
 			}
 		}
 		
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		private void OnPropertyChanging(string propertyName)
 		{
 			if ((this.PropertyChanging != null))
@@ -72,7 +72,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
 		public virtual ComponentState? ComponentState
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
@@ -85,12 +85,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("name")]
 		public string Name
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<string>("name");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.OnPropertyChanging("Name");
@@ -105,12 +105,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("optionsetid")]
 		public System.Nullable<System.Guid> OptionSetId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("optionsetid");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.OnPropertyChanging("OptionSetId");
@@ -130,12 +130,12 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("optionsetid")]
 		public override System.Guid Id
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return base.Id;
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			set
 			{
 				this.OptionSetId = value;
@@ -148,7 +148,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overwritetime")]
 		public System.Nullable<System.DateTime> OverwriteTime
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("overwritetime");
@@ -161,7 +161,7 @@ namespace SWA.CRM.D365.Entities.Base
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("solutionid")]
 		public System.Nullable<System.Guid> SolutionId
 		{
-			[System.Diagnostics.DebuggerNonUserCode()]
+			
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("solutionid");
@@ -172,7 +172,7 @@ namespace SWA.CRM.D365.Entities.Base
 		/// Constructor for populating via LINQ queries given a LINQ anonymous type
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
-		[System.Diagnostics.DebuggerNonUserCode()]
+		
 		public OptionSet(object anonymousType) : 
 				this()
 		{

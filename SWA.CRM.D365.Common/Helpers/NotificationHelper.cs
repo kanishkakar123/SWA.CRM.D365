@@ -1,25 +1,24 @@
 ﻿using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
 using SWA.CRM.D365.Entities.Base;
-using System;
 using System.Linq;
 
 namespace SWA.CRM.D365.Common.Helpers
 {
     public static class NotificationHelper
     {
-        public static Email GetEmailFromTemplate(Template templateEntity, Guid entityId, string entityLogicalName, IOrganizationService service)
+        public static Email GetEmailFromTemplate(Template templateEntity, EntityReference entityReference, IOrganizationService service)
         {
             Email emailEntity = null;
 
             // Retrieve email template from   
-            if (templateEntity != null && entityId != Guid.Empty && !string.IsNullOrEmpty(entityLogicalName))
+            if (templateEntity != null && entityReference != null)
             {
                 InstantiateTemplateRequest templateRequest = new InstantiateTemplateRequest
                 {
                     TemplateId = templateEntity.TemplateId.Value,
-                    ObjectId = entityId,
-                    ObjectType = entityLogicalName
+                    ObjectId = entityReference.Id,
+                    ObjectType = entityReference.LogicalName
                 };
 
                 InstantiateTemplateResponse templateResponse = (InstantiateTemplateResponse)service.Execute(templateRequest);
@@ -52,11 +51,11 @@ namespace SWA.CRM.D365.Common.Helpers
             return sms;
         }
 
-        public static string GetMobileNumber(string entityLogicalName, Guid entityId, IOrganizationService service) 
+        public static string GetMobileNumber(EntityReference entityReference, IOrganizationService service) 
         { 
             string mobileNumber = string.Empty, fieldName = string.Empty;
 
-            switch (entityLogicalName) 
+            switch (entityReference.LogicalName) 
             {
                 case "contact":
                 case "systemuser":
@@ -65,7 +64,7 @@ namespace SWA.CRM.D365.Common.Helpers
                     break;
             }
 
-            Entity entity = service.Retrieve(entityLogicalName, entityId, new Microsoft.Xrm.Sdk.Query.ColumnSet(fieldName));
+            Entity entity = service.Retrieve(entityReference.LogicalName, entityReference.Id, new Microsoft.Xrm.Sdk.Query.ColumnSet(fieldName));
 
             if (entity != null && entity.Contains(fieldName))
             {

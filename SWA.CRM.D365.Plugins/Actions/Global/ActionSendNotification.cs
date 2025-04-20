@@ -60,26 +60,15 @@ namespace SWA.CRM.D365.Plugins
             try
             {
                 // Retrieve Input Parameters
+                logger.Trace("Retrieving Input Parameters");
                 string baseTemplateName = (string)context.InputParameters["BaseTemplateName"];
-                Guid regardingEntityId = new Guid((string)context.InputParameters["RegardingEntityId"]);
-                string regardingEntityLogicalName = (string)context.InputParameters["RegardingEntityLogicalName"];
-                Guid toEntityId = new Guid((string)context.InputParameters["ToEntityId"]);
-                string toEntityLogicalName = (string)context.InputParameters["ToEntityLogicalName"];
+                string regardingEntityURL = (string)context.InputParameters["RegardingEntityURL"];
+                EntityReference regardingEntity = new DynamicUrlParser(regardingEntityURL).ToEntityReference(service);
+                string toEntityURL = (string)context.InputParameters["ToEntityURL"];
+                EntityReference toEntity = new DynamicUrlParser(toEntityURL).ToEntityReference(service);
                 bool sendEmail = (bool)context.InputParameters["SendEmail"];
                 bool sendSMS = (bool)context.InputParameters["SendSMS"];
                 EntityReference fromUser = sendEmail ? (EntityReference)context.InputParameters["FromUser"] : null;
-                EntityReference toEntity = new EntityReference(toEntityLogicalName, toEntityId);
-                EntityReference regardingEntity = new EntityReference(regardingEntityLogicalName, regardingEntityId);
-
-                logger.Trace("Input Parameters:");
-                logger.Trace($"baseTemplateName: {baseTemplateName}");
-                logger.Trace($"regardingEntityId: {regardingEntityId}");
-                logger.Trace($"regardingEntityLogicalName: {regardingEntityLogicalName}");
-                logger.Trace($"toEntityId: {toEntityId}");
-                logger.Trace($"toEntityLogicalName: {toEntityLogicalName}");
-                logger.Trace($"sendEmail: {sendEmail}");
-                logger.Trace($"fromUser: {fromUser.Id}");
-                logger.Trace($"sendSMS: {sendSMS}");
 
                 if (sendEmail)
                 {
@@ -94,14 +83,14 @@ namespace SWA.CRM.D365.Plugins
                         logger.Trace("Start email sending process");
 
                         // Get Email from Template
-                        logger.Trace($"Fetching email template: EMAIL-{baseTemplateName}");
-                        emailTemplate = Template.GetByName(dataContext, "EMAIL-" + baseTemplateName);
+                        logger.Trace($"Fetching email template: Email_{baseTemplateName}");
+                        emailTemplate = Template.GetByName(dataContext, "Email_" + baseTemplateName);
 
                         if (emailTemplate != null)
                         {
                             // Map and Create Email 
                             logger.Trace("Creating email record based on template");
-                            emailEntity = NotificationHelper.GetEmailFromTemplate(emailTemplate, regardingEntityId, regardingEntityLogicalName, service);
+                            emailEntity = NotificationHelper.GetEmailFromTemplate(emailTemplate, regardingEntity, service);
 
                             if (emailEntity != null)
                             {
@@ -136,12 +125,12 @@ namespace SWA.CRM.D365.Plugins
                         }
                         else
                         {
-                            logger.Trace($"Email template not found: EMAIL-{baseTemplateName}");
+                            logger.Trace($"Email template not found: Email_{baseTemplateName}");
                         }
                     }
                     catch (Exception ex)
                     {
-                        logger.Trace($"Error sending email: {ex.Message}");
+                        HelperMethods.LogPluginError("ActionSendNotification", ex, logger);
                     }
                 }
 
@@ -160,14 +149,14 @@ namespace SWA.CRM.D365.Plugins
                         logger.Trace("Start SMS sending process");
 
                         // Get SMS from Template
-                        logger.Trace($"Fetching Email Template: SMS-{baseTemplateName}");
-                        smsTemplate = Template.GetByName(dataContext, "SMS-" + baseTemplateName);
+                        logger.Trace($"Fetching Email Template: SMS_{baseTemplateName}");
+                        smsTemplate = Template.GetByName(dataContext, "SMS_" + baseTemplateName);
 
                         if (smsTemplate != null)
                         {
                             // Map and Create Email 
                             logger.Trace("Creating Email record based on template");
-                            emailEntity = NotificationHelper.GetEmailFromTemplate(smsTemplate, regardingEntityId, regardingEntityLogicalName, service);
+                            emailEntity = NotificationHelper.GetEmailFromTemplate(smsTemplate, regardingEntity, service);
 
                             if (emailEntity != null)
                             {
@@ -176,7 +165,7 @@ namespace SWA.CRM.D365.Plugins
                                 smsEntity = new swa_sms();
                                 string subject = emailEntity.Subject;
                                 string message = emailEntity.Description;
-                                string mobileNumber = NotificationHelper.GetMobileNumber(toEntityLogicalName, toEntityId, service);
+                                string mobileNumber = NotificationHelper.GetMobileNumber(toEntity, service);
                                 NotificationHelper.MapSMS(smsEntity, subject, message, toEntity, regardingEntity);
 
                                 createEntityManipulation = new CreateEntityManipulation(smsEntity);
@@ -211,24 +200,18 @@ namespace SWA.CRM.D365.Plugins
                         }
                         else
                         {
-                            logger.Trace($"Email template not found: EMAIL-{baseTemplateName}");
+                            logger.Trace($"Email template not found: SMS_{baseTemplateName}");
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-
-                        throw;
+                        HelperMethods.LogPluginError("ActionSendNotification", ex, logger);
                     }
                 }
             }
             catch (Exception ex)
             {
-                logger.Trace($"Error processing ActionSendNotification : {ex.Message}{Environment.NewLine}StackTrace : {ex.StackTrace}");
-
-                if (ex.InnerException != null)
-                {
-                    logger.Trace($"Inner Exception : {ex.InnerException.Message}{Environment.NewLine}StackTrace : {ex.InnerException.StackTrace}");
-                }
+                HelperMethods.LogPluginError("ActionSendNotification", ex, logger);
             }
 
             // Set Output Parameters
