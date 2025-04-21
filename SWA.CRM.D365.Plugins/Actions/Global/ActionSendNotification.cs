@@ -22,7 +22,7 @@ namespace SWA.CRM.D365.Plugins
         /// <param name="secure">Contains non-public (secured) configuration information. 
         /// When using Microsoft Dynamics 365 for Outlook with Offline Access, 
         /// the secure string is not passed to a plug-in that executes while the client is offline.</param>
-        public ActionSendNotification(string unsecure, string secure) : base(typeof(DemoPlugin))
+        public ActionSendNotification(string unsecure, string secure) : base(typeof(ActionSendNotification))
         {
             // Implement your custom configuration handling.
         }
@@ -64,8 +64,10 @@ namespace SWA.CRM.D365.Plugins
                 string baseTemplateName = (string)context.InputParameters["BaseTemplateName"];
                 string regardingEntityURL = (string)context.InputParameters["RegardingEntityURL"];
                 EntityReference regardingEntity = new DynamicUrlParser(regardingEntityURL).ToEntityReference(service);
+                //EntityReference regardingEntity = new EntityReference("incident", new DynamicUrlParser(regardingEntityURL).Id);
                 string toEntityURL = (string)context.InputParameters["ToEntityURL"];
                 EntityReference toEntity = new DynamicUrlParser(toEntityURL).ToEntityReference(service);
+                //EntityReference toEntity = new EntityReference("contact", new DynamicUrlParser(toEntityURL).Id);
                 bool sendEmail = (bool)context.InputParameters["SendEmail"];
                 bool sendSMS = (bool)context.InputParameters["SendSMS"];
                 EntityReference fromUser = sendEmail ? (EntityReference)context.InputParameters["FromUser"] : null;
@@ -85,6 +87,7 @@ namespace SWA.CRM.D365.Plugins
                         // Get Email from Template
                         logger.Trace($"Fetching email template: Email_{baseTemplateName}");
                         emailTemplate = Template.GetByName(dataContext, "Email_" + baseTemplateName);
+                        //emailTemplate = Template.GetByName(service, "Email_" + baseTemplateName).ToEntity<Template>();
 
                         if (emailTemplate != null)
                         {
@@ -151,6 +154,7 @@ namespace SWA.CRM.D365.Plugins
                         // Get SMS from Template
                         logger.Trace($"Fetching Email Template: SMS_{baseTemplateName}");
                         smsTemplate = Template.GetByName(dataContext, "SMS_" + baseTemplateName);
+                        //smsTemplate = Template.GetByName(service, "SMS_" + baseTemplateName).ToEntity<Template>();
 
                         if (smsTemplate != null)
                         {
