@@ -52,41 +52,41 @@ namespace SWA.CRM.D365.Plugins
 
             logger.Trace("Start TaskPreCreate");
 
-            try
+            //try
+            //{
+            logger.Trace("Get target task");
+            Task task = localContext.GetTargetEntity().ToEntity<Task>();
+
+            if (task != null && task.RegardingObjectId != null && string.Equals(task.RegardingObjectId.LogicalName, Incident.EntityLogicalName, StringComparison.OrdinalIgnoreCase))
             {
-                logger.Trace("Get target task");
-                Task task = localContext.GetTargetEntity().ToEntity<Task>();
+                logger.Trace($"Regarding case : {task.RegardingObjectId.Name} ({task.RegardingObjectId.Id})");
 
-                if (task != null && task.RegardingObjectId != null &&  string.Equals(task.RegardingObjectId.LogicalName,Incident.EntityLogicalName,StringComparison.OrdinalIgnoreCase))
+                logger.Trace("Get open tasks for case");
+                //IEnumerable<Task> openTasks = Task.GetByRegardingObject(dataContext, task.RegardingObjectId.Id);
+                EntityCollection openTasks = Task.GetByRegardingObject(service, task.RegardingObjectId.Id);
+
+                //if (openTasks != null && openTasks.Any())
+                if (openTasks != null && openTasks.Entities.Count > 0)
                 {
-                    logger.Trace($"Regarding case : {task.RegardingObjectId.Name} ({task.RegardingObjectId.Id})");
-
-                    logger.Trace("Get open tasks for case");
-                    //IEnumerable<Task> openTasks = Task.GetByRegardingObject(dataContext, task.RegardingObjectId.Id);
-                    EntityCollection openTasks = Task.GetByRegardingObject(service, task.RegardingObjectId.Id);
-
-                    //if (openTasks != null && openTasks.Any())
-                    if (openTasks != null && openTasks.Entities.Count > 0)
-                    {
-                        //logger.Trace($"{openTasks.Count()} task(s) are open for the case");
-                        logger.Trace($"{openTasks.Entities.Count} task(s) are open for the case");
-                        throw new InvalidPluginExecutionException("There are existing open tasks for this case. Please ensure all open tasks are completed before creating new ones.");
-                    }
-                    else
-                    {
-                        logger.Trace($"No open task found for the case");
-                    }
+                    //logger.Trace($"{openTasks.Count()} task(s) are open for the case");
+                    logger.Trace($"{openTasks.Entities.Count} task(s) are open for the case");
+                    throw new InvalidPluginExecutionException("There are existing open tasks for this case. Please ensure all open tasks are completed before creating new ones.");
+                }
+                else
+                {
+                    logger.Trace($"No open task found for the case");
                 }
             }
-            catch (Exception ex)
-            {
-                logger.Trace($"Error processing TaskPreCreate : {ex.Message}{Environment.NewLine}StackTrace : {ex.StackTrace}");
+            //}
+            //catch (Exception ex)
+            //{
+            //    logger.Trace($"Error processing TaskPreCreate : {ex.Message}{Environment.NewLine}StackTrace : {ex.StackTrace}");
 
-                if (ex.InnerException != null)
-                {
-                    logger.Trace($"Inner Exception : {ex.InnerException.Message}{Environment.NewLine}StackTrace : {ex.InnerException.StackTrace}");
-                }
-            }
+            //    if (ex.InnerException != null)
+            //    {
+            //        logger.Trace($"Inner Exception : {ex.InnerException.Message}{Environment.NewLine}StackTrace : {ex.InnerException.StackTrace}");
+            //    }
+            //}
 
             logger.Trace("End TaskPreCreate");
         }
