@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SWA.CRM.D365.Workflows")]
-[assembly: AssemblyCopyright("Copyright ©  2024")]
+[assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e0f925ce-2116-425b-98b5-bd14e28c1b6a")]
+[assembly: Guid("4a7d2e10-a877-4992-b178-8675e2699e2c")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -34,4 +34,3 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: Microsoft.Xrm.Sdk.Client.ProxyTypesAssemblyAttribute()]
