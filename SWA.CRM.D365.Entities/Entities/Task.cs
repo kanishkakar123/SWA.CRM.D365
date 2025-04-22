@@ -17,6 +17,7 @@ namespace SWA.CRM.D365.Entities.Base
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("task")]
+
 	public partial class Task : Microsoft.Xrm.Sdk.Entity
 	{
 		

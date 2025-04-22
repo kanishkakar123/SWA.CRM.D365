@@ -62,14 +62,14 @@ namespace SWA.CRM.D365.Plugins
                 logger.Trace($"Regarding case : {task.RegardingObjectId.Name} ({task.RegardingObjectId.Id})");
 
                 logger.Trace("Get open tasks for case");
-                //IEnumerable<Task> openTasks = Task.GetByRegardingObject(dataContext, task.RegardingObjectId.Id);
-                EntityCollection openTasks = Task.GetByRegardingObject(service, task.RegardingObjectId.Id);
+                IEnumerable<Task> openTasks = Task.GetByRegardingObject(dataContext, task.RegardingObjectId.Id);
+                //EntityCollection openTasks = Task.GetByRegardingObject(service, task.RegardingObjectId.Id);
 
-                //if (openTasks != null && openTasks.Any())
-                if (openTasks != null && openTasks.Entities.Count > 0)
+                if (openTasks != null && openTasks.Any())
+                //if (openTasks != null && openTasks.Entities.Count > 0)
                 {
-                    //logger.Trace($"{openTasks.Count()} task(s) are open for the case");
-                    logger.Trace($"{openTasks.Entities.Count} task(s) are open for the case");
+                    logger.Trace($"{openTasks.Count()} task(s) are open for the case");
+                    //logger.Trace($"{openTasks.Entities.Count} task(s) are open for the case");
                     throw new InvalidPluginExecutionException("There are existing open tasks for this case. Please ensure all open tasks are completed before creating new ones.");
                 }
                 else

@@ -5,13 +5,13 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWA.CRM.D365.Entities.Base", "SWA.CRM.D365.Entities\SWA.CRM.D365.Entities.Base.csproj", "{C900CFF8-6080-42D6-B371-748F8B45A698}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWA.CRM.D365.Plugins", "SWA.CRM.D365.Plugins\SWA.CRM.D365.Plugins.csproj", "{DD027768-E9EC-44AC-B4C5-840054B2E1A8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWA.CRM.D365.Common", "SWA.CRM.D365.Common\SWA.CRM.D365.Common.csproj", "{F718D700-4F4E-44DC-8D3D-E1E7F0E2D35F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApp", "TestConsoleApp\TestConsoleApp.csproj", "{F51F3B96-EC1E-4A23-B5E5-0D76AB2F2165}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWA.CRM.D365.Workflows", "SWA.CRM.D365.Workflows\SWA.CRM.D365.Workflows.csproj", "{4A7D2E10-A877-4992-B178-8675E2699E2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWA.CRM.D365.Plugins", "SWA.CRM.D365.Plugins\SWA.CRM.D365.Plugins.csproj", "{5007C018-A94A-4172-B1B0-F8E5BFC7A0ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{C900CFF8-6080-42D6-B371-748F8B45A698}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C900CFF8-6080-42D6-B371-748F8B45A698}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C900CFF8-6080-42D6-B371-748F8B45A698}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD027768-E9EC-44AC-B4C5-840054B2E1A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD027768-E9EC-44AC-B4C5-840054B2E1A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD027768-E9EC-44AC-B4C5-840054B2E1A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD027768-E9EC-44AC-B4C5-840054B2E1A8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F718D700-4F4E-44DC-8D3D-E1E7F0E2D35F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F718D700-4F4E-44DC-8D3D-E1E7F0E2D35F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F718D700-4F4E-44DC-8D3D-E1E7F0E2D35F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{4A7D2E10-A877-4992-B178-8675E2699E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A7D2E10-A877-4992-B178-8675E2699E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A7D2E10-A877-4992-B178-8675E2699E2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5007C018-A94A-4172-B1B0-F8E5BFC7A0ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5007C018-A94A-4172-B1B0-F8E5BFC7A0ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5007C018-A94A-4172-B1B0-F8E5BFC7A0ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5007C018-A94A-4172-B1B0-F8E5BFC7A0ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

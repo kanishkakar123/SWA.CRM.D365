@@ -10,6 +10,7 @@
 
 //[assembly: Microsoft.Xrm.Sdk.Client.ProxyTypesAssemblyAttribute()]
 [assembly: System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.95")]
+[assembly: Microsoft.Xrm.Sdk.Client.ProxyTypesAssemblyAttribute()]
 
 namespace SWA.CRM.D365.Entities.Base
 {

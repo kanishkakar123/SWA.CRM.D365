@@ -1,11 +1,12 @@
 ﻿using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Tooling.Connector;
+//using Microsoft.Xrm.Tooling.Connector;
 using System;
 
 namespace SWA.CRM.D365.Common.CRMHelper
 {
     public class CRMConnection
     {
+        /*
         private CrmServiceClient serviceClient = null;
         private string ConnectionString = string.Empty;
 
@@ -45,5 +46,6 @@ namespace SWA.CRM.D365.Common.CRMHelper
 
             return serviceClient.OrganizationWebProxyClient != null ? (IOrganizationService)serviceClient.OrganizationWebProxyClient : serviceClient.OrganizationServiceProxy;
         }
+        */
     }
 }
