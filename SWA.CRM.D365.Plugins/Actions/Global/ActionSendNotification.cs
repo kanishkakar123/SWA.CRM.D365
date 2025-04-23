@@ -10,23 +10,13 @@ namespace SWA.CRM.D365.Plugins
 {
     public class ActionSendNotification : PluginBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionSendNotification"/> class.
+        /// </summary>
         public ActionSendNotification() : base(typeof(ActionSendNotification))
         {
             // Implement your custom configuration handling.
         }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ActionSendNotification"/> class.
-        /// </summary>
-        /// <param name="unsecure">Contains public (unsecured) configuration information.</param>
-        /// <param name="secure">Contains non-public (secured) configuration information. 
-        /// When using Microsoft Dynamics 365 for Outlook with Offline Access, 
-        /// the secure string is not passed to a plug-in that executes while the client is offline.</param>
-        public ActionSendNotification(string unsecure, string secure) : base(typeof(ActionSendNotification))
-        {
-            // Implement your custom configuration handling.
-        }
-
 
         /// <summary>
         /// Main entry point for he business logic that the plug-in is to execute.
@@ -83,52 +73,78 @@ namespace SWA.CRM.D365.Plugins
                     try
                     {
                         logger.Trace("Start email sending process");
+                        logger.Trace($"Email To : {toEntity.LogicalName} ({toEntity.Id})");
 
-                        // Get Email from Template
-                        logger.Trace($"Fetching email template: Email_{baseTemplateName}");
-                        emailTemplate = Template.GetByName(dataContext, "Email_" + baseTemplateName);
-                        //emailTemplate = Template.GetByName(service, "Email_" + baseTemplateName).ToEntity<Template>();
-
-                        if (emailTemplate != null)
+                        // If email to is team then send email to default queue of the team
+                        if (toEntity.LogicalName == Team.EntityLogicalName)
                         {
-                            // Map and Create Email 
-                            logger.Trace("Creating email record based on template");
-                            emailEntity = NotificationHelper.GetEmailFromTemplate(emailTemplate, regardingEntity, service);
+                            logger.Trace("Get default queue of team");
+                            Queue defaultQueue = Queue.GetByTeam(dataContext, toEntity.Id);
 
-                            if (emailEntity != null)
+                            if (defaultQueue != null)
+                            { 
+                                toEntity = defaultQueue.ToEntityReference();
+                                logger.Trace("Send email to default queue of team");
+                            }
+                        }
+
+                        logger.Trace($"Get email address of {toEntity.LogicalName} ({toEntity.Id})");
+                        string emailAddress = NotificationHelper.GetEmailAddress(toEntity, service);
+
+                        if (!string.IsNullOrEmpty(emailAddress))
+                        {
+                            logger.Trace($"Email address : {emailAddress}");
+
+                            // Get Email from Template
+                            logger.Trace($"Fetching Template: Email_{baseTemplateName}");
+                            emailTemplate = Template.GetByName(dataContext, "Email_" + baseTemplateName);
+                            //emailTemplate = Template.GetByName(service, "Email_" + baseTemplateName).ToEntity<Template>();
+
+                            if (emailTemplate != null)
                             {
-                                emailEntity = NotificationHelper.MapEmail(emailEntity, toEntity, regardingEntity, fromUser);
+                                // Map and Create Email 
+                                logger.Trace("Creating email record based on template");
+                                emailEntity = NotificationHelper.GetEmailFromTemplate(emailTemplate, regardingEntity, service);
 
-                                createEntityManipulation = new CreateEntityManipulation(emailEntity);
-                                emailId = createEntityManipulation.Create(service);
-                                logger.Trace($"Email record created : {emailId}");
+                                if (emailEntity != null)
+                                {
+                                    emailEntity = NotificationHelper.MapEmail(emailEntity, toEntity, regardingEntity, fromUser);
 
-                                // Send Email
-                                //logger.Trace("Sending email");
-                                //sendEmailRequest = new SendEmailRequest()
-                                //{
-                                //    EmailId = emailId,
-                                //    //TrackingToken = "",
-                                //    IssueSend = true
-                                //};
+                                    createEntityManipulation = new CreateEntityManipulation(emailEntity);
+                                    emailId = createEntityManipulation.Create(service);
+                                    logger.Trace($"Email record created : {emailId}");
 
-                                //sendEmailResponse = (SendEmailResponse)service.Execute(sendEmailRequest);
+                                    // Send Email
+                                    logger.Trace("Sending email");
+                                    sendEmailRequest = new SendEmailRequest()
+                                    {
+                                        EmailId = emailId,
+                                        //TrackingToken = "",
+                                        IssueSend = true
+                                    };
 
-                                //if (sendEmailResponse != null)
-                                //{
-                                //    emailStatus = true;
-                                //    logger.Trace("Email sent successfully");
-                                //}
-                                //else
-                                //{
-                                //    emailStatus = false;
-                                //    logger.Trace("Error sending email");
-                                //}
+                                    sendEmailResponse = (SendEmailResponse)service.Execute(sendEmailRequest);
+
+                                    if (sendEmailResponse != null)
+                                    {
+                                        emailStatus = true;
+                                        logger.Trace("Email sent successfully");
+                                    }
+                                    else
+                                    {
+                                        emailStatus = false;
+                                        logger.Trace("Error sending email");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                logger.Trace($"Template not found: Email_{baseTemplateName}");
                             }
                         }
                         else
                         {
-                            logger.Trace($"Email template not found: Email_{baseTemplateName}");
+                            logger.Trace($"Email address not set for {toEntity.LogicalName} ({toEntity.Id})");
                         }
                     }
                     catch (Exception ex)
@@ -137,7 +153,7 @@ namespace SWA.CRM.D365.Plugins
                     }
                 }
 
-                if (sendSMS)
+                if (toEntity.LogicalName != Queue.EntityLogicalName && sendSMS)
                 {
                     Template smsTemplate;
                     Email emailEntity;
@@ -150,61 +166,75 @@ namespace SWA.CRM.D365.Plugins
                     try
                     {
                         logger.Trace("Start SMS sending process");
+                        logger.Trace($"Get mobile number of {toEntity.LogicalName} ({toEntity.Id})");
 
-                        // Get SMS from Template
-                        logger.Trace($"Fetching Email Template: SMS_{baseTemplateName}");
-                        smsTemplate = Template.GetByName(dataContext, "SMS_" + baseTemplateName);
-                        //smsTemplate = Template.GetByName(service, "SMS_" + baseTemplateName).ToEntity<Template>();
+                        string mobileNumber = NotificationHelper.GetMobileNumber(toEntity, service);
 
-                        if (smsTemplate != null)
+                        if (!string.IsNullOrEmpty(mobileNumber))
                         {
-                            // Map and Create Email 
-                            logger.Trace("Creating Email record based on template");
-                            emailEntity = NotificationHelper.GetEmailFromTemplate(smsTemplate, regardingEntity, service);
+                            logger.Trace($"Mobile number : {mobileNumber}");
 
-                            if (emailEntity != null)
+                            // Get SMS from Template
+                            logger.Trace($"Fetching Template: SMS_{baseTemplateName}");
+                            smsTemplate = Template.GetByName(dataContext, "SMS_" + baseTemplateName);
+                            //smsTemplate = Template.GetByName(service, "SMS_" + baseTemplateName).ToEntity<Template>();
+
+                            if (smsTemplate != null)
                             {
-                                // Map and Create SMS
-                                logger.Trace("Creating SMS record based on template");
-                                smsEntity = new swa_sms();
-                                string subject = emailEntity.Subject;
-                                string message = emailEntity.Description;
-                                string mobileNumber = NotificationHelper.GetMobileNumber(toEntity, service);
-                                NotificationHelper.MapSMS(smsEntity, subject, message, toEntity, regardingEntity);
+                                // Map and Create Email 
+                                logger.Trace("Creating Email record based on template");
+                                emailEntity = NotificationHelper.GetEmailFromTemplate(smsTemplate, regardingEntity, service);
 
-                                createEntityManipulation = new CreateEntityManipulation(smsEntity);
-                                smsId = createEntityManipulation.Create(service);
-                                logger.Trace($"SMS record created : {smsId}");
+                                if (emailEntity != null)
+                                {
+                                    // Map and Create SMS
+                                    logger.Trace("Creating SMS record based on template");
+                                    smsEntity = new swa_sms();
+                                    string subject = emailEntity.Subject;
+                                    string message = Common.Helpers.HelperMethods.UseHtmlDecode(emailEntity.Description);
 
-                                // Send SMS
-                                //logger.Trace("Sending SMS");
-                                //smsServiceRequest = new SMSServiceRequest()
-                                //{
-                                //    Message = message,
-                                //    MobileNumber = mobileNumber
-                                //};
+                                    NotificationHelper.MapSMS(smsEntity, subject, message, toEntity, regardingEntity);
 
-                                //smsService = new SMSService(service);
-                                //smsServiceResponse = smsService.SendSMS(smsServiceRequest);
+                                    createEntityManipulation = new CreateEntityManipulation(smsEntity);
+                                    smsId = createEntityManipulation.Create(service);
+                                    logger.Trace($"SMS record created : {smsId}");
 
-                                //if (smsServiceResponse != null && smsServiceResponse.Success)
-                                //{
-                                //    // Need SMS response model
-                                //    smsStatus = true;
-                                //    logger.Trace("SMS sent successfully");
-                                //}
-                                //else
-                                //{
-                                //    smsStatus = false;
-                                //    logger.Trace("Error sending SMS");
-                                //}
+                                    // Send SMS
+                                    //logger.Trace("Sending SMS");
+                                    //smsServiceRequest = new SMSServiceRequest()
+                                    //{
+                                    //    Message = message,
+                                    //    MobileNumber = mobileNumber
+                                    //};
 
-                                smsStatus = true;
+                                    //smsService = new SMSService(service);
+                                    //smsServiceResponse = smsService.SendSMS(smsServiceRequest);
+
+                                    //if (smsServiceResponse != null && smsServiceResponse.Success)
+                                    //{
+                                    //    // Need SMS response model
+                                    //    smsStatus = true;
+                                    //    logger.Trace("SMS sent successfully");
+                                    //}
+                                    //else
+                                    //{
+                                    //    smsStatus = false;
+                                    //    logger.Trace("Error sending SMS");
+                                    //}
+
+                                    // Code to update SMS activity with service response
+
+                                    smsStatus = true;
+                                }
+                            }
+                            else
+                            {
+                                logger.Trace($"Template not found: SMS_{baseTemplateName}");
                             }
                         }
                         else
                         {
-                            logger.Trace($"Email template not found: SMS_{baseTemplateName}");
+                            logger.Trace($"Mobile number not set for {toEntity.LogicalName} ({toEntity.Id})");
                         }
                     }
                     catch (Exception ex)

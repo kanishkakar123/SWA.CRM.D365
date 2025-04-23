@@ -402,7 +402,19 @@ namespace SWA.CRM.D365.Entities.Base
 				return this.CreateQuery<SWA.CRM.D365.Entities.Base.UoMSchedule>();
 			}
 		}
-	}
+
+        /// <summary>
+        /// Gets a binding to the set of all <see cref="SWA.CRM.D365.Entities.Base.Queue"/> entities.
+        /// </summary>
+        public System.Linq.IQueryable<SWA.CRM.D365.Entities.Base.Queue> QueueSet
+        {
+
+            get
+            {
+                return this.CreateQuery<SWA.CRM.D365.Entities.Base.Queue>();
+            }
+        }
+    }
 	
 	internal sealed class EntityOptionSetEnum
 	{

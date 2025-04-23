@@ -83,7 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CRMHelper\CRMConnection.cs" />
+    <Compile Include="Helpers\Constants.cs" />
     <Compile Include="Helpers\DynamicUrlParser.cs" />
+    <Compile Include="Helpers\HelperMethods.cs" />
     <Compile Include="Helpers\JSONHelper.cs" />
     <Compile Include="Helpers\NotificationHelper.cs" />
     <Compile Include="Model\Common\AccessToken.cs" />

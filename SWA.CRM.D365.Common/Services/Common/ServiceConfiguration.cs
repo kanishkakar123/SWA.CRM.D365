@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xrm.Sdk;
 using Newtonsoft.Json;
+using SWA.CRM.D365.Common.Helpers;
 using SWA.CRM.D365.Common.Model;
 using SWA.CRM.D365.Entities.Base;
 
@@ -60,7 +61,7 @@ namespace SWA.CRM.D365.Common.Services
             switch (serviceCategory)
             {
                 case ServiceCategory.SMSService:
-                    configName = "SmsApiUrl";
+                    configName = Constants.SmsApiUrl;
                     break;
 
                 case ServiceCategory.Survey:
@@ -73,10 +74,6 @@ namespace SWA.CRM.D365.Common.Services
                     break;
 
                 case ServiceCategory.OAuthService:
-                    OAuthServiceConfig = new OAuthServiceConfig()
-                    {
-                        // Get values from SWA Config record in OAuthServiceConfig properties
-                    };
                     break;
             }
 

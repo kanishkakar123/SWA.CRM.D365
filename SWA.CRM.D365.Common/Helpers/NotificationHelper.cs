@@ -1,6 +1,7 @@
 ﻿using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
 using SWA.CRM.D365.Entities.Base;
+using System.Collections;
 using System.Linq;
 
 namespace SWA.CRM.D365.Common.Helpers
@@ -51,16 +52,44 @@ namespace SWA.CRM.D365.Common.Helpers
             return sms;
         }
 
+        public static string GetEmailAddress(EntityReference entityReference, IOrganizationService service)
+        {
+            string emailAddress = string.Empty, fieldName = string.Empty;
+
+            switch (entityReference.LogicalName)
+            {
+                case Contact.EntityLogicalName:
+                    fieldName = Contact.Fields.EMailAddress1;
+                    break;
+                case SystemUser.EntityLogicalName:
+                    fieldName = SystemUser.Fields.InternalEMailAddress;
+                    break;
+                case Entities.Base.Queue.EntityLogicalName:
+                    fieldName = Entities.Base.Queue.Fields.EMailAddress;
+                    break;
+            }
+
+            Entity entity = service.Retrieve(entityReference.LogicalName, entityReference.Id, new Microsoft.Xrm.Sdk.Query.ColumnSet(fieldName));
+
+            if (entity != null && entity.Contains(fieldName))
+            {
+                emailAddress = entity.GetAttributeValue<string>(fieldName);
+            }
+
+            return emailAddress;
+        }
+
         public static string GetMobileNumber(EntityReference entityReference, IOrganizationService service) 
         { 
             string mobileNumber = string.Empty, fieldName = string.Empty;
 
             switch (entityReference.LogicalName) 
             {
-                case "contact":
-                case "systemuser":
-                case "lead":
-                    fieldName = "mobilenumber";
+                case Contact.EntityLogicalName:
+                    fieldName = Contact.Fields.MobilePhone;
+                    break;
+                case SystemUser.EntityLogicalName:
+                    fieldName = SystemUser.Fields.MobilePhone;
                     break;
             }
 

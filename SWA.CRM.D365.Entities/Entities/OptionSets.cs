@@ -3714,12 +3714,12 @@ namespace SWA.CRM.D365.Entities.Base
 		PendingManagerReview = 116950004,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Problem Solved", 10, "#358717")]
-		ProblemSolved = 5,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
 		[OptionSetMetadataAttribute("Researching", 6, "#007A7C")]
 		Researching = 4,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Resolved", 10, "#358717")]
+		Resolved = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		[OptionSetMetadataAttribute("Waiting for Details", 3, "#8C24B5")]
@@ -5205,6 +5205,317 @@ namespace SWA.CRM.D365.Entities.Base
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		[OptionSetMetadataAttribute("Rectify", 1)]
 		Rectify = 1,
+	}
+	
+	/// <summary>
+	/// Indicates the approval options for server-side synchronization or Email Router access.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Queue_EmailRouterAccessApproval
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Approved", 1)]
+		Approved = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Empty", 0)]
+		Empty = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Pending Approval", 2)]
+		PendingApproval = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Rejected", 3)]
+		Rejected = 3,
+	}
+	
+	/// <summary>
+	/// Incoming email delivery method for the queue.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Queue_IncomingEmailDeliveryMethod
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Forward Mailbox", 2)]
+		ForwardMailbox = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("None", 0)]
+		None = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Server-Side Synchronization or Email Router", 1)]
+		ServerSideSynchronizationOrEmailRouter = 2,
+	}
+	
+	/// <summary>
+	/// Incoming email filtering method.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Queue_IncomingEmailFilteringMethod
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("All email messages", 0)]
+		AllEmailMessages = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Email messages from Dynamics 365 Leads, Contacts and Accounts", 2)]
+		EmailMessagesFromDynamics365LeadsContactsAndAccounts = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Email messages from Dynamics 365 records that are email enabled", 3)]
+		EmailMessagesFromDynamics365RecordsThatAreEmailEnabled = 3,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Email messages in response to Dynamics 365 email", 1)]
+		EmailMessagesInResponseToDynamics365Email = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("No email messages", 4)]
+		NoEmailMessages = 4,
+	}
+	
+	/// <summary>
+	/// Outgoing email delivery method for the queue.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Queue_OutgoingEmailDeliveryMethod
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("None", 0)]
+		None = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Server-Side Synchronization or Email Router", 1)]
+		ServerSideSynchronizationOrEmailRouter = 2,
+	}
+	
+	/// <summary>
+	/// Type of queue that is automatically assigned when a user or queue is created. The type can be public, private, or work in process.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Queue_QueueTypeCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Default Value", 0)]
+		DefaultValue = 1,
+	}
+	
+	/// <summary>
+	/// Select whether the queue is public or private. A public queue can be viewed by all.A private queue can be viewed only by the members added to the queue.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Queue_QueueViewType
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Private", 1)]
+		Private = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Public", 0)]
+		Public = 0,
+	}
+	
+	/// <summary>
+	/// Status of the queue.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum queue_statecode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Active", 0)]
+		Active = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Inactive", 1)]
+		Inactive = 1,
+	}
+	
+	/// <summary>
+	/// Reason for the status of the queue.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum Queue_StatusCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Active", 1)]
+		Active = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Inactive", 0)]
+		Inactive = 2,
+	}
+	
+	/// <summary>
+	/// Identifies the type of queue item, such as the specific activity type, case, or article.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum QueueItem_ObjectTypeCode
+	{
+		
+		/// <summary>
+		/// Task performed, or to be performed, by a user. An activity is any action for which an entry can be made on a calendar.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Activity", 0, null, "Task performed, or to be performed, by a user. An activity is any action for whic" +
+			"h an entry can be made on a calendar.")]
+		Activity = 4200,
+		
+		/// <summary>
+		/// Commitment representing a time interval with start/end times and duration.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Appointment", 2, null, "Commitment representing a time interval with start/end times and duration.")]
+		Appointment = 4201,
+		
+		/// <summary>
+		/// Task performed, or to be performed, by a user for planning or running a campaign.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Campaign Activity", 4, null, "Task performed, or to be performed, by a user for planning or running a campaign." +
+			"")]
+		CampaignActivity = 4402,
+		
+		/// <summary>
+		/// Response from an existing or a potential new customer for a campaign.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Campaign Response", 1, null, "Response from an existing or a potential new customer for a campaign.")]
+		CampaignResponse = 4401,
+		
+		/// <summary>
+		/// Service request case associated with a contract.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Case", 14, null, "Service request case associated with a contract.")]
+		Case = 112,
+		
+		/// <summary>
+		/// Activity that is delivered using email protocols.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Email", 9, null, "Activity that is delivered using email protocols.")]
+		Email = 4202,
+		
+		/// <summary>
+		/// Activity that tracks call outcome and number of pages for a fax and optionally stores an electronic copy of the document.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Fax", 5, null, "Activity that tracks call outcome and number of pages for a fax and optionally st" +
+			"ores an electronic copy of the document.")]
+		Fax = 4204,
+		
+		/// <summary>
+		/// Organizational knowledge for internal and external use.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Knowledge Article", 6, null, "Organizational knowledge for internal and external use.")]
+		KnowledgeArticle = 9953,
+		
+		/// <summary>
+		/// Organizational Knowledge Article Template for Internal and external creation of Knowledge Articles.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Knowledge Article Template", 13, null, "Organizational Knowledge Article Template for Internal and external creation of K" +
+			"nowledge Articles.")]
+		KnowledgeArticleTemplate = 10055,
+		
+		/// <summary>
+		/// Activity that tracks the delivery of a letter. The activity can contain the electronic copy of the letter.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Letter", 15, null, "Activity that tracks the delivery of a letter. The activity can contain the elect" +
+			"ronic copy of the letter.")]
+		Letter = 4207,
+		
+		/// <summary>
+		/// Activity to track a telephone call.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Phone Call", 7, null, "Activity to track a telephone call.")]
+		PhoneCall = 4210,
+		
+		/// <summary>
+		/// System operation used to perform lengthy and asynchronous operations on large data sets, such as distributing a campaign activity or quick campaign.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Quick Campaign", 10, null, "System operation used to perform lengthy and asynchronous operations on large dat" +
+			"a sets, such as distributing a campaign activity or quick campaign.")]
+		QuickCampaign = 4406,
+		
+		/// <summary>
+		/// The Master appointment of a recurring appointment series.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Recurring Appointment", 16, null, "The Master appointment of a recurring appointment series.")]
+		RecurringAppointment = 4251,
+		
+		/// <summary>
+		/// Activity offered by the organization to satisfy its customer's needs. Each service activity includes date, time, duration, and required resources.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Service Activity", 8, null, "Activity offered by the organization to satisfy its customer\'s needs. Each servic" +
+			"e activity includes date, time, duration, and required resources.")]
+		ServiceActivity = 4214,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("SMS", 12)]
+		Sms = 10117,
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Social Activity", 11, null, "For internal use only.")]
+		SocialActivity = 4216,
+		
+		/// <summary>
+		/// Generic activity representing work needed to be done.
+		/// </summary>
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Task", 3, null, "Generic activity representing work needed to be done.")]
+		Task = 4212,
+	}
+	
+	/// <summary>
+	/// Status of the queue item.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum queueitem_statecode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Active", 0)]
+		Active = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Inactive", 1)]
+		Inactive = 1,
+	}
+	
+	/// <summary>
+	/// Reason for the status of the queue item.
+	/// </summary>
+	[System.Runtime.Serialization.DataContractAttribute()]
+	public enum QueueItem_StatusCode
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Active", 1)]
+		Active = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Inactive", 0)]
+		Inactive = 2,
 	}
 	
 	/// <summary>

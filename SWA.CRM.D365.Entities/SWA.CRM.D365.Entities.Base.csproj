@@ -84,6 +84,8 @@
     <Compile Include="Entities\PhoneCall.cs" />
     <Compile Include="Entities\PriceLevel.cs" />
     <Compile Include="Entities\ProductPriceLevel.cs" />
+    <Compile Include="Entities\Queue.cs" />
+    <Compile Include="Entities\QueueItem.cs" />
     <Compile Include="Entities\SavedQuery.cs" />
     <Compile Include="Entities\swa_casecategory.cs" />
     <Compile Include="Entities\swa_casesubcategory.cs" />
@@ -126,6 +128,7 @@
     <Compile Include="EntityManipulation\SetStateEntityManipulation.cs" />
     <Compile Include="EntityManipulation\UpdateEntityManipulation.cs" />
     <Compile Include="EntityManipulation\UpSertEntityManipulation.cs" />
+    <Compile Include="EntityQuery\Queue.partial.cs" />
     <Compile Include="EntityQuery\Incident.partial.cs" />
     <Compile Include="EntityQuery\Account.partial.cs" />
     <Compile Include="EntityQuery\Contact.partial.cs" />
