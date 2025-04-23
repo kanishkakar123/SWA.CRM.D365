@@ -54,10 +54,8 @@ namespace SWA.CRM.D365.Plugins
                 string baseTemplateName = (string)context.InputParameters["BaseTemplateName"];
                 string regardingEntityURL = (string)context.InputParameters["RegardingEntityURL"];
                 EntityReference regardingEntity = new DynamicUrlParser(regardingEntityURL).ToEntityReference(service);
-                //EntityReference regardingEntity = new EntityReference("incident", new DynamicUrlParser(regardingEntityURL).Id);
                 string toEntityURL = (string)context.InputParameters["ToEntityURL"];
                 EntityReference toEntity = new DynamicUrlParser(toEntityURL).ToEntityReference(service);
-                //EntityReference toEntity = new EntityReference("contact", new DynamicUrlParser(toEntityURL).Id);
                 bool sendEmail = (bool)context.InputParameters["SendEmail"];
                 bool sendSMS = (bool)context.InputParameters["SendSMS"];
                 EntityReference fromUser = sendEmail ? (EntityReference)context.InputParameters["FromUser"] : null;
