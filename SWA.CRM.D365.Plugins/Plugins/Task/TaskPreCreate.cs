@@ -8,23 +8,13 @@ namespace SWA.CRM.D365.Plugins
 {
     public class TaskPreCreate : PluginBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TaskPreCreate"/> class.
+        /// </summary>
         public TaskPreCreate() : base(typeof(TaskPreCreate))
         {
             // Implement your custom configuration handling.
         }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ActionSendNotification"/> class.
-        /// </summary>
-        /// <param name="unsecure">Contains public (unsecured) configuration information.</param>
-        /// <param name="secure">Contains non-public (secured) configuration information. 
-        /// When using Microsoft Dynamics 365 for Outlook with Offline Access, 
-        /// the secure string is not passed to a plug-in that executes while the client is offline.</param>
-        //public TaskPreCreate(string unsecure, string secure) : base(typeof(TaskPreCreate)) 
-        //{
-        //    // Implement your custom configuration handling.
-        //}
-
 
         /// <summary>
         /// Main entry point for he business logic that the plug-in is to execute.
@@ -52,41 +42,44 @@ namespace SWA.CRM.D365.Plugins
 
             logger.Trace("Start TaskPreCreate");
 
-            //try
-            //{
-            logger.Trace("Get target task");
-            Task task = localContext.GetTargetEntity().ToEntity<Task>();
-
-            if (task != null && task.RegardingObjectId != null && string.Equals(task.RegardingObjectId.LogicalName, Incident.EntityLogicalName, StringComparison.OrdinalIgnoreCase))
+            try
             {
-                logger.Trace($"Regarding case : {task.RegardingObjectId.Name} ({task.RegardingObjectId.Id})");
+                logger.Trace("Get target task");
+                Task task = localContext.GetTargetEntity().ToEntity<Task>();
 
-                logger.Trace("Get open tasks for case");
-                IEnumerable<Task> openTasks = Task.GetByRegardingObject(dataContext, task.RegardingObjectId.Id);
-                //EntityCollection openTasks = Task.GetByRegardingObject(service, task.RegardingObjectId.Id);
-
-                if (openTasks != null && openTasks.Any())
-                //if (openTasks != null && openTasks.Entities.Count > 0)
+                if (task != null && task.RegardingObjectId != null && string.Equals(task.RegardingObjectId.LogicalName, Incident.EntityLogicalName, StringComparison.OrdinalIgnoreCase))
                 {
-                    logger.Trace($"{openTasks.Count()} task(s) are open for the case");
-                    //logger.Trace($"{openTasks.Entities.Count} task(s) are open for the case");
-                    throw new InvalidPluginExecutionException("There are existing open tasks for this case. Please ensure all open tasks are completed before creating new ones.");
+                    logger.Trace($"Regarding case : {task.RegardingObjectId.Name} ({task.RegardingObjectId.Id})");
+
+                    logger.Trace("Get open tasks for case");
+                    IEnumerable<Task> openTasks = Task.GetByRegardingObject(dataContext, task.RegardingObjectId.Id);
+
+                    if (openTasks != null && openTasks.Any())
+                    {
+                        logger.Trace($"{openTasks.Count()} task(s) are open for the case");
+                        throw new InvalidPluginExecutionException(OperationStatus.Failed, Constants.OpenTaskValidationErrorCode, Constants.OpenTaskValidationErrorMessage);
+                    }
+                    else
+                    {
+                        logger.Trace("No open task found for the case");
+                    }
+                }
+            }
+            catch (InvalidPluginExecutionException ex)
+            {
+                if (ex.ErrorCode == Constants.OpenTaskValidationErrorCode)
+                {
+                    throw (ex);
                 }
                 else
                 {
-                    logger.Trace($"No open task found for the case");
+                    HelperMethods.LogPluginError("TaskPreCreate", ex, logger);
                 }
             }
-            //}
-            //catch (Exception ex)
-            //{
-            //    logger.Trace($"Error processing TaskPreCreate : {ex.Message}{Environment.NewLine}StackTrace : {ex.StackTrace}");
-
-            //    if (ex.InnerException != null)
-            //    {
-            //        logger.Trace($"Inner Exception : {ex.InnerException.Message}{Environment.NewLine}StackTrace : {ex.InnerException.StackTrace}");
-            //    }
-            //}
+            catch (Exception ex)
+            {
+                HelperMethods.LogPluginError("TaskPreCreate", ex, logger);
+            }
 
             logger.Trace("End TaskPreCreate");
         }
