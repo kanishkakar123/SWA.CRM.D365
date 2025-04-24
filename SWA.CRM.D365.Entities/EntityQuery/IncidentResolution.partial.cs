@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace SWA.CRM.D365.Entities.Base
@@ -13,6 +12,7 @@ namespace SWA.CRM.D365.Entities.Base
         {
             return (from entity in dataContext.IncidentResolutionSet
                     where entity.IncidentId.Id == caseId
+                    orderby entity.CreatedOn descending
                     select entity).FirstOrDefault();
         }
 
