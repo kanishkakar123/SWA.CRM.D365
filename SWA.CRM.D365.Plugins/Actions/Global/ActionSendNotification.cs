@@ -42,6 +42,7 @@ namespace SWA.CRM.D365.Plugins
             ITracingService logger = localContext.TracingService;
             CRMDataContext dataContext = localContext.DataContext;
             CreateEntityManipulation createEntityManipulation;
+            string taskOwnerName = string.Empty;
 
             bool emailStatus = false, smsStatus = false;
 
@@ -58,7 +59,38 @@ namespace SWA.CRM.D365.Plugins
                 EntityReference toEntity = new DynamicUrlParser(toEntityURL).ToEntityReference(service);
                 bool sendEmail = (bool)context.InputParameters["SendEmail"];
                 bool sendSMS = (bool)context.InputParameters["SendSMS"];
-                EntityReference fromUser = sendEmail ? (EntityReference)context.InputParameters["FromUser"] : null;
+                EntityReference fromQueue = sendEmail ? (EntityReference)context.InputParameters["FromQueue"] : null;
+
+                // If email to is team then send email to default queue of the team
+                if (toEntity.LogicalName == Team.EntityLogicalName)
+                {
+                    logger.Trace("Get default queue of team");
+                    Queue defaultQueue = Queue.GetByTeam(dataContext, toEntity.Id);
+
+                    if (defaultQueue != null)
+                    {
+                        toEntity = defaultQueue.ToEntityReference();
+                        logger.Trace("Send email to default queue of team");
+                    }
+                    else
+                    {
+                        logger.Trace("Default queue of team is not set");
+                        sendEmail = false;
+                    }
+                }
+
+                // If email to is account then send email to primary contact of the account
+                if (toEntity.LogicalName == Account.EntityLogicalName)
+                {
+                    logger.Trace("Get primary contact of customer");
+                    toEntity = Account.GetById(dataContext, toEntity.Id).PrimaryContactId;
+
+                    if (toEntity == null)
+                    {
+                        logger.Trace("Primary Contact of customer is not set");
+                        sendEmail = false;
+                    }
+                }
 
                 if (sendEmail)
                 {
@@ -73,19 +105,6 @@ namespace SWA.CRM.D365.Plugins
                         logger.Trace("Start email sending process");
                         logger.Trace($"Email To : {toEntity.LogicalName} ({toEntity.Id})");
 
-                        // If email to is team then send email to default queue of the team
-                        if (toEntity.LogicalName == Team.EntityLogicalName)
-                        {
-                            logger.Trace("Get default queue of team");
-                            Queue defaultQueue = Queue.GetByTeam(dataContext, toEntity.Id);
-
-                            if (defaultQueue != null)
-                            { 
-                                toEntity = defaultQueue.ToEntityReference();
-                                logger.Trace("Send email to default queue of team");
-                            }
-                        }
-
                         logger.Trace($"Get email address of {toEntity.LogicalName} ({toEntity.Id})");
                         string emailAddress = NotificationHelper.GetEmailAddress(toEntity, service);
 
@@ -96,17 +115,56 @@ namespace SWA.CRM.D365.Plugins
                             // Get Email from Template
                             logger.Trace($"Fetching Template: Email_{baseTemplateName}");
                             emailTemplate = Template.GetByName(dataContext, "Email_" + baseTemplateName);
-                            //emailTemplate = Template.GetByName(service, "Email_" + baseTemplateName).ToEntity<Template>();
 
                             if (emailTemplate != null)
                             {
+                                // Get task owner name to add to email body for task creation notification
+                                if (regardingEntity.LogicalName == Task.EntityLogicalName)
+                                {
+                                    Task taskRecord = Task.GetById(dataContext, regardingEntity.Id);
+
+                                    if (taskRecord != null &&
+                                        taskRecord.RegardingObjectId != null &&
+                                        taskRecord.RegardingObjectId.LogicalName == Incident.EntityLogicalName &&
+                                        taskRecord.OwnerId != null)
+                                    {
+                                        taskOwnerName = taskRecord.OwnerIdName;
+                                        logger.Trace($"Task Owner : {taskOwnerName}");
+                                        regardingEntity = Incident.GetById(dataContext, taskRecord.RegardingObjectId.Id).ToEntityReference();
+                                    }
+                                }
+
                                 // Map and Create Email 
                                 logger.Trace("Creating email record based on template");
                                 emailEntity = NotificationHelper.GetEmailFromTemplate(emailTemplate, regardingEntity, service);
 
                                 if (emailEntity != null)
                                 {
-                                    emailEntity = NotificationHelper.MapEmail(emailEntity, toEntity, regardingEntity, fromUser);
+                                    // Add Resolution Remarks to email body for case resolution
+                                    if (regardingEntity.LogicalName == Incident.EntityLogicalName && baseTemplateName.EndsWith("Resolve"))
+                                    {
+                                        Incident caseRecord = Incident.GetById(dataContext, regardingEntity.Id);
+
+                                        if (caseRecord != null && caseRecord.StateCode == incident_statecode.Resolved)
+                                        {
+                                            logger.Trace("Add Resolution Remarks to email body for case resolution");
+                                            logger.Trace("Get Incident Resolution record");
+                                            IncidentResolution incidentResolution = IncidentResolution.GetByCase(dataContext, regardingEntity.Id);
+
+                                            if (incidentResolution != null && !string.IsNullOrEmpty(incidentResolution.Subject))
+                                            {
+                                                logger.Trace($"Incident Resolution id : {incidentResolution.Id}");
+                                                emailEntity.Description = emailEntity.Description.Replace("{ResolutionRemarks}", incidentResolution.Subject);
+                                            }
+                                        }
+                                    }
+
+                                    if (!string.IsNullOrEmpty(taskOwnerName))
+                                    {
+                                        emailEntity.Description = emailEntity.Description.Replace("{TaskOwner}", taskOwnerName);
+                                    }
+
+                                    emailEntity = NotificationHelper.MapEmail(emailEntity, toEntity, regardingEntity, fromQueue);
 
                                     createEntityManipulation = new CreateEntityManipulation(emailEntity);
                                     emailId = createEntityManipulation.Create(service);
@@ -133,6 +191,10 @@ namespace SWA.CRM.D365.Plugins
                                         emailStatus = false;
                                         logger.Trace("Error sending email");
                                     }
+                                }
+                                else
+                                {
+                                    logger.Trace($"Unable to create email record. Check if template : Email_{baseTemplateName} exists in system");
                                 }
                             }
                             else
@@ -175,10 +237,25 @@ namespace SWA.CRM.D365.Plugins
                             // Get SMS from Template
                             logger.Trace($"Fetching Template: SMS_{baseTemplateName}");
                             smsTemplate = Template.GetByName(dataContext, "SMS_" + baseTemplateName);
-                            //smsTemplate = Template.GetByName(service, "SMS_" + baseTemplateName).ToEntity<Template>();
 
                             if (smsTemplate != null)
                             {
+                                // Get task owner name to add to email body for task creation notification
+                                if (regardingEntity.LogicalName == Task.EntityLogicalName)
+                                {
+                                    Task taskRecord = Task.GetById(dataContext, regardingEntity.Id);
+
+                                    if (taskRecord != null &&
+                                        taskRecord.RegardingObjectId != null &&
+                                        taskRecord.RegardingObjectId.LogicalName == Incident.EntityLogicalName &&
+                                        taskRecord.OwnerId != null)
+                                    {
+                                        taskOwnerName = taskRecord.OwnerIdName;
+                                        logger.Trace($"Task Owner : {taskOwnerName}");
+                                        regardingEntity = Incident.GetById(dataContext, taskRecord.RegardingObjectId.Id).ToEntityReference();
+                                    }
+                                }
+
                                 // Map and Create Email 
                                 logger.Trace("Creating Email record based on template");
                                 emailEntity = NotificationHelper.GetEmailFromTemplate(smsTemplate, regardingEntity, service);
@@ -190,6 +267,11 @@ namespace SWA.CRM.D365.Plugins
                                     smsEntity = new swa_sms();
                                     string subject = emailEntity.Subject;
                                     string message = Common.Helpers.HelperMethods.UseHtmlDecode(emailEntity.Description);
+
+                                    if (!string.IsNullOrEmpty(taskOwnerName))
+                                    {
+                                        emailEntity.Description = message = message.Replace("{TaskOwner}", taskOwnerName);
+                                    }
 
                                     NotificationHelper.MapSMS(smsEntity, subject, message, toEntity, regardingEntity);
 
@@ -223,6 +305,10 @@ namespace SWA.CRM.D365.Plugins
                                     // Code to update SMS activity with service response
 
                                     smsStatus = true;
+                                }
+                                else
+                                {
+                                    logger.Trace($"Unable to create email record. Check if template : Email_{baseTemplateName} exists in system");
                                 }
                             }
                             else

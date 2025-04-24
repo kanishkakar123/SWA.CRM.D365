@@ -33,10 +33,10 @@ namespace SWA.CRM.D365.Common.Helpers
             return emailEntity;
         }
 
-        public static Email MapEmail(Email emailEntity, EntityReference toEntity, EntityReference regardingEntity, EntityReference systemUserEntity)
+        public static Email MapEmail(Email emailEntity, EntityReference toEntity, EntityReference regardingEntity, EntityReference queueEntity)
         {
-            emailEntity.To = new ActivityParty[] { new ActivityParty() { PartyId = toEntity } };
-            emailEntity.From = new ActivityParty[] { new ActivityParty() { PartyId = systemUserEntity } };
+            emailEntity.To = new ActivityParty[] { new ActivityParty() { PartyId = toEntity} };
+            emailEntity.From = new ActivityParty[] { new ActivityParty() { PartyId = queueEntity } };
             emailEntity.Description = emailEntity.Description;
             emailEntity.RegardingObjectId = regardingEntity;
             emailEntity.DirectionCode = true;

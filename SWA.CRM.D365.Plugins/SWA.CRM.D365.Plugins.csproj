@@ -71,6 +71,7 @@
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Common\HelperMethods.cs" />
     <Compile Include="Common\PluginBase.cs" />
+    <Compile Include="Plugins\Task\TaskPostCreate.cs" />
     <Compile Include="Plugins\Task\TaskPreCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
