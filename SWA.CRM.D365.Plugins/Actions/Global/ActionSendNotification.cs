@@ -19,7 +19,7 @@ namespace SWA.CRM.D365.Plugins
         }
 
         /// <summary>
-        /// Main entry point for he business logic that the plug-in is to execute.
+        /// Main entry point for the business logic that the plug-in is to execute.
         /// </summary>
         /// <param name="localContext">The <see cref="LocalPluginContext"/> which contains the
         /// <see cref="IPluginExecutionContext"/>,
@@ -206,7 +206,7 @@ namespace SWA.CRM.D365.Plugins
                                 }
                                 else
                                 {
-                                    logger.Trace("Unable to create email record");
+                                    logger.Trace("Unable to get email from template");
                                 }
                             }
                             else
@@ -303,7 +303,7 @@ namespace SWA.CRM.D365.Plugins
                                 }
                                 else
                                 {
-                                    logger.Trace($"Unable to create email record. Check if template : Email_{baseTemplateName} exists in system");
+                                    logger.Trace($"Unable to get email from template");
                                 }
                             }
                             else
