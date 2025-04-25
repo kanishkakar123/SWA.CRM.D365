@@ -128,6 +128,7 @@
     <Compile Include="EntityManipulation\SetStateEntityManipulation.cs" />
     <Compile Include="EntityManipulation\UpdateEntityManipulation.cs" />
     <Compile Include="EntityManipulation\UpSertEntityManipulation.cs" />
+    <Compile Include="EntityQuery\swa_sms.partial.cs" />
     <Compile Include="EntityQuery\IncidentResolution.partial.cs" />
     <Compile Include="EntityQuery\Queue.partial.cs" />
     <Compile Include="EntityQuery\Incident.partial.cs" />
