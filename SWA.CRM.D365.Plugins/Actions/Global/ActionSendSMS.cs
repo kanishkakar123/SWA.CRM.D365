@@ -102,6 +102,7 @@ namespace SWA.CRM.D365.Plugins
                                 //}
 
                                 // Code to update SMS activity with service response
+                                smsStatus = true;
                             }
                         }
                     }
