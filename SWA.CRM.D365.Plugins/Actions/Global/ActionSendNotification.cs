@@ -60,6 +60,7 @@ namespace SWA.CRM.D365.Plugins
                 bool sendEmail = (bool)context.InputParameters["SendEmail"];
                 bool sendSMS = (bool)context.InputParameters["SendSMS"];
                 EntityReference fromQueue = sendEmail ? (EntityReference)context.InputParameters["FromQueue"] : null;
+                string recordURL = context.InputParameters.Contains("RecordURL") ? (string)context.InputParameters["RecordURL"] : string.Empty;
 
                 // If email to parameter is team then send email to default queue of the team
                 if (toEntity.LogicalName == Team.EntityLogicalName)
@@ -176,6 +177,14 @@ namespace SWA.CRM.D365.Plugins
                                     if (!string.IsNullOrEmpty(taskOwnerName))
                                     {
                                         emailEntity.Description = emailEntity.Description.Replace("{TaskOwner}", taskOwnerName);
+                                    }
+
+                                    if (!string.IsNullOrEmpty(recordURL))
+                                    {
+                                        logger.Trace($"Record URL : {recordURL}");
+                                        string orgURL = swa_configuration.GetByName(dataContext, "OrganizationURL").swa_value;
+                                        recordURL = "https://" + orgURL + "/main.aspx" + recordURL.Substring(recordURL.IndexOf("?"));
+                                        emailEntity.Description = emailEntity.Description.Replace("{RecordURL}", recordURL);
                                     }
 
                                     emailEntity = NotificationHelper.MapEmail(emailEntity, toEntity, regardingEntity, fromQueue);
