@@ -6,8 +6,6 @@ using SWA.CRM.D365.Entities.Base;
 
 namespace SWA.CRM.D365.Common.Services
 {
-    public enum ServiceCategory { SMSService, Survey, IVR, ATIT, OAuthService }
-
     public class ServiceConfiguration
     {
         private IOrganizationService organizationService;
@@ -61,7 +59,7 @@ namespace SWA.CRM.D365.Common.Services
             switch (serviceCategory)
             {
                 case ServiceCategory.SMSService:
-                    configName = Constants.SmsApiUrl;
+                    configName = Constants.ConfigSmsApiUrl;
                     break;
 
                 case ServiceCategory.Survey:

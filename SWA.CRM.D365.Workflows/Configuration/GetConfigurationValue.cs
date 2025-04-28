@@ -1,5 +1,6 @@
 ﻿using System.Activities;
 using Microsoft.Xrm.Sdk.Workflow;
+using SWA.CRM.D365.Entities.Base;
 
 namespace SWA.CRM.D365.Workflows
 {
@@ -19,7 +20,7 @@ namespace SWA.CRM.D365.Workflows
 
         public override void ExecuteCRMWorkFlowActivity(CodeActivityContext executionContext, LocalWorkflowContext crmWorkflowContext)
         {
-            //Value.Set(executionContext, swa_cdpconfiguration.GetValueByKey(crmWorkflowContext.DataContext, Key.Get(executionContext)));
+            Value.Set(executionContext, swa_configuration.GetByName(crmWorkflowContext.DataContext, Key.Get(executionContext)));
         }
     }
 }

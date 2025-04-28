@@ -1,7 +1,6 @@
 ﻿using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
 using SWA.CRM.D365.Entities.Base;
-using System.Collections;
 using System.Linq;
 
 namespace SWA.CRM.D365.Common.Helpers
@@ -35,7 +34,7 @@ namespace SWA.CRM.D365.Common.Helpers
 
         public static Email MapEmail(Email emailEntity, EntityReference toEntity, EntityReference regardingEntity, EntityReference queueEntity)
         {
-            emailEntity.To = new ActivityParty[] { new ActivityParty() { PartyId = toEntity} };
+            emailEntity.To = new ActivityParty[] { new ActivityParty() { PartyId = toEntity } };
             emailEntity.From = new ActivityParty[] { new ActivityParty() { PartyId = queueEntity } };
             emailEntity.Description = emailEntity.Description;
             emailEntity.RegardingObjectId = regardingEntity;
@@ -64,8 +63,8 @@ namespace SWA.CRM.D365.Common.Helpers
                 case SystemUser.EntityLogicalName:
                     fieldName = SystemUser.Fields.InternalEMailAddress;
                     break;
-                case Entities.Base.Queue.EntityLogicalName:
-                    fieldName = Entities.Base.Queue.Fields.EMailAddress;
+                case Queue.EntityLogicalName:
+                    fieldName = Queue.Fields.EMailAddress;
                     break;
             }
 
@@ -79,11 +78,11 @@ namespace SWA.CRM.D365.Common.Helpers
             return emailAddress;
         }
 
-        public static string GetMobileNumber(EntityReference entityReference, IOrganizationService service) 
-        { 
+        public static string GetMobileNumber(EntityReference entityReference, IOrganizationService service)
+        {
             string mobileNumber = string.Empty, fieldName = string.Empty;
 
-            switch (entityReference.LogicalName) 
+            switch (entityReference.LogicalName)
             {
                 case Contact.EntityLogicalName:
                     fieldName = Contact.Fields.MobilePhone;

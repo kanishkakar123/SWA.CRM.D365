@@ -5,7 +5,7 @@ using System.Activities;
 
 namespace SWA.CRM.D365.Workflows
 {
-    public class DemoWorkflowActivity : WorkFlowActivityBase
+    internal class DemoWorkflowActivity : WorkFlowActivityBase
     {
         public DemoWorkflowActivity() : base(typeof(DemoWorkflowActivity))
         {

@@ -46,9 +46,11 @@
     </Reference>
     <Reference Include="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.34\lib\net462\Microsoft.Xrm.Sdk.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Xrm.Sdk.Workflow, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CrmSdk.Workflow.9.0.2.34\lib\net462\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -74,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\HelperMethods.cs" />
     <Compile Include="Common\WorkFlowActivityBase.cs" />
     <Compile Include="Configuration\GetConfigurationValue.cs" />
     <Compile Include="Context\GetWorkflowContextMessage.cs" />
@@ -81,6 +84,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemUser\GetUserByEmail.cs" />
     <Compile Include="SystemUser\GetWorkflowInitiatingUser.cs" />
+    <Compile Include="Template\GetTemplateName.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SWA.CRM.D365.Common\SWA.CRM.D365.Common.csproj">

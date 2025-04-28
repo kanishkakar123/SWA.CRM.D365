@@ -9,9 +9,6 @@ using System.Threading.Tasks;
 
 namespace SWA.CRM.D365.Common.Services
 {
-    public enum AuthorizationType { AuthToken, AppKey }
-    public enum RequestMethod { GET, POST }
-
     public static class ServiceInvocation
     {
         public static AccessToken GenerateAuthToken(string apiKey, string apiSecret, string baseUrlToken)
@@ -47,7 +44,7 @@ namespace SWA.CRM.D365.Common.Services
             }
             catch (Exception exception)
             {
-                throw new Exception("An error has occurred in the Service while generating access token - Please contact your system administrator.", exception);
+                throw new Exception("An error has occurred in the Service while generating access token.", exception);
             }
         }
 
@@ -114,7 +111,7 @@ namespace SWA.CRM.D365.Common.Services
             }
             catch (Exception exception)
             {
-                throw new Exception("ERROR: An error has occurred in the Service GET Request - Please contact your system administrator.", exception);
+                throw new Exception("ERROR: An error has occurred in the Service GET Request.", exception);
             }
         }
 
@@ -136,7 +133,7 @@ namespace SWA.CRM.D365.Common.Services
             }
             catch (Exception exception)
             {
-                throw new Exception("ERROR: An error has occurred in the Service POST Request - Please contact your system administrator.", exception);
+                throw new Exception("ERROR: An error has occurred in the Service POST Request.", exception);
             }
         }
     }

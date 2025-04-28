@@ -65,6 +65,7 @@ namespace SWA.CRM.D365.Plugins
                 // If email to parameter is team then send email to default queue of the team
                 if (toEntity.LogicalName == Team.EntityLogicalName)
                 {
+                    sendEmail = false;
                     logger.Trace("Get default queue of team");
                     Queue defaultQueue = Queue.GetByTeam(dataContext, toEntity.Id);
 
@@ -182,7 +183,7 @@ namespace SWA.CRM.D365.Plugins
                                     if (!string.IsNullOrEmpty(recordURL))
                                     {
                                         logger.Trace($"Record URL : {recordURL}");
-                                        string orgURL = swa_configuration.GetByName(dataContext, "OrganizationURL").swa_value;
+                                        string orgURL = swa_configuration.GetByName(dataContext, Common.Helpers.Constants.ConfigOrganizationUrl).swa_value;
                                         recordURL = "https://" + orgURL + "/main.aspx" + recordURL.Substring(recordURL.IndexOf("?"));
                                         emailEntity.Description = emailEntity.Description.Replace("{RecordURL}", recordURL);
                                     }
@@ -234,7 +235,7 @@ namespace SWA.CRM.D365.Plugins
                     }
                 }
 
-                if (toEntity.LogicalName != Queue.EntityLogicalName && sendSMS)
+                if (sendSMS)
                 {
                     Template smsTemplate;
                     Email emailEntity;

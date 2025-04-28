@@ -89,12 +89,13 @@
     <Compile Include="Helpers\JSONHelper.cs" />
     <Compile Include="Helpers\NotificationHelper.cs" />
     <Compile Include="Model\Common\AccessToken.cs" />
-    <Compile Include="Model\Common\ServiceConfigStructs.cs" />
+    <Compile Include="Model\Common\ConfigurationModels.cs" />
     <Compile Include="Model\DemoService\DemoServiceRequest.cs" />
     <Compile Include="Model\DemoService\DemoServiceResponse.cs" />
     <Compile Include="Model\Common\ErrorMessage.cs" />
     <Compile Include="Model\Common\ModelBase.cs" />
     <Compile Include="Model\Common\ResponseMessageBase.cs" />
+    <Compile Include="Model\Common\Enumerations.cs" />
     <Compile Include="Model\SMSService\SMSServiceRequest.cs" />
     <Compile Include="Model\SMSService\SMSServiceResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
