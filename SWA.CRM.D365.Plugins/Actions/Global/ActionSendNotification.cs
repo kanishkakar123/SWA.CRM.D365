@@ -62,6 +62,8 @@ namespace SWA.CRM.D365.Plugins
                 EntityReference fromQueue = sendEmail ? (EntityReference)context.InputParameters["FromQueue"] : null;
                 string recordURL = context.InputParameters.Contains("RecordURL") ? (string)context.InputParameters["RecordURL"] : string.Empty;
 
+                logger.Trace($"Base Template Name : {baseTemplateName}");
+
                 // If email to parameter is team then send email to default queue of the team
                 if (toEntity.LogicalName == Team.EntityLogicalName)
                 {
