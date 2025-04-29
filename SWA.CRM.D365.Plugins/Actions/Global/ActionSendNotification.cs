@@ -67,7 +67,7 @@ namespace SWA.CRM.D365.Plugins
                 // If email to parameter is team then send email to default queue of the team
                 if (toEntity.LogicalName == Team.EntityLogicalName)
                 {
-                    sendEmail = false;
+                    sendSMS = false;
                     logger.Trace("Get default queue of team");
                     Queue defaultQueue = Queue.GetByTeam(dataContext, toEntity.Id);
 
@@ -139,6 +139,8 @@ namespace SWA.CRM.D365.Plugins
                     }
                 }
 
+                logger.Trace($"Send Email : {sendEmail}");
+                logger.Trace($"Send SMS : {sendSMS}");
 
                 if (sendEmail)
                 {
